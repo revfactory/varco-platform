@@ -1,0 +1,3 @@
+string_id,context,text_ko,max_len,placeholders
+menu_start,,시작하기 버튼이 아주 길어요,5,
+ui.hud.lap,HUD,{current}/{total} 바퀴,16,current

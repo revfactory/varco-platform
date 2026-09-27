@@ -1,0 +1,69 @@
+{
+  "id": "face_vo",
+  "verdict": "fail",
+  "mode": "live",
+  "checks": [
+    {
+      "name": "file_count",
+      "result": "fail",
+      "detail": "2/3"
+    },
+    {
+      "name": "ch1_intro_001:success",
+      "result": "pass",
+      "detail": "success=True"
+    },
+    {
+      "name": "ch1_intro_001:shape",
+      "result": "pass",
+      "detail": "frames 30/30, poses 3/3"
+    },
+    {
+      "name": "ch1_intro_001:range",
+      "result": "pass",
+      "detail": "0.100~0.900"
+    },
+    {
+      "name": "ch1_intro_001:moves",
+      "result": "pass",
+      "detail": "분산 8.00e-02"
+    },
+    {
+      "name": "ch1_intro_001:sync",
+      "result": "pass",
+      "detail": "애니 1.00s / 음성 1.00s"
+    },
+    {
+      "name": "ch1_intro_002:success",
+      "result": "pass",
+      "detail": "success=True"
+    },
+    {
+      "name": "ch1_intro_002:shape",
+      "result": "pass",
+      "detail": "frames 90/90, poses 3/3"
+    },
+    {
+      "name": "ch1_intro_002:range",
+      "result": "pass",
+      "detail": "0.200~0.200"
+    },
+    {
+      "name": "ch1_intro_002:moves",
+      "result": "fail",
+      "detail": "분산 0.00e+00"
+    },
+    {
+      "name": "ch1_intro_002:sync",
+      "result": "fail",
+      "detail": "애니 3.00s / 음성 1.00s"
+    }
+  ],
+  "issues": [
+    "얼굴 JSON 없음: ['_workspace/harness-build/test/c/games/demo/assets/anim/face/ch1_intro_003.json']",
+    "ch1_intro_002 표정이 움직이지 않는다",
+    "ch1_intro_002 음성과 애니메이션 길이 차이 2.00s"
+  ],
+  "retryable": true,
+  "fix_hint": "빠진 줄의 face.blendshape 를 호출한다 / face_style·lip_style 을 바꾸거나 음성을 확인한다 / 최종 음성 파일로 다시 호출한다"
+}

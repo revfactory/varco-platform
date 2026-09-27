@@ -1,0 +1,39 @@
+{
+  "id": "vo_ch1_intro",
+  "status": "generated",
+  "outputs": [
+    "games/test-game/assets/audio/voice/korean/ch1_intro_001.wav",
+    "games/test-game/assets/audio/voice/korean/ch1_intro_002.wav",
+    "games/test-game/assets/anim/face/ch1_intro_002.json",
+    "games/test-game/assets/audio/voice/korean/ch1_intro_003.wav"
+  ],
+  "calls": 4,
+  "est_credits_spent": 5.0,
+  "notes": "3/3줄 완료; 단가 미공개 호출 1건은 est_credits_spent 에 빠져 있다",
+  "error": "",
+  "lines": [
+    {
+      "line_id": "ch1_intro_001",
+      "ok": true,
+      "outputs": [
+        "games/test-game/assets/audio/voice/korean/ch1_intro_001.wav"
+      ]
+    },
+    {
+      "line_id": "ch1_intro_002",
+      "ok": true,
+      "outputs": [
+        "games/test-game/assets/audio/voice/korean/ch1_intro_002.wav",
+        "games/test-game/assets/anim/face/ch1_intro_002.json"
+      ]
+    },
+    {
+      "line_id": "ch1_intro_003",
+      "ok": true,
+      "outputs": [
+        "games/test-game/assets/audio/voice/korean/ch1_intro_003.wav"
+      ]
+    }
+  ],
+  "unknown_price_calls": 1
+}

@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "lang": "tw",
+    "source": "ko",
+    "generated_by": "dry-run",
+    "reviewed": false
+  },
+  "ch1_intro_001": "[tw] 네온 도시의 밤이 깊어 간다.",
+  "ch1_intro_002": "[tw] 또 너야? {player_name}.",
+  "ch1_intro_003": "[tw] 오늘은 내가 이긴다.",
+  "ch1_intro_004": "[tw] 그 말, 지난주에도 들었어.",
+  "ch1_boss_001": "[tw] 크아아아!",
+  "ch1_boss_002": "[tw] 피해!",
+  "ch1_end_001": "[tw] 끝났네.",
+  "ui.menu.start": "[tw] 시작하기",
+  "ui.hud.lap": "[tw] 랩 {current}/{total}",
+  "ui.result.win": "[tw] 네온 드리프트 챔피언!"
+}

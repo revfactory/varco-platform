@@ -1,0 +1,12 @@
+매니페스트에서 id 가 "sfx_coin_pickup" 인 에셋 하나를 제작하라.
+게임: tiny
+실행 설정: _workspace/harness-build/e2e/_ws/run_meta.json
+승인된 매니페스트: _workspace/harness-build/e2e/games/tiny/manifest.json
+확정 폴더: _workspace/harness-build/e2e/games/tiny  작업 폴더: _workspace/harness-build/e2e/_ws
+크레딧 장부: _workspace/harness-build/e2e/_ws/varco_ledger.jsonl
+모드: dry-run. varco_client.py call 에 --dry-run --ledger _workspace/harness-build/e2e/_ws/varco_ledger.jsonl --asset-id <id> 를 붙인다. 실제 호출은 하지 않는다.
+단가 미공개 API 에는 --allow-unknown-price 를 붙이지 않는다. 막히면 budget_blocked 로 반환한다.
+매니페스트는 읽기만 한다. 상태 갱신은 리더가 한다.
+결과 파일은 에셋의 output 위치(확정 폴더 기준)에 저장하고, 작업 기록은 _workspace/harness-build/e2e/_ws/03_sound_sfx_coin_pickup.json 에 남긴다.
+varco_client.py 종료 코드가 3(예산 초과)이면 status=budget_blocked, 10(인증)이면 auth_failed, 11(크레딧·권한)이면 credit_exhausted 로 즉시 끝낸다. 이 세 경우는 재시도하지 않는다.
+최종 응답은 사용자에게 보내는 글이 아니라 스키마에 맞춘 반환 데이터다.

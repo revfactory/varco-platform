@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Failed(Child)" total="3" passed="2" failed="1" inconclusive="0" skipped="0">
+  <test-suite type="Assembly" name="Game.Tests.EditMode.dll">
+    <test-case id="1" name="LoadsEnemies" fullname="Game.Tests.DataTests.LoadsEnemies" result="Passed"/>
+    <test-case id="2" name="SchemaMin" fullname="Game.Tests.DataTests.SchemaMin" result="Failed">
+      <failure><message><![CDATA[enemies.slime.hp=0 < min 1]]></message></failure>
+    </test-case>
+    <test-case id="3" name="StringsExist" fullname="Game.Tests.DataTests.StringsExist" result="Passed"/>
+  </test-suite>
+</test-run>

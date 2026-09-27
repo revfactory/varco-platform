@@ -1,0 +1,21 @@
+{
+  "id": "vo_ch1_intro_acting",
+  "status": "generated",
+  "outputs": [
+    "games/test-game/assets/audio/voice/korean/ch1_intro_004.wav"
+  ],
+  "calls": 1,
+  "est_credits_spent": 2.0,
+  "notes": "1/1줄 완료; vc.acting 생략: 단가 미공개 호출이 승인되지 않아 TTS 결과를 최종 음성으로 쓴다; face.blendshape 생략: 단가 미공개 호출이 승인되지 않았다",
+  "error": "",
+  "lines": [
+    {
+      "line_id": "ch1_intro_004",
+      "ok": true,
+      "outputs": [
+        "games/test-game/assets/audio/voice/korean/ch1_intro_004.wav"
+      ]
+    }
+  ],
+  "unknown_price_calls": 0
+}

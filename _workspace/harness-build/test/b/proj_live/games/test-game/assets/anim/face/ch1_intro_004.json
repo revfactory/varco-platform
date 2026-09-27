@@ -1,0 +1,23 @@
+{
+  "id": "ch1_intro_004",
+  "success": true,
+  "blendshape": {
+    "exportFps": 30,
+    "numPoses": 2,
+    "numFrames": 2,
+    "faceNames": [
+      "jawOpen",
+      "eyeBlinkLeft"
+    ],
+    "weightMat": [
+      [
+        0.1,
+        0
+      ],
+      [
+        0.3,
+        0.1
+      ]
+    ]
+  }
+}

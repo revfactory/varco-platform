@@ -1,0 +1,3 @@
+id,hp,attack,move_speed_px_s,reward_gold
+slime,40,6,80,7
+boss,1200,35,60,250

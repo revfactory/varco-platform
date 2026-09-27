@@ -1,0 +1,345 @@
+{
+ "stats": {
+  "chapters": {
+   "docs": 25,
+   "reference": 28
+  },
+  "images": 77,
+  "videos": 2,
+  "audios": 16,
+  "pricing_tables": 19
+ },
+ "anchors": [
+  [
+   1,
+   "sec-docs"
+  ],
+  [
+   2,
+   "sec-docs-g1"
+  ],
+  [
+   3,
+   "docs-introduction"
+  ],
+  [
+   3,
+   "docs-quickstart"
+  ],
+  [
+   3,
+   "docs-pricing"
+  ],
+  [
+   2,
+   "sec-docs-g2"
+  ],
+  [
+   3,
+   "docs-sound-overview"
+  ],
+  [
+   3,
+   "docs-sound-conversion"
+  ],
+  [
+   3,
+   "docs-sound-enhance"
+  ],
+  [
+   3,
+   "docs-sound-looping"
+  ],
+  [
+   3,
+   "docs-sound-monotostereo"
+  ],
+  [
+   3,
+   "docs-sound-variation"
+  ],
+  [
+   3,
+   "docs-sound-texttosound"
+  ],
+  [
+   3,
+   "docs-3d-overview"
+  ],
+  [
+   3,
+   "docs-3d-image-to-3d"
+  ],
+  [
+   3,
+   "docs-voice-to-face"
+  ],
+  [
+   2,
+   "sec-docs-g3"
+  ],
+  [
+   3,
+   "docs-voice-overview"
+  ],
+  [
+   3,
+   "docs-voice-text-to-speech-lite"
+  ],
+  [
+   3,
+   "docs-voice-text-to-speech-standard"
+  ],
+  [
+   3,
+   "docs-voice-voice-conversion"
+  ],
+  [
+   3,
+   "docs-voice-voice-conversion-acting"
+  ],
+  [
+   3,
+   "docs-translate"
+  ],
+  [
+   2,
+   "sec-docs-g4"
+  ],
+  [
+   3,
+   "docs-fashion-overview"
+  ],
+  [
+   2,
+   "sec-docs-g5"
+  ],
+  [
+   3,
+   "docs-chatbot-overview"
+  ],
+  [
+   2,
+   "sec-docs-g6"
+  ],
+  [
+   3,
+   "docs-gentlewords-overview"
+  ],
+  [
+   3,
+   "docs-safety-overview"
+  ],
+  [
+   2,
+   "sec-docs-g7"
+  ],
+  [
+   3,
+   "docs-plugin-sound"
+  ],
+  [
+   3,
+   "docs-plugin-sound-unity"
+  ],
+  [
+   1,
+   "sec-reference"
+  ],
+  [
+   2,
+   "sec-reference-g1"
+  ],
+  [
+   3,
+   "reference-introduction"
+  ],
+  [
+   3,
+   "reference-authentication"
+  ],
+  [
+   2,
+   "sec-reference-g2"
+  ],
+  [
+   3,
+   "reference-sound-text2sound"
+  ],
+  [
+   3,
+   "reference-sound-variation"
+  ],
+  [
+   3,
+   "reference-sound-mono2stereo"
+  ],
+  [
+   3,
+   "reference-sound-looping"
+  ],
+  [
+   3,
+   "reference-sound-conversion"
+  ],
+  [
+   3,
+   "reference-sound-enhance"
+  ],
+  [
+   2,
+   "sec-reference-g3"
+  ],
+  [
+   3,
+   "reference-3d-image-to-3d"
+  ],
+  [
+   2,
+   "sec-reference-g4"
+  ],
+  [
+   3,
+   "reference-voice-to-face"
+  ],
+  [
+   2,
+   "sec-reference-g5"
+  ],
+  [
+   3,
+   "reference-translate"
+  ],
+  [
+   2,
+   "sec-reference-g6"
+  ],
+  [
+   3,
+   "reference-text-to-speech-lite"
+  ],
+  [
+   3,
+   "reference-text-to-speech-standard"
+  ],
+  [
+   3,
+   "reference-voice-conversion"
+  ],
+  [
+   3,
+   "reference-voice-conversion-custom"
+  ],
+  [
+   3,
+   "reference-voice-conversion-acting"
+  ],
+  [
+   3,
+   "reference-voice-conversion-acting-custom"
+  ],
+  [
+   2,
+   "sec-reference-g7"
+  ],
+  [
+   3,
+   "reference-vton-clothes"
+  ],
+  [
+   3,
+   "reference-vton-accessories"
+  ],
+  [
+   3,
+   "reference-headswap"
+  ],
+  [
+   3,
+   "reference-generative-edit-eraser"
+  ],
+  [
+   3,
+   "reference-generative-edit-inpaint"
+  ],
+  [
+   3,
+   "reference-generative-edit-inpaint-image"
+  ],
+  [
+   3,
+   "reference-generative-edit-texture"
+  ],
+  [
+   3,
+   "reference-generative-edit-perspective"
+  ],
+  [
+   3,
+   "reference-generative-edit-graphic"
+  ],
+  [
+   3,
+   "reference-generative-edit-background"
+  ],
+  [
+   3,
+   "reference-upscale"
+  ]
+ ],
+ "labels": {
+  "docs-introduction": "Introduction",
+  "docs-quickstart": "Quickstart",
+  "docs-pricing": "Pricing",
+  "docs-sound-overview": "Sound · Overview",
+  "docs-sound-conversion": "Sound · Conversion",
+  "docs-sound-enhance": "Sound · Enhance",
+  "docs-sound-looping": "Sound · Looping",
+  "docs-sound-monotostereo": "Sound · MonoToStereo",
+  "docs-sound-variation": "Sound · Variation",
+  "docs-sound-texttosound": "Sound · TextToSound",
+  "docs-3d-overview": "3D · Overview",
+  "docs-3d-image-to-3d": "3D · Image to 3D",
+  "docs-voice-to-face": "SyncFace · Overview",
+  "docs-voice-overview": "Voice · Overview",
+  "docs-voice-text-to-speech-lite": "Voice · Text To Speech (lite)",
+  "docs-voice-text-to-speech-standard": "Voice · Text To Speech (standard)",
+  "docs-voice-voice-conversion": "Voice · Voice Conversion",
+  "docs-voice-voice-conversion-acting": "Voice · Voice Conversion Acting",
+  "docs-translate": "Translate · Overview",
+  "docs-fashion-overview": "Art Fashion · Overview",
+  "docs-chatbot-overview": "Chatbot · Overview",
+  "docs-gentlewords-overview": "Gentle Words · Overview",
+  "docs-safety-overview": "Safety · Overview",
+  "docs-plugin-sound": "PlugIn · Sound",
+  "docs-plugin-sound-unity": "PlugIn · Unity",
+  "reference-introduction": "Introduction",
+  "reference-authentication": "Authentication",
+  "reference-sound-text2sound": "Text to Sound",
+  "reference-sound-variation": "Variation",
+  "reference-sound-mono2stereo": "Mono to Stereo",
+  "reference-sound-looping": "Looping",
+  "reference-sound-conversion": "Conversion",
+  "reference-sound-enhance": "Enhance",
+  "reference-3d-image-to-3d": "Image to 3D",
+  "reference-voice-to-face": "Voice to Face",
+  "reference-translate": "Translate",
+  "reference-text-to-speech-lite": "Text to Speech (lite)",
+  "reference-text-to-speech-standard": "Text to Speech (standard)",
+  "reference-voice-conversion": "Voice Conversion",
+  "reference-voice-conversion-custom": "Voice Conversion Custom",
+  "reference-voice-conversion-acting": "Voice Conversion Acting",
+  "reference-voice-conversion-acting-custom": "Voice Conversion Acting Custom",
+  "reference-vton-clothes": "Virtual Try On ",
+  "reference-vton-accessories": "Virtual Try On for Accessories",
+  "reference-headswap": "Headswap",
+  "reference-generative-edit-eraser": "Eraser",
+  "reference-generative-edit-inpaint": "Inpaint (text)",
+  "reference-generative-edit-inpaint-image": "Inpaint (image)",
+  "reference-generative-edit-texture": "Texture",
+  "reference-generative-edit-perspective": "Perspective",
+  "reference-generative-edit-graphic": "Graphic",
+  "reference-generative-edit-background": "Background",
+  "reference-upscale": "Upscale"
+ }
+}

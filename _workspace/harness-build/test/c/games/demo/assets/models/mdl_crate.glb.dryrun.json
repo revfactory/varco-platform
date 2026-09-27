@@ -1,0 +1,15 @@
+{
+  "api": "3d.image_to_3d",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/3d/varco/v1/image-to-3d",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "target_face_num": "20000",
+    "image": "<file 5334 bytes from _workspace/harness-build/test/c/ws/crate.png>"
+  },
+  "intended_output": "_workspace/harness-build/test/c/games/demo/assets/models/mdl_crate.glb",
+  "est_credits": 200,
+  "price_note": "200/호출"
+}

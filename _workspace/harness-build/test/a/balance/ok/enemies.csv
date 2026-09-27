@@ -1,0 +1,4 @@
+id,hp,attack,defense_pct,attack_interval_s,reward_gold
+grunt,90,12,0,1.2,5
+drone,60,8,10,0.8,7
+boss_core,1200,30,25,1.5,200

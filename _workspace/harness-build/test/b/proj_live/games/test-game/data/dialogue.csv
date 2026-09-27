@@ -1,0 +1,8 @@
+line_id,scene_id,speaker_id,text_ko,emotion,direction,voice,priority
+ch1_intro_001,ch1_intro,narrator,네온 도시의 밤이 깊어 간다.,neutral,차분하게,tts,P0
+ch1_intro_002,ch1_intro,hero,"또 너야? {player_name}.",angry,한숨 섞어,tts,P0
+ch1_intro_003,ch1_intro,rival,오늘은 내가 이긴다.,happy,여유롭게,tts,P1
+ch1_intro_004,ch1_intro,hero,"그 말, 지난주에도 들었어.",sad,작게,acting,P0
+ch1_boss_001,ch1_boss,golem,크아아아!,angry,포효,creature,P0
+ch1_boss_002,ch1_boss,hero,피해!,surprise,다급하게,tts,P0
+ch1_end_001,ch1_end,hero,끝났네.,neutral,,none,P2

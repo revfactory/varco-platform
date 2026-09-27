@@ -1,0 +1,5 @@
+speaker_id,name_ko,role,gender,age_band,personality,voice_brief,voice_type,face_anim
+hero,리아,주인공,female,20s,냉소적이지만 동료를 챙긴다,"낮고 건조한 20대 여성, 빠른 말투",human,y
+rival,카이,라이벌,male,20s,여유롭고 장난스럽다,"밝고 가벼운 20대 남성, 웃음 섞인 말투",human,n
+core_beast,코어 비스트,보스,none,-,난폭하다,"거대한 금속 짐승, 낮은 으르렁",creature,n
+system,시스템,안내,none,-,-,-,none,n

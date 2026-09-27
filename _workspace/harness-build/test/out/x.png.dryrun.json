@@ -1,0 +1,14 @@
+{
+  "api": "image.upscale",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/fashion/upscale/v1/super-resolution",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "image": "<planned input, not yet generated: _workspace/harness-build/test/not_yet/x.png>"
+  },
+  "intended_output": "_workspace/harness-build/test/out/x.png",
+  "est_credits": 50,
+  "price_note": "출력 크기 미상 → 최저 구간으로 계산"
+}

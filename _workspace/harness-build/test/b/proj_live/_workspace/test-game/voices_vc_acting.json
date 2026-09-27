@@ -1,0 +1,98 @@
+[
+  {
+    "speaker_uuid": "u-실라린-n",
+    "speaker_name": "실라린(중립)",
+    "saas_name": null,
+    "description": "남성, 노년, 고음, 거침, 노련한"
+  },
+  {
+    "speaker_uuid": "u-실라린-a",
+    "speaker_name": "실라린(분노)",
+    "saas_name": null,
+    "description": "남성, 노년, 고음, 거침, 노련한"
+  },
+  {
+    "speaker_uuid": "u-실라린-h",
+    "speaker_name": "실라린(행복)",
+    "saas_name": null,
+    "description": "남성, 노년, 고음, 거침, 노련한"
+  },
+  {
+    "speaker_uuid": "u-실라린-s",
+    "speaker_name": "실라린(슬픔)",
+    "saas_name": null,
+    "description": "남성, 노년, 고음, 거침, 노련한"
+  },
+  {
+    "speaker_uuid": "u-하린-n",
+    "speaker_name": "하린(중립)",
+    "saas_name": null,
+    "description": "여성, 청년, 저음, 건조, 냉소"
+  },
+  {
+    "speaker_uuid": "u-하린-a",
+    "speaker_name": "하린(분노)",
+    "saas_name": null,
+    "description": "여성, 청년, 저음, 건조, 냉소"
+  },
+  {
+    "speaker_uuid": "u-하린-h",
+    "speaker_name": "하린(행복)",
+    "saas_name": null,
+    "description": "여성, 청년, 저음, 건조, 냉소"
+  },
+  {
+    "speaker_uuid": "u-하린-s",
+    "speaker_name": "하린(슬픔)",
+    "saas_name": null,
+    "description": "여성, 청년, 저음, 건조, 냉소"
+  },
+  {
+    "speaker_uuid": "u-도윤-n",
+    "speaker_name": "도윤(중립)",
+    "saas_name": null,
+    "description": "남성, 중년, 저음, 거만"
+  },
+  {
+    "speaker_uuid": "u-도윤-a",
+    "speaker_name": "도윤(분노)",
+    "saas_name": null,
+    "description": "남성, 중년, 저음, 거만"
+  },
+  {
+    "speaker_uuid": "u-도윤-h",
+    "speaker_name": "도윤(행복)",
+    "saas_name": null,
+    "description": "남성, 중년, 저음, 거만"
+  },
+  {
+    "speaker_uuid": "u-도윤-s",
+    "speaker_name": "도윤(슬픔)",
+    "saas_name": null,
+    "description": "남성, 중년, 저음, 거만"
+  },
+  {
+    "speaker_uuid": "u-민서-n",
+    "speaker_name": "민서(중립)",
+    "saas_name": null,
+    "description": "여성, 청년, 고음, 밝음"
+  },
+  {
+    "speaker_uuid": "u-민서-a",
+    "speaker_name": "민서(분노)",
+    "saas_name": null,
+    "description": "여성, 청년, 고음, 밝음"
+  },
+  {
+    "speaker_uuid": "u-민서-h",
+    "speaker_name": "민서(행복)",
+    "saas_name": null,
+    "description": "여성, 청년, 고음, 밝음"
+  },
+  {
+    "speaker_uuid": "u-민서-s",
+    "speaker_name": "민서(슬픔)",
+    "saas_name": null,
+    "description": "여성, 청년, 고음, 밝음"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "language": "korean",
+  "text": "오늘은 내가 이긴다.",
+  "voice": "u-민서-h",
+  "seed": 91500,
+  "properties": {
+    "speed": 1.0,
+    "pitch": 1.0
+  }
+}

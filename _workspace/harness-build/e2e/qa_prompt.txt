@@ -1,0 +1,13 @@
+에셋 "sfx_coin_pickup"(sfx, 담당 sound-designer)을 검증하라. 검증 1회차다.
+게임: tiny
+실행 설정: _workspace/harness-build/e2e/_ws/run_meta.json
+승인된 매니페스트: _workspace/harness-build/e2e/games/tiny/manifest.json
+확정 폴더: _workspace/harness-build/e2e/games/tiny  작업 폴더: _workspace/harness-build/e2e/_ws
+크레딧 장부: _workspace/harness-build/e2e/_ws/varco_ledger.jsonl
+모드: dry-run. varco_client.py call 에 --dry-run --ledger _workspace/harness-build/e2e/_ws/varco_ledger.jsonl --asset-id <id> 를 붙인다. 실제 호출은 하지 않는다.
+단가 미공개 API 에는 --allow-unknown-price 를 붙이지 않는다. 막히면 budget_blocked 로 반환한다.
+제작 결과: {"status":"__STATUS__","outputs":["__OUTPUTS__"],"notes":"__NOTES__"}
+드라이런이다. {파일}.dryrun.json 요청 명세를 varco_client.py validate 로 검사하고, 출력 경로·개수·파라미터가 매니페스트와 맞는지 대조한다.
+검사 결과를 _workspace/harness-build/e2e/_ws/03_assetqa_sfx_coin_pickup.json 에 저장한다.
+retryable 은 제작 담당이 파라미터나 프롬프트를 바꿔 고칠 수 있을 때만 true 다. 원본 입력 누락처럼 담당이 고칠 수 없는 문제는 false 다.
+최종 응답은 스키마에 맞춘 반환 데이터다.

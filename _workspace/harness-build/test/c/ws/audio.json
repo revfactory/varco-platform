@@ -1,0 +1,45 @@
+{
+  "id": "audio_vo",
+  "verdict": "fail",
+  "mode": "live",
+  "checks": [
+    {
+      "name": "decodable",
+      "result": "pass",
+      "detail": "2/2"
+    },
+    {
+      "name": "not_silent",
+      "result": "fail",
+      "detail": "None~-18.06"
+    },
+    {
+      "name": "duration_s",
+      "result": "skip",
+      "detail": "기준 없음"
+    }
+  ],
+  "issues": [
+    "무음에 가까움: ['ch1_intro_002.wav=None']"
+  ],
+  "retryable": true,
+  "fix_hint": "프롬프트나 입력을 바꿔 다시 생성한다",
+  "measurements": {
+    "ch1_intro_001.wav": {
+      "channels": 1,
+      "sample_rate": 44100,
+      "codec": "pcm_s16le",
+      "duration_s": 1.0,
+      "peak_dbfs": -18.06,
+      "lufs": -21.9
+    },
+    "ch1_intro_002.wav": {
+      "channels": 1,
+      "sample_rate": 44100,
+      "codec": "pcm_s16le",
+      "duration_s": 1.0,
+      "peak_dbfs": null,
+      "lufs": null
+    }
+  }
+}

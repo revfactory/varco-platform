@@ -1,0 +1,9 @@
+{
+  "svc": "varco-translation",
+  "TID": "test-game-ja-ui.menu.start",
+  "provider": "content",
+  "source_lang": "ko",
+  "target_lang": "ja",
+  "source_text": "시작하기",
+  "target_text": "<ja>시작하기"
+}

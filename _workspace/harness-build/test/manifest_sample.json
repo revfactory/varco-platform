@@ -1,0 +1,145 @@
+{
+ "game": "test-game",
+ "version": 1,
+ "varco_mode": "dry-run",
+ "budget_credits": 1000,
+ "assets": [
+  {
+   "id": "sfx_sword_swing",
+   "category": "sfx",
+   "owner": "sound-designer",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "docs/systems.md#공격",
+   "brief": "단검 휘두르기",
+   "inputs": [],
+   "steps": [
+    {
+     "api": "sound.text2sound",
+     "params": {
+      "prompt": "quick dagger swing whoosh",
+      "num_sample": 3,
+      "version": "v2"
+     }
+    },
+    {
+     "api": "sound.variation",
+     "input_from": "best_of_previous",
+     "params": {
+      "num_sample": 4,
+      "strength": 0.8
+     }
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/sfx",
+    "basename": "sfx_sword_swing",
+    "format": "wav",
+    "count": 5
+   },
+   "acceptance": {
+    "duration_s": [
+     0.1,
+     10
+    ]
+   },
+   "status": "planned"
+  },
+  {
+   "id": "vo_ch1_intro",
+   "category": "voice_line",
+   "owner": "voice-director",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv:ch1_intro_001",
+   "brief": "주인공 첫 대사",
+   "steps": [
+    {
+     "api": "tts.standard",
+     "params": {
+      "language": "korean"
+     },
+     "calls": 2,
+     "per_call_chars": [
+      14,
+      22
+     ]
+    },
+    {
+     "api": "face.blendshape",
+     "input_from": "previous",
+     "params": {
+      "fps": 30
+     },
+     "calls": 2
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/voice/korean",
+    "basename": "{line_id}",
+    "format": "wav",
+    "count": 2
+   },
+   "acceptance": {},
+   "status": "planned",
+   "lines": [
+    "ch1_intro_001",
+    "ch1_intro_002"
+   ]
+  },
+  {
+   "id": "mdl_crate",
+   "category": "model_3d",
+   "owner": "visual-artist",
+   "phase": "production",
+   "priority": "P1",
+   "source_ref": "docs/levels.md#1-1",
+   "brief": "나무 상자",
+   "steps": [
+    {
+     "api": "3d.image_to_3d",
+     "params": {
+      "target_face_num": 20000
+     }
+    }
+   ],
+   "output": {
+    "dir": "assets/models",
+    "basename": "mdl_crate",
+    "format": "glb",
+    "count": 1
+   },
+   "acceptance": {
+    "face_max": 20000
+   },
+   "status": "planned",
+   "inputs": [
+    "_workspace/test/crate.png"
+   ]
+  },
+  {
+   "id": "bgm_title",
+   "category": "music",
+   "owner": "sound-designer",
+   "phase": "production",
+   "priority": "P1",
+   "source_ref": "docs/ux.md#타이틀",
+   "brief": "타이틀 음악",
+   "inputs": [],
+   "steps": [
+    {
+     "api": "manual.unity_music",
+     "params": {}
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/music",
+    "basename": "bgm_title",
+    "format": "wav",
+    "count": 1
+   },
+   "acceptance": {},
+   "status": "planned"
+  }
+ ]
+}

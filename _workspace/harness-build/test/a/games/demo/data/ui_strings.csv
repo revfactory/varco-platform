@@ -1,0 +1,4 @@
+string_id,context,text_ko,max_len,placeholders
+ui.menu.start,메인 메뉴 시작 버튼,시작하기,12,
+ui.hud.lap,HUD 랩 표시,{current}/{total} 바퀴,16,current total
+ui.result.title,결과 화면 제목,레이스 완료,,

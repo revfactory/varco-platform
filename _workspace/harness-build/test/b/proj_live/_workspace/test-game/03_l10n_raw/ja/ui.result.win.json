@@ -1,0 +1,9 @@
+{
+  "svc": "varco-translation",
+  "TID": "test-game-ja-ui.result.win",
+  "provider": "content",
+  "source_lang": "ko",
+  "target_lang": "ja",
+  "source_text": "⟦G0⟧ 챔피언!",
+  "target_text": "<ja>⟦G0⟧ 챔피언!"
+}

@@ -1,0 +1,21 @@
+{
+  "lang": "ja",
+  "total": 10,
+  "translated": 10,
+  "cached": 10,
+  "failed": [],
+  "placeholder_lost": [],
+  "over_length": [
+    {
+      "id": "ui.hud.lap",
+      "len": 11,
+      "max_len": 10,
+      "text": "<ja>랩 {current}/{total}"
+    }
+  ],
+  "dry_run": false,
+  "missing": [],
+  "calls": 0,
+  "est_credits_spent": 0.0,
+  "unknown_price_calls": 0
+}

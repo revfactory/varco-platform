@@ -1,0 +1,10 @@
+{
+  "language": "korean",
+  "text": "또 너야? .",
+  "voice": "<speaker_uuid:hero>",
+  "seed": 83206,
+  "properties": {
+    "speed": 1.0,
+    "pitch": 1.0
+  }
+}

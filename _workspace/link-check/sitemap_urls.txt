@@ -1,0 +1,12 @@
+https://api.varco.ai/en
+https://api.varco.ai/ko
+https://api.varco.ai/en/docs
+https://api.varco.ai/ko/docs
+https://api.varco.ai/en/reference
+https://api.varco.ai/ko/reference
+https://api.varco.ai/en/product-info
+https://api.varco.ai/ko/product-info
+https://api.varco.ai/en/support
+https://api.varco.ai/ko/support
+https://api.varco.ai/en/api-status
+https://api.varco.ai/ko/api-status

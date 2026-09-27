@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "total": 10,
+  "translated": 0,
+  "cached": 0,
+  "failed": [],
+  "placeholder_lost": [],
+  "over_length": [],
+  "dry_run": false,
+  "missing": [
+    "ch1_intro_001",
+    "ch1_intro_002",
+    "ch1_intro_003",
+    "ch1_intro_004",
+    "ch1_boss_001",
+    "ch1_boss_002",
+    "ch1_end_001",
+    "ui.menu.start",
+    "ui.hud.lap",
+    "ui.result.win"
+  ],
+  "calls": 1,
+  "est_credits_spent": 0.0,
+  "unknown_price_calls": 0
+}

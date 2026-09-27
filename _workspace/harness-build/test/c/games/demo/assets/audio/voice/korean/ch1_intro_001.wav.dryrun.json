@@ -1,0 +1,16 @@
+{
+  "api": "tts.standard",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/tts/standard/v1/api/synthesize",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "voice": "u1",
+    "text": "또 너야?",
+    "language": "korean"
+  },
+  "intended_output": "_workspace/harness-build/test/c/games/demo/assets/audio/voice/korean/ch1_intro_001.wav",
+  "est_credits": 1,
+  "price_note": "5자 ÷ 10자당 1"
+}

@@ -1,0 +1,4 @@
+string_id,context,text_ko,max_len,placeholders
+ui.menu.start,메인 메뉴 시작 버튼,시작하기,12,
+ui.hud.lap,"HUD 랩 표시, {current}/{total}",랩 {current}/{total},10,current total
+ui.result.win,결과 화면 승리 문구,네온 드리프트 챔피언!,20,

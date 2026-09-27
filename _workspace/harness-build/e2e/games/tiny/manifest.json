@@ -1,0 +1,94 @@
+{
+ "game": "tiny",
+ "version": 1,
+ "varco_mode": "dry-run",
+ "budget_credits": 1000,
+ "assets": [
+  {
+   "id": "amb_rain_forest",
+   "category": "ambience",
+   "owner": "sound-designer",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "docs/levels.md#1-1",
+   "brief": "비 내리는 숲 환경음 루프",
+   "inputs": [],
+   "steps": [
+    {
+     "api": "sound.text2sound",
+     "params": {
+      "prompt": "steady rain falling on forest leaves, distant thunder",
+      "num_sample": 2,
+      "version": "v2"
+     }
+    },
+    {
+     "api": "sound.mono2stereo",
+     "input_from": "best_of_previous",
+     "params": {}
+    },
+    {
+     "api": "sound.looping",
+     "input_from": "previous",
+     "params": {}
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/ambience",
+    "basename": "amb_rain_forest",
+    "format": "wav",
+    "count": 1
+   },
+   "acceptance": {
+    "loop": true,
+    "duration_s": [
+     5,
+     12
+    ]
+   },
+   "status": "planned"
+  },
+  {
+   "id": "sfx_coin_pickup",
+   "category": "sfx",
+   "owner": "sound-designer",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "docs/systems.md#코인",
+   "brief": "코인을 먹을 때 나는 짧고 밝은 소리. 연속으로 먹으므로 변형 4개가 필요하다.",
+   "inputs": [],
+   "steps": [
+    {
+     "api": "sound.text2sound",
+     "params": {
+      "prompt": "bright short coin pickup chime, arcade",
+      "num_sample": 3,
+      "version": "v2"
+     }
+    },
+    {
+     "api": "sound.variation",
+     "input_from": "best_of_previous",
+     "params": {
+      "num_sample": 4,
+      "strength": 0.6
+     }
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/sfx",
+    "basename": "sfx_coin_pickup",
+    "format": "wav",
+    "count": 5
+   },
+   "acceptance": {
+    "duration_s": [
+     0.1,
+     1.5
+    ],
+    "peak_dbfs_max": -1.0
+   },
+   "status": "planned"
+  }
+ ]
+}

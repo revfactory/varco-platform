@@ -1,0 +1,9 @@
+{
+  "svc": "varco-translation",
+  "TID": "test-game-ja-ch1_intro_003",
+  "provider": "content",
+  "source_lang": "ko",
+  "target_lang": "ja",
+  "source_text": "오늘은 내가 이긴다.",
+  "target_text": "<ja>오늘은 내가 이긴다."
+}

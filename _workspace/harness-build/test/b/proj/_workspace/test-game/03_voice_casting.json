@@ -1,0 +1,87 @@
+{
+  "tts.standard": {
+    "hero": {
+      "speaker_name": null,
+      "default": "<speaker_uuid:hero>",
+      "by_emotion": {},
+      "description": null,
+      "seed": 83206,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": true,
+      "reason": "드라이런이거나 화자 목록이 없어 자리표시로 둔다"
+    },
+    "golem": {
+      "speaker_name": null,
+      "default": "<speaker_uuid:golem>",
+      "by_emotion": {},
+      "description": null,
+      "seed": 19414,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": true,
+      "reason": "드라이런이거나 화자 목록이 없어 자리표시로 둔다"
+    },
+    "narrator": {
+      "speaker_name": null,
+      "default": "<speaker_uuid:narrator>",
+      "by_emotion": {},
+      "description": null,
+      "seed": 68166,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": true,
+      "reason": "드라이런이거나 화자 목록이 없어 자리표시로 둔다"
+    },
+    "rival": {
+      "speaker_name": null,
+      "default": "<speaker_uuid:rival>",
+      "by_emotion": {},
+      "description": null,
+      "seed": 91500,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": true,
+      "reason": "드라이런이거나 화자 목록이 없어 자리표시로 둔다"
+    }
+  },
+  "vc.acting": {
+    "hero": {
+      "speaker_name": null,
+      "default": "<speaker_uuid:hero>",
+      "by_emotion": {},
+      "description": null,
+      "seed": 83206,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": true,
+      "reason": "드라이런이거나 화자 목록이 없어 자리표시로 둔다"
+    }
+  },
+  "_meta": {
+    "updated": "2026-09-28T06:24:54+09:00",
+    "method": "auto-score",
+    "voice_lists": {
+      "tts.standard": null,
+      "vc.acting": null
+    },
+    "placeholders": [
+      "tts.standard:golem",
+      "tts.standard:hero",
+      "tts.standard:narrator",
+      "tts.standard:rival",
+      "vc.acting:hero"
+    ],
+    "note": "이 파일이 있으면 모든 voice-director 가 그대로 쓴다. 바꾸려면 리더 승인 후 --force"
+  }
+}

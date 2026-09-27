@@ -1,0 +1,2 @@
+{"player":{"description":"플레이어 기본 능력치","columns":{"id":{"type":"string"},"hp":{"type":"int","min":1},"attack":{"type":"int","min":0},"attack_interval_s":{"type":"float","min":0.05},"crit_rate_pct":{"type":"float","min":0,"max":100},"crit_mult":{"type":"float","min":1}}},
+ "enemies":{"description":"적 기본 능력치","columns":{"id":{"type":"string"},"hp":{"type":"int","min":1},"attack":{"type":"int","min":0},"defense_pct":{"type":"float","min":0,"max":90},"attack_interval_s":{"type":"float","min":0.05},"reward_gold":{"type":"int","min":0}}}}

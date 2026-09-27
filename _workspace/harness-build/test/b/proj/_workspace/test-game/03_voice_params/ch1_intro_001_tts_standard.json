@@ -1,0 +1,10 @@
+{
+  "language": "korean",
+  "text": "네온 도시의 밤이 깊어 간다.",
+  "voice": "<speaker_uuid:narrator>",
+  "seed": 68166,
+  "properties": {
+    "speed": 1.0,
+    "pitch": 1.0
+  }
+}

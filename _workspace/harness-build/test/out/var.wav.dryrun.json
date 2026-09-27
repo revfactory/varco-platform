@@ -1,0 +1,15 @@
+{
+  "api": "sound.variation",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/sound/varco/v1/api/variation",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "num_sample": 4,
+    "source": "<base64 1058444 bytes from _workspace/harness-build/test/src.wav>"
+  },
+  "intended_output": "_workspace/harness-build/test/out/var.wav",
+  "est_credits": 50,
+  "price_note": "50/호출"
+}

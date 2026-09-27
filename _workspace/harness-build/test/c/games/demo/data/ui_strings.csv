@@ -1,0 +1,3 @@
+string_id,context,text_ko,max_len,placeholders
+ui.menu.start,메인 메뉴 시작 버튼,시작하기,8,
+ui.hud.gold,골드 표시,골드 {count},12,count

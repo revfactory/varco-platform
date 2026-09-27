@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://api.varco.ai/en</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/ko</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/en/docs</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/docs" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/docs" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/ko/docs</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/docs" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/docs" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/en/reference</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/reference" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/reference" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/ko/reference</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/reference" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/reference" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/en/product-info</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/product-info" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/product-info" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/ko/product-info</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/product-info" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/product-info" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/en/support</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/support" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/support" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/ko/support</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/support" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/support" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/en/api-status</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/api-status" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/api-status" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://api.varco.ai/ko/api-status</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://api.varco.ai/en/api-status" />
+<xhtml:link rel="alternate" hreflang="ko" href="https://api.varco.ai/ko/api-status" />
+<lastmod>2026-09-18T08:59:28.334Z</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+</urlset>

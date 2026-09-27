@@ -1,0 +1,21 @@
+{
+  "api": "tts.standard",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/tts/standard/v1/api/synthesize",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "language": "korean",
+    "text": "네온 도시의 밤이 깊어 간다.",
+    "voice": "<speaker_uuid:narrator>",
+    "seed": 68166,
+    "properties": {
+      "speed": 1.0,
+      "pitch": 1.0
+    }
+  },
+  "intended_output": "games/test-game/assets/audio/voice/korean/ch1_intro_001.wav",
+  "est_credits": 2,
+  "price_note": "16자 ÷ 10자당 1"
+}

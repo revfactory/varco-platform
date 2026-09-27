@@ -1,0 +1,9 @@
+{
+  "svc": "varco-translation",
+  "TID": "test-game-ja-ch1_intro_004",
+  "provider": "content",
+  "source_lang": "ko",
+  "target_lang": "ja",
+  "source_text": "그 말, 지난주에도 들었어.",
+  "target_text": "<ja>그 말, 지난주에도 들었어."
+}

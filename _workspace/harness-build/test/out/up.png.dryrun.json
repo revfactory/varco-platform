@@ -1,0 +1,15 @@
+{
+  "api": "image.upscale",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/fashion/upscale/v1/super-resolution",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "scale_factor": "4",
+    "image": "<file 5334 bytes from _workspace/harness-build/test/src.png>"
+  },
+  "intended_output": "_workspace/harness-build/test/out/up.png",
+  "est_credits": 400,
+  "price_note": "출력 16.8MP ≤ 25MP"
+}

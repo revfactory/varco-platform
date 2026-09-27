@@ -1,0 +1,24 @@
+{
+  "id": "vo_ch1_intro_acting",
+  "status": "dry-run",
+  "outputs": [
+    "games/test-game/assets/audio/voice/korean/ch1_intro_004.wav.dryrun.json",
+    "games/test-game/assets/anim/face/ch1_intro_004.json.dryrun.json"
+  ],
+  "calls": 3,
+  "est_credits_spent": 0.0,
+  "notes": "1/1줄 완료; 드라이런: 앞 단계 입력 자리에 1초 무음 자리표시 파일을 넣어 요청 명세를 만들었다",
+  "error": "",
+  "lines": [
+    {
+      "line_id": "ch1_intro_004",
+      "ok": true,
+      "outputs": [
+        "_workspace/test-game/03_voice_raw/ch1_intro_004_tts.wav.dryrun.json",
+        "games/test-game/assets/audio/voice/korean/ch1_intro_004.wav.dryrun.json",
+        "games/test-game/assets/anim/face/ch1_intro_004.json.dryrun.json"
+      ]
+    }
+  ],
+  "unknown_price_calls": 0
+}

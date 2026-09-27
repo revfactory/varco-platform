@@ -1,0 +1,19 @@
+{
+  "api": "mt.translate",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/mt/chat-content/v1/translate",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "svc": "varco-translation",
+    "TID": "test-game-tw-ui.hud.lap",
+    "provider": "content",
+    "source_lang": "ko",
+    "target_lang": "tw",
+    "source_text": "랩 ⟦P0⟧/⟦P1⟧"
+  },
+  "intended_output": "_workspace/test-game/03_l10n_raw/tw/ui.hud.lap.json",
+  "est_credits": null,
+  "price_note": "단가 미공개"
+}

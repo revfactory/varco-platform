@@ -1,0 +1,11 @@
+{
+  "id": "crv_ch1_boss",
+  "status": "failed",
+  "outputs": [],
+  "calls": 0,
+  "est_credits_spent": 0,
+  "notes": "crv_ch1_boss 는 voice_line 이 아니다(creature_voice). 크리처 음성은 sound-designer 담당",
+  "error": "",
+  "lines": [],
+  "unknown_price_calls": 0
+}

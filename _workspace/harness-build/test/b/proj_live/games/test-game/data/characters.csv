@@ -1,0 +1,5 @@
+speaker_id,name_ko,role,gender,age_band,personality,voice_brief,voice_type,face_anim
+hero,리아,주인공,female,20s,냉소적이지만 동료를 챙긴다,"낮고 건조한 20대 여성, 빠른 말투",human,y
+rival,카엘,라이벌,male,30s,자신만만하다,"중후한 30대 남성, 거만한",human,n
+golem,돌거인,보스,none,none,분노,"낮게 울리는 돌 괴물",creature,n
+narrator,해설,해설자,male,50s,차분하다,"차분한 중년 남성 내레이션",human,n

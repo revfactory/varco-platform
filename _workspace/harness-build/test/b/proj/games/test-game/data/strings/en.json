@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "lang": "en",
+    "source": "ko",
+    "generated_by": "dry-run",
+    "reviewed": false
+  },
+  "ch1_intro_001": "[en] 네온 도시의 밤이 깊어 간다.",
+  "ch1_intro_002": "[en] 또 너야? {player_name}.",
+  "ch1_intro_003": "[en] 오늘은 내가 이긴다.",
+  "ch1_intro_004": "[en] 그 말, 지난주에도 들었어.",
+  "ch1_boss_001": "[en] 크아아아!",
+  "ch1_boss_002": "[en] 피해!",
+  "ch1_end_001": "[en] 끝났네.",
+  "ui.menu.start": "[en] 시작하기",
+  "ui.hud.lap": "[en] 랩 {current}/{total}",
+  "ui.result.win": "[en] Neon Drift 챔피언!"
+}

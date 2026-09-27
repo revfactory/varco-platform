@@ -1,0 +1,15 @@
+{
+  "api": "vc.acting",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/vc/acting/v1/api/voice-conversion",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "speaker_uuid": "<speaker_uuid:hero>",
+    "audio": "<base64 88244 bytes from _workspace/test-game/03_voice_raw/_placeholder_1s.wav>"
+  },
+  "intended_output": "games/test-game/assets/audio/voice/korean/ch1_intro_004.wav",
+  "est_credits": 15,
+  "price_note": "1.0초 → 10초당 15 (vc.convert 단가로 가정)"
+}

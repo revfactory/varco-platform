@@ -1,0 +1,2 @@
+{"enemies":{"description":"적","columns":{"id":{"type":"string"},"hp":{"type":"int","min":1},"attack":{"type":"int","min":0},"move_speed_px_s":{"type":"float","min":0},"reward_gold":{"type":"int","min":0}}},
+ "player":{"description":"플레이어","columns":{"id":{"type":"string"},"hp":{"type":"int","min":1},"dash_cooldown_s":{"type":"float","min":0}}}}

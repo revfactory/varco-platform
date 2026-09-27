@@ -1,0 +1,19 @@
+{
+  "api": "mt.translate",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/mt/chat-content/v1/translate",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "svc": "varco-translation",
+    "TID": "test-game-en-store.short",
+    "provider": "content",
+    "source_lang": "ko",
+    "target_lang": "en",
+    "source_text": "네온 도시를 달리는 3분 레이싱"
+  },
+  "intended_output": "_workspace/test-game/03_l10n_raw/en/store.short.json",
+  "est_credits": null,
+  "price_note": "단가 미공개"
+}

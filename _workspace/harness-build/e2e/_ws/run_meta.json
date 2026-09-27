@@ -1,0 +1,2 @@
+{"slug":"tiny","title":"타이니 테스트","engine":"web","varco_mode":"dry-run","budget_credits":1000,"approved_scope":"all",
+ "source_lang":"ko","target_langs":["en"],"voice_langs":["korean"],"gates":"auto","allow_unknown_price":false,"phases_done":["01","02"],"workflow_runs":[],"notes":["하네스 실행 테스트용"]}

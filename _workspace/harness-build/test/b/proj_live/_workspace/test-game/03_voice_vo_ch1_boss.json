@@ -1,0 +1,18 @@
+{
+  "id": "vo_ch1_boss",
+  "status": "auth_failed",
+  "outputs": [],
+  "calls": 1,
+  "est_credits_spent": 0.0,
+  "notes": "치명적 실패로 중단",
+  "error": "인증 실패: OPENAPI_KEY 가 없거나 잘못됐다(재시도 금지)",
+  "lines": [
+    {
+      "line_id": "ch1_boss_002",
+      "ok": false,
+      "outputs": [],
+      "error": "인증 실패: OPENAPI_KEY 가 없거나 잘못됐다(재시도 금지)"
+    }
+  ],
+  "unknown_price_calls": 0
+}

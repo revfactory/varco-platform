@@ -1,0 +1,35 @@
+{
+  "id": "vo_ch1_intro",
+  "status": "dry-run",
+  "outputs": [
+    "games/test-game/assets/audio/voice/korean/ch1_intro_001.wav.dryrun.json",
+    "games/test-game/assets/audio/voice/korean/ch1_intro_003.wav.dryrun.json"
+  ],
+  "calls": 2,
+  "est_credits_spent": 0.0,
+  "notes": "2/3줄 완료; 드라이런: 앞 단계 입력 자리에 1초 무음 자리표시 파일을 넣어 요청 명세를 만들었다",
+  "error": "ch1_intro_002: 자리표시자가 있는 대사라 합성하지 않았다. narrative 에 문장 수정을 요청한다",
+  "lines": [
+    {
+      "line_id": "ch1_intro_001",
+      "ok": true,
+      "outputs": [
+        "games/test-game/assets/audio/voice/korean/ch1_intro_001.wav.dryrun.json"
+      ]
+    },
+    {
+      "line_id": "ch1_intro_002",
+      "ok": false,
+      "outputs": [],
+      "error": "자리표시자가 있는 대사라 합성하지 않았다. narrative 에 문장 수정을 요청한다"
+    },
+    {
+      "line_id": "ch1_intro_003",
+      "ok": true,
+      "outputs": [
+        "games/test-game/assets/audio/voice/korean/ch1_intro_003.wav.dryrun.json"
+      ]
+    }
+  ],
+  "unknown_price_calls": 0
+}

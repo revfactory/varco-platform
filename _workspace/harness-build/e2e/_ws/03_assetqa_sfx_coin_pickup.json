@@ -1,0 +1,44 @@
+{
+  "id": "sfx_coin_pickup",
+  "verdict": "pass",
+  "mode": "dry-run",
+  "checks": [
+    {
+      "name": "specs_found",
+      "result": "pass",
+      "detail": "2개"
+    },
+    {
+      "name": "spec_params",
+      "result": "pass",
+      "detail": "문제 0"
+    },
+    {
+      "name": "steps_covered",
+      "result": "pass",
+      "detail": "{\"sound.text2sound\": 1, \"sound.variation\": 1}"
+    },
+    {
+      "name": "api_in_manifest",
+      "result": "pass",
+      "detail": "매니페스트 API ['sound.text2sound', 'sound.variation']"
+    },
+    {
+      "name": "output_location",
+      "result": "pass",
+      "detail": "_workspace/harness-build/e2e/games/tiny/assets/audio/sfx"
+    },
+    {
+      "name": "ledger_ok",
+      "result": "pass",
+      "detail": "기록 2건"
+    }
+  ],
+  "issues": [],
+  "retryable": false,
+  "fix_hint": "",
+  "specs": [
+    "_workspace/harness-build/e2e/_ws/03_sound_raw/sfx_coin_pickup_t2s.wav.dryrun.json",
+    "_workspace/harness-build/e2e/games/tiny/assets/audio/sfx/sfx_coin_pickup.wav.dryrun.json"
+  ]
+}

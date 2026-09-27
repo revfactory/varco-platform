@@ -1,0 +1,365 @@
+{
+ "game": "test-game",
+ "version": 1,
+ "varco_mode": "dry-run",
+ "budget_credits": 2000,
+ "assets": [
+  {
+   "id": "vo_ch1_intro",
+   "category": "voice_line",
+   "owner": "voice-director",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv:scene=ch1_intro",
+   "brief": "장면 ch1_intro 대사 3줄, 화자 hero, narrator, rival. 얼굴 애니메이션 1줄",
+   "lines": [
+    "ch1_intro_001",
+    "ch1_intro_002",
+    "ch1_intro_003"
+   ],
+   "inputs": [],
+   "steps": [
+    {
+     "api": "tts.standard",
+     "params": {
+      "language": "korean"
+     },
+     "calls": 3,
+     "per_call_chars": [
+      16,
+      20,
+      11
+     ]
+    },
+    {
+     "api": "face.blendshape",
+     "input_from": "previous",
+     "when": "speaker_face_anim",
+     "params": {
+      "fps": 30,
+      "lip_style": "balanced",
+      "face_style": "natural"
+     },
+     "calls": 1
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/voice/korean",
+    "basename": "{line_id}",
+    "format": "wav",
+    "count": 3,
+    "extra": [
+     {
+      "dir": "assets/anim/face",
+      "basename": "{line_id}",
+      "format": "json",
+      "count": 1,
+      "lines": [
+       "ch1_intro_002"
+      ]
+     }
+    ]
+   },
+   "acceptance": {
+    "duration_s": [
+     0.3,
+     20.0
+    ],
+    "peak_dbfs_max": -1.0
+   },
+   "status": "planned"
+  },
+  {
+   "id": "vo_ch1_intro_acting",
+   "category": "voice_line",
+   "owner": "voice-director",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv:scene=ch1_intro",
+   "brief": "장면 ch1_intro 대사 1줄, 화자 hero — 연기 톤을 살리려고 VC Acting 을 거친다. 얼굴 애니메이션 1줄",
+   "lines": [
+    "ch1_intro_004"
+   ],
+   "inputs": [],
+   "steps": [
+    {
+     "api": "tts.standard",
+     "params": {
+      "language": "korean"
+     },
+     "calls": 1,
+     "per_call_chars": [
+      15
+     ]
+    },
+    {
+     "api": "vc.acting",
+     "input_from": "previous",
+     "params": {},
+     "calls": 1,
+     "est_audio_seconds": 2.7
+    },
+    {
+     "api": "face.blendshape",
+     "input_from": "previous",
+     "when": "speaker_face_anim",
+     "params": {
+      "fps": 30,
+      "lip_style": "balanced",
+      "face_style": "natural"
+     },
+     "calls": 1
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/voice/korean",
+    "basename": "{line_id}",
+    "format": "wav",
+    "count": 1,
+    "extra": [
+     {
+      "dir": "assets/anim/face",
+      "basename": "{line_id}",
+      "format": "json",
+      "count": 1,
+      "lines": [
+       "ch1_intro_004"
+      ]
+     }
+    ]
+   },
+   "acceptance": {
+    "duration_s": [
+     0.3,
+     20.0
+    ],
+    "peak_dbfs_max": -1.0
+   },
+   "status": "planned"
+  },
+  {
+   "id": "crv_ch1_boss",
+   "category": "creature_voice",
+   "owner": "sound-designer",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv:scene=ch1_boss",
+   "brief": "장면 ch1_boss 크리처 음성 1줄(golem). 가이드 음성을 TTS 로 만들고 크리처 참조음을 text2sound 로 한 번 만든 뒤 줄마다 Conversion 한다. 음색: golem: 낮게 울리는 돌 괴물. 사람이 녹음한 가이드가 있으면 inputs 에 넣고 step1 을 건너뛴다.",
+   "lines": [
+    "ch1_boss_001"
+   ],
+   "inputs": [],
+   "steps": [
+    {
+     "api": "tts.standard",
+     "params": {
+      "language": "korean"
+     },
+     "calls": 1,
+     "per_call_chars": [
+      5
+     ]
+    },
+    {
+     "api": "sound.text2sound",
+     "params": {
+      "prompt": "creature vocal reference: golem: 낮게 울리는 돌 괴물",
+      "num_sample": 1,
+      "version": "v2"
+     }
+    },
+    {
+     "api": "sound.conversion",
+     "input_from": {
+      "source": "step1",
+      "reference": "step2"
+     },
+     "params": {
+      "ratio": 1.0,
+      "enhance": false
+     },
+     "calls": 1
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/creature",
+    "basename": "{line_id}",
+    "format": "wav",
+    "count": 1
+   },
+   "acceptance": {
+    "duration_s": [
+     0.2,
+     15.0
+    ],
+    "peak_dbfs_max": -1.0
+   },
+   "status": "planned"
+  },
+  {
+   "id": "vo_ch1_boss",
+   "category": "voice_line",
+   "owner": "voice-director",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv:scene=ch1_boss",
+   "brief": "장면 ch1_boss 대사 1줄, 화자 hero. 얼굴 애니메이션 1줄",
+   "lines": [
+    "ch1_boss_002"
+   ],
+   "inputs": [],
+   "steps": [
+    {
+     "api": "tts.standard",
+     "params": {
+      "language": "korean"
+     },
+     "calls": 1,
+     "per_call_chars": [
+      3
+     ]
+    },
+    {
+     "api": "face.blendshape",
+     "input_from": "previous",
+     "when": "speaker_face_anim",
+     "params": {
+      "fps": 30,
+      "lip_style": "balanced",
+      "face_style": "natural"
+     },
+     "calls": 1
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/voice/korean",
+    "basename": "{line_id}",
+    "format": "wav",
+    "count": 1,
+    "extra": [
+     {
+      "dir": "assets/anim/face",
+      "basename": "{line_id}",
+      "format": "json",
+      "count": 1,
+      "lines": [
+       "ch1_boss_002"
+      ]
+     }
+    ]
+   },
+   "acceptance": {
+    "duration_s": [
+     0.3,
+     20.0
+    ],
+    "peak_dbfs_max": -1.0
+   },
+   "status": "planned"
+  },
+  {
+   "id": "l10n_en",
+   "category": "localization",
+   "owner": "localization-specialist",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv, data/ui_strings.csv",
+   "brief": "영어 문자열",
+   "inputs": [
+    "data/dialogue.csv",
+    "data/ui_strings.csv"
+   ],
+   "steps": [
+    {
+     "api": "mt.translate",
+     "params": {
+      "source_lang": "ko",
+      "target_lang": "en",
+      "provider": "content"
+     },
+     "calls": 10
+    }
+   ],
+   "output": {
+    "dir": "data/strings",
+    "basename": "en",
+    "format": "json",
+    "count": 1
+   },
+   "acceptance": {
+    "lang_coverage": true,
+    "max_len_ok": true
+   },
+   "status": "planned"
+  },
+  {
+   "id": "l10n_ja",
+   "category": "localization",
+   "owner": "localization-specialist",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv, data/ui_strings.csv",
+   "brief": "일본어 문자열",
+   "inputs": [
+    "data/dialogue.csv",
+    "data/ui_strings.csv"
+   ],
+   "steps": [
+    {
+     "api": "mt.translate",
+     "params": {
+      "source_lang": "ko",
+      "target_lang": "ja",
+      "provider": "content"
+     },
+     "calls": 10
+    }
+   ],
+   "output": {
+    "dir": "data/strings",
+    "basename": "ja",
+    "format": "json",
+    "count": 1
+   },
+   "acceptance": {
+    "lang_coverage": true,
+    "max_len_ok": true
+   },
+   "status": "planned"
+  },
+  {
+   "id": "mdl_crate",
+   "category": "model_3d",
+   "owner": "visual-artist",
+   "phase": "production",
+   "priority": "P1",
+   "source_ref": "docs/levels.md#1-1",
+   "brief": "나무 상자 프랍",
+   "inputs": [
+    "_workspace/test-game/src/mdl_crate.png"
+   ],
+   "source_image_plan": "provided",
+   "steps": [
+    {
+     "api": "3d.image_to_3d",
+     "params": {
+      "target_face_type": "tri",
+      "target_face_num": 8000,
+      "generate_texture": true
+     }
+    }
+   ],
+   "output": {
+    "dir": "assets/models",
+    "basename": "mdl_crate",
+    "format": "glb",
+    "count": 1
+   },
+   "acceptance": {
+    "face_max": 10000,
+    "has_texture": true
+   },
+   "status": "planned"
+  }
+ ]
+}

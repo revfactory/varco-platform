@@ -1,0 +1,65 @@
+{
+  "id": "sfx_bad",
+  "verdict": "fail",
+  "mode": "live",
+  "checks": [
+    {
+      "name": "file_count",
+      "result": "fail",
+      "detail": "3/4"
+    },
+    {
+      "name": "decodable",
+      "result": "fail",
+      "detail": "2/3"
+    },
+    {
+      "name": "not_silent",
+      "result": "fail",
+      "detail": "None~-12.06"
+    },
+    {
+      "name": "duration_s",
+      "result": "fail",
+      "detail": "1.0~3.0"
+    },
+    {
+      "name": "peak_dbfs",
+      "result": "fail",
+      "detail": "None~-12.06"
+    },
+    {
+      "name": "lufs_range",
+      "result": "fail",
+      "detail": "[None, -15.8]"
+    }
+  ],
+  "issues": [
+    "결과 파일 3개(기대 4개). 없음: ['_workspace/harness-build/test/c/audio/nofile.wav']",
+    "디코딩 실패: ['broken.wav: _workspace/harness-build/test/c/audio/broken.wav: Invalid data found when processing input']",
+    "무음에 가까움: ['silent.wav=None']",
+    "길이가 [0.1, 2.0]초 밖: ['clipping.wav=3.0']",
+    "피크가 -1.0dBFS 초과: ['silent.wav=None']",
+    "LUFS 범위 [-24,-10] 밖: ['silent.wav']"
+  ],
+  "retryable": true,
+  "fix_hint": "빠진 결과 파일을 다시 생성한다 / 손상된 파일을 다시 생성한다 / 프롬프트나 입력을 바꿔 다시 생성한다 / 뒤쪽 무음을 자르거나(ffmpeg silenceremove) 길이 파라미터를 조정한다 / 게인을 낮추거나 variation strength 를 낮춘다 / ffmpeg loudnorm 으로 라우드니스를 맞춘다",
+  "measurements": {
+    "silent.wav": {
+      "channels": 1,
+      "sample_rate": 44100,
+      "codec": "pcm_s16le",
+      "duration_s": 1.0,
+      "peak_dbfs": null,
+      "lufs": null
+    },
+    "clipping.wav": {
+      "channels": 1,
+      "sample_rate": 44100,
+      "codec": "pcm_s16le",
+      "duration_s": 3.0,
+      "peak_dbfs": -12.06,
+      "lufs": -15.8
+    }
+  }
+}

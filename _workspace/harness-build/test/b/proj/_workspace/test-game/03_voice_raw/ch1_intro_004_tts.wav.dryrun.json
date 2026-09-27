@@ -1,0 +1,21 @@
+{
+  "api": "tts.standard",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/tts/standard/v1/api/synthesize",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "language": "korean",
+    "text": "그 말, 지난주에도 들었어.",
+    "voice": "<speaker_uuid:hero>",
+    "seed": 83206,
+    "properties": {
+      "speed": 1.0,
+      "pitch": 1.0
+    }
+  },
+  "intended_output": "_workspace/test-game/03_voice_raw/ch1_intro_004_tts.wav",
+  "est_credits": 2,
+  "price_note": "15자 ÷ 10자당 1"
+}

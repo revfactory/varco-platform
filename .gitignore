@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# 비밀 정보: VARCO 키는 .env 에 두고 절대 커밋하지 않는다
+.env
+.env.*
+
+# 실행 중에 생기는 잠금·프로세스 파일
+*.lock
+*.pid

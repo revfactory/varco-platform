@@ -1,0 +1,82 @@
+{
+  "ok": true,
+  "verdict": "fail",
+  "runs": 2000,
+  "seed": 7,
+  "params": {},
+  "input_hashes": {
+    "enemies.csv": "ab8b3653f93f8680",
+    "player.csv": "36752b893f944ee8"
+  },
+  "distribution": {
+    "clear_time_s": {
+      "mean": 47.7503,
+      "median": 47.5,
+      "p10": 44.5,
+      "p90": 51.0,
+      "min": 40.0,
+      "max": 56.5
+    },
+    "deaths": {
+      "mean": 1.0,
+      "median": 1.0,
+      "p10": 1.0,
+      "p90": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "max_ttk_s": {
+      "mean": 42.8287,
+      "median": 43.0,
+      "p10": 40.0,
+      "p90": 46.0,
+      "min": 34.5,
+      "max": 52.0
+    }
+  },
+  "criteria": {
+    "clear_time_s": {
+      "stat": "median",
+      "min": 20,
+      "max": 60
+    },
+    "deaths": {
+      "stat": "mean",
+      "max": 0.5
+    },
+    "max_ttk_s": {
+      "stat": "p90",
+      "max": 30
+    }
+  },
+  "verdicts": {
+    "clear_time_s": {
+      "result": "pass",
+      "stat": "median",
+      "value": 47.5,
+      "range": [
+        20,
+        60
+      ]
+    },
+    "deaths": {
+      "result": "fail",
+      "stat": "mean",
+      "value": 1.0,
+      "range": [
+        null,
+        0.5
+      ]
+    },
+    "max_ttk_s": {
+      "result": "fail",
+      "stat": "p90",
+      "value": 46.0,
+      "range": [
+        null,
+        30
+      ]
+    }
+  },
+  "table_warnings": []
+}

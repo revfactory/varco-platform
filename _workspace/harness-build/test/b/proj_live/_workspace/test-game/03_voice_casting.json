@@ -1,0 +1,111 @@
+{
+  "tts.standard": {
+    "hero": {
+      "speaker_name": "하린",
+      "default": "u-하린-n",
+      "by_emotion": {
+        "neutral": "u-하린-n",
+        "angry": "u-하린-a",
+        "happy": "u-하린-h",
+        "sad": "u-하린-s"
+      },
+      "description": "여성, 청년, 저음, 건조, 냉소",
+      "score": 8.0,
+      "seed": 83206,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": false,
+      "reason": "voice_brief '낮고 건조한 20대 여성, 빠른 말투' ↔ '여성, 청년, 저음, 건조, 냉소'"
+    },
+    "narrator": {
+      "speaker_name": "도윤",
+      "default": "u-도윤-n",
+      "by_emotion": {
+        "neutral": "u-도윤-n",
+        "angry": "u-도윤-a",
+        "happy": "u-도윤-h",
+        "sad": "u-도윤-s"
+      },
+      "description": "남성, 중년, 저음, 거만",
+      "score": 7.0,
+      "seed": 68166,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": false,
+      "reason": "voice_brief '차분한 중년 남성 내레이션' ↔ '남성, 중년, 저음, 거만'"
+    },
+    "rival": {
+      "speaker_name": "실라린",
+      "default": "u-실라린-n",
+      "by_emotion": {
+        "neutral": "u-실라린-n",
+        "angry": "u-실라린-a",
+        "happy": "u-실라린-h",
+        "sad": "u-실라린-s"
+      },
+      "description": "남성, 노년, 고음, 거침, 노련한",
+      "score": 4.0,
+      "seed": 91500,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": false,
+      "reason": "voice_brief '중후한 30대 남성, 거만한' ↔ '남성, 노년, 고음, 거침, 노련한'"
+    },
+    "golem": {
+      "speaker_name": "도윤",
+      "default": "u-도윤-n",
+      "by_emotion": {
+        "neutral": "u-도윤-n",
+        "angry": "u-도윤-a",
+        "happy": "u-도윤-h",
+        "sad": "u-도윤-s"
+      },
+      "description": "남성, 중년, 저음, 거만",
+      "score": 1.0,
+      "seed": 19414,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": false,
+      "reason": "voice_brief '낮게 울리는 돌 괴물' ↔ '남성, 중년, 저음, 거만' (크리처 가이드 음성)"
+    }
+  },
+  "vc.acting": {
+    "hero": {
+      "speaker_name": "하린",
+      "default": "u-하린-n",
+      "by_emotion": {
+        "neutral": "u-하린-n",
+        "angry": "u-하린-a",
+        "happy": "u-하린-h",
+        "sad": "u-하린-s"
+      },
+      "description": "여성, 청년, 저음, 건조, 냉소",
+      "score": 8.0,
+      "seed": 83206,
+      "properties": {
+        "speed": 1.0,
+        "pitch": 1.0
+      },
+      "placeholder": false,
+      "reason": "voice_brief '낮고 건조한 20대 여성, 빠른 말투' ↔ '여성, 청년, 저음, 건조, 냉소'"
+    }
+  },
+  "_meta": {
+    "updated": "2026-09-28T06:26:00+09:00",
+    "method": "auto-score",
+    "voice_lists": {
+      "tts.standard": "_workspace/test-game/voices_tts_standard.json",
+      "vc.acting": "_workspace/test-game/voices_vc_acting.json"
+    },
+    "placeholders": [],
+    "note": "이 파일이 있으면 모든 voice-director 가 그대로 쓴다. 바꾸려면 리더 승인 후 --force"
+  }
+}

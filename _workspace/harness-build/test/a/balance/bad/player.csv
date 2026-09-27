@@ -1,0 +1,2 @@
+id,hp,attack,attack_interval_s,crit_rate_pct,crit_mult
+default,200,20,0.5,10,2.0

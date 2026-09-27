@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>표지</title>
+<style>
+@font-face { font-family: "BookSans"; font-weight: 400; src: url("fonts/Pretendard-Regular.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 500; src: url("fonts/Pretendard-Medium.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 600; src: url("fonts/Pretendard-SemiBold.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 700; src: url("fonts/Pretendard-Bold.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 800; src: url("fonts/Pretendard-ExtraBold.ttf"); }
+@page { size: A4; margin: 0; }
+html, body { margin: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "BookSans", "Apple SD Gothic Neo", sans-serif; word-break: keep-all; }
+.cover {
+  position: relative; width: 210mm; height: 297mm; overflow: hidden; box-sizing: border-box;
+  background: #0d0f14; color: #f2f4f7;
+}
+.glow-a {
+  position: absolute; right: -52mm; top: -44mm; width: 190mm; height: 190mm; border-radius: 50%;
+  background: radial-gradient(circle, rgba(58, 104, 255, 0.55) 0%, rgba(58, 104, 255, 0) 66%);
+}
+.glow-b {
+  position: absolute; right: 6mm; top: 42mm; width: 120mm; height: 120mm; border-radius: 50%;
+  background: radial-gradient(circle, rgba(146, 92, 255, 0.42) 0%, rgba(146, 92, 255, 0) 66%);
+}
+.brand { position: absolute; left: 22mm; top: 24mm; font-size: 11pt; font-weight: 600; color: #d9dde5; }
+.brand b { font-weight: 800; letter-spacing: 0.12em; color: #fff; margin-right: 1.5mm; }
+.title { position: absolute; left: 22mm; right: 22mm; top: 96mm; }
+.kicker { font-size: 9.5pt; font-weight: 700; letter-spacing: 0.22em; color: #8fa6ff; }
+h1 { font-size: 46pt; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin: 5mm 0 6mm; }
+.sub { font-size: 12.5pt; color: #aab1be; }
+.secs { position: absolute; left: 22mm; right: 22mm; bottom: 52mm; display: grid; grid-template-columns: 1fr 1fr; column-gap: 12mm; }
+.c-sec { border-top: 1px solid #343a47; padding-top: 4mm; }
+.c-no { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.1em; color: #8fa6ff; }
+.c-t { font-size: 14pt; font-weight: 700; margin: 1.2mm 0 2.2mm; }
+.c-g { font-size: 8.8pt; line-height: 1.75; color: #9aa2b1; }
+.foot {
+  position: absolute; left: 22mm; right: 22mm; bottom: 20mm;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-size: 8.4pt; line-height: 1.7; color: #7f8797;
+}
+.foot .r { text-align: right; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+  <div class="brand"><b>VARCO</b>API Platform</div>
+  <div class="title">
+    <div class="kicker">DOCUMENTATION &amp; API REFERENCE</div>
+    <h1>레퍼런스<br>매뉴얼</h1>
+    <div class="sub">한국어판 · 도큐먼트 25편 · API 레퍼런스 28편</div>
+  </div>
+  <div class="secs"><div class="c-sec"><div class="c-no">제1부</div><div class="c-t">도큐먼트</div><div class="c-g">Getting Started · Game AI · Media AI · Visual AI · Content Biz AI · Content Protection AI · Integrations</div></div><div class="c-sec"><div class="c-no">제2부</div><div class="c-t">API 레퍼런스</div><div class="c-g">Overview · Sound · 3D · SyncFace · Translation · Voice · Art Fashion</div></div></div>
+  <div class="foot">
+    <div>2026년 9월 28일 기준<br>원문 api.varco.ai/ko</div>
+    <div class="r">api.varco.ai에 공개된 문서를<br>모아 엮은 참고용 사본입니다.</div>
+  </div>
+</div>
+</body>
+</html>

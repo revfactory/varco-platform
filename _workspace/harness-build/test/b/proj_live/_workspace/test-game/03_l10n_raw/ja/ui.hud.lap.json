@@ -1,0 +1,9 @@
+{
+  "svc": "varco-translation",
+  "TID": "test-game-ja-ui.hud.lap",
+  "provider": "content",
+  "source_lang": "ko",
+  "target_lang": "ja",
+  "source_text": "랩 ⟦P0⟧/⟦P1⟧",
+  "target_text": "<ja>랩 ⟦P0⟧/⟦P1⟧"
+}

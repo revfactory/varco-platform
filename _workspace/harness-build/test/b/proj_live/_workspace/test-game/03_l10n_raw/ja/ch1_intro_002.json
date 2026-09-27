@@ -1,0 +1,9 @@
+{
+  "svc": "varco-translation",
+  "TID": "test-game-ja-ch1_intro_002",
+  "provider": "content",
+  "source_lang": "ko",
+  "target_lang": "ja",
+  "source_text": "또 너야? ⟦P0⟧.",
+  "target_text": "<ja>또 너야? ⟦P0⟧."
+}

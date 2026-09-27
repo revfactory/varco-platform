@@ -1,0 +1,14 @@
+{
+  "lang": "en",
+  "total": 10,
+  "translated": 10,
+  "cached": 0,
+  "failed": [],
+  "placeholder_lost": [],
+  "over_length": [],
+  "dry_run": true,
+  "missing": [],
+  "calls": 10,
+  "est_credits_spent": 0.0,
+  "unknown_price_calls": 0
+}

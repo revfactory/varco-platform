@@ -1,0 +1,15 @@
+{
+  "lang": "tw",
+  "total": 10,
+  "translated": 10,
+  "cached": 0,
+  "failed": [],
+  "placeholder_lost": [],
+  "over_length": [],
+  "dry_run": true,
+  "glossary_warning": "glossary.csv 에 term_tw 열이 없다. 지정 번역어 없이 번역기에 맡긴다(do_not_translate 보호는 적용)",
+  "missing": [],
+  "calls": 10,
+  "est_credits_spent": 0.0,
+  "unknown_price_calls": 0
+}

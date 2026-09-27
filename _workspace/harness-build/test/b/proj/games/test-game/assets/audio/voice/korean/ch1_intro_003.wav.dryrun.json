@@ -1,0 +1,21 @@
+{
+  "api": "tts.standard",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/tts/standard/v1/api/synthesize",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "language": "korean",
+    "text": "오늘은 내가 이긴다.",
+    "voice": "<speaker_uuid:rival>",
+    "seed": 91500,
+    "properties": {
+      "speed": 1.0,
+      "pitch": 1.0
+    }
+  },
+  "intended_output": "games/test-game/assets/audio/voice/korean/ch1_intro_003.wav",
+  "est_credits": 2,
+  "price_note": "11자 ÷ 10자당 1"
+}

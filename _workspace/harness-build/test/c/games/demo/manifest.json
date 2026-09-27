@@ -1,0 +1,143 @@
+{
+ "game": "demo",
+ "version": 1,
+ "varco_mode": "live",
+ "budget_credits": 1000,
+ "assets": [
+  {
+   "id": "sfx_door",
+   "category": "sfx",
+   "owner": "sound-designer",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "docs/levels.md#1",
+   "brief": "문",
+   "inputs": [],
+   "steps": [
+    {
+     "api": "sound.text2sound",
+     "params": {
+      "prompt": "heavy door creak",
+      "num_sample": 3
+     }
+    },
+    {
+     "api": "sound.variation",
+     "input_from": "best_of_previous",
+     "params": {
+      "num_sample": 3
+     }
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/sfx",
+    "basename": "sfx_door",
+    "format": "wav",
+    "count": 3
+   },
+   "acceptance": {
+    "duration_s": [
+     0.2,
+     3
+    ]
+   },
+   "status": "qa_passed"
+  },
+  {
+   "id": "vo_ch1_intro",
+   "category": "voice_line",
+   "owner": "voice-director",
+   "phase": "production",
+   "priority": "P0",
+   "source_ref": "data/dialogue.csv",
+   "brief": "인트로",
+   "lines": [
+    "ch1_intro_001",
+    "ch1_intro_002"
+   ],
+   "steps": [
+    {
+     "api": "tts.standard",
+     "params": {
+      "language": "korean"
+     },
+     "calls": 2
+    },
+    {
+     "api": "face.blendshape",
+     "input_from": "previous",
+     "params": {
+      "fps": 30
+     },
+     "calls": 2
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/voice/korean",
+    "basename": "{line_id}",
+    "format": "wav",
+    "count": 2,
+    "extra": [
+     {
+      "dir": "assets/anim/face",
+      "basename": "{line_id}",
+      "format": "json"
+     }
+    ]
+   },
+   "acceptance": {},
+   "status": "qa_passed"
+  },
+  {
+   "id": "mdl_crate",
+   "category": "model_3d",
+   "owner": "visual-artist",
+   "phase": "production",
+   "priority": "P1",
+   "source_ref": "docs/levels.md",
+   "brief": "상자",
+   "inputs": [
+    "x.png"
+   ],
+   "steps": [
+    {
+     "api": "3d.image_to_3d",
+     "params": {
+      "target_face_num": 20000
+     }
+    }
+   ],
+   "output": {
+    "dir": "assets/models",
+    "basename": "mdl_crate",
+    "format": "glb",
+    "count": 1
+   },
+   "acceptance": {
+    "face_max": 40000
+   },
+   "status": "planned"
+  },
+  {
+   "id": "bgm_title",
+   "category": "music",
+   "owner": "sound-designer",
+   "phase": "production",
+   "priority": "P1",
+   "source_ref": "x",
+   "brief": "b",
+   "steps": [
+    {
+     "api": "manual.unity_music"
+    }
+   ],
+   "output": {
+    "dir": "assets/audio/music",
+    "basename": "bgm_title",
+    "format": "wav",
+    "count": 1
+   },
+   "status": "manual_pending"
+  }
+ ]
+}

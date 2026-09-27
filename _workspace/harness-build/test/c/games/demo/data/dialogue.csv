@@ -1,0 +1,3 @@
+line_id,scene_id,speaker_id,text_ko,emotion,direction,voice,priority
+ch1_intro_001,ch1_intro,hero,또 너야? {player_name}.,angry,작게,tts,P0
+ch1_intro_002,ch1_intro,rival,네온 시티에 온 걸 환영해.,happy,,tts,P0

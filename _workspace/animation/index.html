@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VARCO API Platform 소개</title>
+<style>
+@font-face { font-family: "BookSans"; font-weight: 400; src: url("fonts/Pretendard-Regular.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 500; src: url("fonts/Pretendard-Medium.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 600; src: url("fonts/Pretendard-SemiBold.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 700; src: url("fonts/Pretendard-Bold.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 800; src: url("fonts/Pretendard-ExtraBold.ttf"); }
+:root {
+  --bg: #05060a; --ink: #f3f5fb; --ink2: #c4cad8; --muted: #8a93a8;
+  --blue: #4d7cff; --violet: #a36bff; --cyan: #35d4ff; --pink: #ff6bb0; --green: #35d49a; --red: #ff5d6c;
+  --mono: "SF Mono", Menlo, Monaco, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+#stage {
+  position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden;
+  background: var(--bg); color: var(--ink); transform-origin: 0 0;
+  font-family: "BookSans", "Apple SD Gothic Neo", sans-serif; word-break: keep-all;
+}
+#bg { position: absolute; inset: 0; }
+.scene { position: absolute; inset: 0; opacity: 0; visibility: hidden; }
+.grad { background: linear-gradient(92deg, #7d9bff 0%, #b384ff 55%, #5ad6ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.anchor { position: absolute; width: 0; height: 0; }
+#vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,.6) 100%); }
+#fade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+.caret { display: inline-block; width: 3px; height: 1em; background: #fff; margin-left: 3px; vertical-align: -0.12em; }
+
+/* S1 도입 */
+#s1 .hook { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+#s1 .hl { font-size: 150px; font-weight: 800; letter-spacing: -0.045em; line-height: 1.12; }
+
+/* S2 로고 */
+#logo { position: absolute; left: 0; right: 0; top: 318px; display: flex; flex-direction: column; align-items: center; }
+.wm { position: relative; font-size: 236px; font-weight: 800; line-height: 1; white-space: nowrap; }
+.wm span { display: inline-block; text-shadow: 0 0 70px rgba(90, 120, 255, 0.55); }
+.wm .sheen { position: absolute; left: 0; top: 0; color: transparent; -webkit-background-clip: text; background-clip: text;
+  background-image: linear-gradient(100deg, transparent 0%, transparent 42%, rgba(255,255,255,.95) 50%, transparent 58%, transparent 100%);
+  background-size: 260% 100%; background-repeat: no-repeat; }
+.wm .sheen span { text-shadow: none; }
+.plat { font-size: 66px; font-weight: 600; letter-spacing: 0.02em; color: #cdd5ff; margin-top: 16px; }
+#tag { position: absolute; left: 0; right: 0; top: 770px; text-align: center; font-size: 32px; font-weight: 500; color: var(--ink2); }
+
+/* S3 연동 */
+#net { position: absolute; inset: 0; }
+#s3 .title { position: absolute; left: 0; right: 0; top: 92px; text-align: center; font-size: 72px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.22; }
+#key { position: absolute; font-family: var(--mono); font-size: 30px; font-weight: 600; padding: 22px 34px; border-radius: 18px; white-space: nowrap;
+  background: rgba(18, 22, 38, 0.94); border: 1.5px solid rgba(125, 155, 255, 0.65);
+  box-shadow: 0 0 70px rgba(77, 124, 255, 0.5), inset 0 0 22px rgba(77, 124, 255, 0.18);
+  display: flex; align-items: center; gap: 14px; }
+#key .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: 0 0 14px var(--green); }
+.node { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 12px; white-space: nowrap; }
+.node i { width: 26px; height: 26px; border-radius: 50%; background: var(--c);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--c) 24%, transparent), 0 0 44px var(--c); }
+.node b { font-size: 34px; font-weight: 700; }
+.node em { font-style: normal; font-size: 15px; font-weight: 700; letter-spacing: 0.16em; color: var(--c); margin-top: -6px; }
+
+/* 서비스 장면 공통 */
+.sc .left { position: absolute; left: 150px; top: 0; bottom: 0; width: 700px; display: flex; flex-direction: column; justify-content: center; }
+.sc .eb { font-size: 19px; font-weight: 700; letter-spacing: 0.18em; color: var(--c); display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+.sc .eb .n { color: var(--muted); letter-spacing: 0.06em; }
+.sc .eb .ln { width: 40px; height: 2px; background: var(--c); }
+.sc .tt { overflow: hidden; padding-bottom: 0.08em; margin-bottom: 20px; }
+.sc .tt span { display: block; font-size: var(--ts, 128px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.04; }
+.sc .ds { font-size: 31px; line-height: 1.56; color: var(--ink2); font-weight: 500; margin-bottom: 36px; }
+.sc .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+.chip { font-size: 21px; font-weight: 600; padding: 9px 18px; border-radius: 999px; white-space: nowrap;
+  border: 1.5px solid rgba(255,255,255,.14); background: rgba(255,255,255,.045); color: #dfe4ef; }
+.chip:first-child { border-color: var(--c); background: color-mix(in srgb, var(--c) 20%, transparent); color: #fff; }
+.sc .right { position: absolute; left: 900px; width: 890px; top: 0; bottom: 0; }
+.vis { position: absolute; border-radius: 26px; overflow: hidden; background: #0c0f18;
+  box-shadow: 0 50px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.09); }
+.vis > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card { background: linear-gradient(180deg, rgba(24, 28, 44, .95), rgba(12, 14, 24, .95)); }
+
+/* Sound */
+.v-sound .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,6,10,.1) 0%, rgba(5,6,10,.35) 45%, rgba(5,6,10,.88) 100%); }
+.prompt { position: absolute; left: 32px; top: 32px; display: flex; align-items: center; gap: 14px; padding: 14px 22px; border-radius: 14px;
+  background: rgba(8, 10, 18, .78); border: 1px solid rgba(255,255,255,.16); font-size: 30px; font-weight: 700; }
+.prompt .k { font-family: var(--mono); font-size: 18px; font-weight: 600; color: var(--cyan); letter-spacing: 0.06em; }
+.bars { position: absolute; left: 40px; right: 40px; bottom: 44px; height: 230px; display: flex; align-items: center; justify-content: space-between; }
+.bars i { display: block; width: 6px; border-radius: 3px; background: linear-gradient(180deg, #a9c1ff, #4d7cff); }
+
+/* 3D */
+.v-3d img.base { filter: grayscale(1) brightness(1.15) contrast(.92); }
+.v-3d .grid { position: absolute; inset: 0; mix-blend-mode: screen;
+  background-image: linear-gradient(rgba(120,160,255,.2) 1px, transparent 1px), linear-gradient(90deg, rgba(120,160,255,.2) 1px, transparent 1px);
+  background-size: 32px 32px; }
+.v-3d .scan { position: absolute; top: 0; bottom: 0; width: 3px; background: #b5ccff; box-shadow: 0 0 26px 7px rgba(120,160,255,.75); }
+.pipe { position: absolute; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 14px; }
+.pipe .st { font-size: 22px; font-weight: 600; padding: 12px 20px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.12); color: var(--muted); background: rgba(255,255,255,.03); }
+.pipe .st.on { color: #fff; border-color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); box-shadow: 0 0 30px color-mix(in srgb, var(--c) 40%, transparent); }
+.pipe .ar { color: var(--muted); font-size: 22px; }
+
+/* SyncFace */
+.bs { padding: 30px; }
+.bs .ph { font-family: var(--mono); font-size: 20px; color: var(--cyan); margin-bottom: 28px; display: flex; justify-content: space-between; }
+.bs .ph .fr { color: var(--muted); }
+.bs .row { display: grid; grid-template-columns: 188px 1fr 60px; align-items: center; gap: 14px; margin-bottom: 21px; font-family: var(--mono); font-size: 18px; color: var(--ink2); }
+.bs .track { height: 10px; border-radius: 5px; background: rgba(255,255,255,.08); overflow: hidden; }
+.bs .track i { display: block; height: 100%; border-radius: 5px; background: linear-gradient(90deg, #4d7cff, #35d4ff); }
+.bs .row em { font-style: normal; text-align: right; color: #fff; }
+.bs .al { position: absolute; left: 30px; bottom: 170px; font-family: var(--mono); font-size: 17px; color: var(--muted); }
+.bs .aud { position: absolute; left: 30px; right: 30px; bottom: 34px; height: 120px; display: flex; align-items: center; justify-content: space-between; }
+.bs .aud i { display: block; width: 5px; border-radius: 3px; background: var(--violet); }
+
+/* Voice */
+.v-voice .vl { position: absolute; left: 44px; top: 40px; display: flex; gap: 14px; align-items: center; }
+.pl { font-size: 20px; font-weight: 700; padding: 8px 16px; border-radius: 10px; background: rgba(53,212,255,.14); color: #8fe6ff; border: 1px solid rgba(53,212,255,.4); }
+.pl.b { background: rgba(163,107,255,.14); color: #cdb2ff; border-color: rgba(163,107,255,.45); }
+.ar2 { color: var(--muted); font-size: 22px; }
+.v-voice .vt { position: absolute; left: 44px; right: 44px; top: 118px; font-size: 54px; font-weight: 700; letter-spacing: -0.02em; }
+.v-voice .vb { position: absolute; left: 44px; right: 44px; top: 238px; height: 190px; display: flex; align-items: center; justify-content: space-between; }
+.v-voice .vb i { display: block; width: 5px; border-radius: 3px; }
+.v-voice .vs { position: absolute; left: 44px; bottom: 36px; font-family: var(--mono); font-size: 20px; color: var(--muted); display: flex; gap: 10px; }
+.v-voice .vs .a { color: #8fe6ff; }
+.v-voice .vs .bspk { color: #cdb2ff; }
+
+/* Translate */
+.chhead { height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 30px; border-bottom: 1px solid rgba(255,255,255,.08); font-family: var(--mono); font-size: 21px; color: var(--ink2); }
+.live { font-family: "BookSans"; font-size: 15px; font-weight: 800; letter-spacing: 0.12em; color: #fff; background: var(--red); padding: 4px 10px; border-radius: 6px; }
+.msgs { padding: 28px 30px; display: flex; flex-direction: column; gap: 26px; }
+.msg { display: flex; gap: 18px; }
+.av { flex: none; width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 22px; color: #0b0d14; }
+.mb { flex: 1; }
+.mn { font-size: 19px; font-weight: 700; color: var(--ink2); display: flex; gap: 12px; align-items: center; margin-bottom: 4px; }
+.lg { font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--cyan); border: 1px solid rgba(53,212,255,.4); padding: 2px 8px; border-radius: 6px; }
+.orig { font-size: 22px; color: var(--muted); margin-bottom: 8px; }
+.trl { display: inline-block; font-size: 28px; font-weight: 700; color: #fff; background: rgba(53,212,255,.11); border: 1px solid rgba(53,212,255,.3); padding: 10px 16px; border-radius: 14px; }
+
+/* Art Fashion */
+.tags { position: absolute; left: 0; right: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.tg { font-size: 19px; font-weight: 600; padding: 8px 15px; border-radius: 999px; border: 1.5px solid rgba(163,107,255,.42); color: #dccbff; background: rgba(163,107,255,.1); }
+
+/* Chatbot · Gentle Words */
+.kh { position: absolute; left: 30px; top: 24px; font-size: 20px; font-weight: 700; display: flex; gap: 12px; align-items: center; color: var(--ink2); }
+.kh .d { width: 10px; height: 10px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 12px var(--pink); }
+.bub { position: absolute; font-size: 25px; font-weight: 600; padding: 14px 22px; border-radius: 20px; white-space: nowrap; }
+.bub.u { right: 30px; top: 84px; background: #2a3352; border-bottom-right-radius: 6px; }
+.bub.b { left: 30px; top: 176px; background: rgba(255,107,176,.14); border: 1px solid rgba(255,107,176,.4); border-bottom-left-radius: 6px; }
+.gw { position: absolute; left: 30px; right: 30px; height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border-radius: 14px; background: rgba(255,255,255,.045); font-size: 23px; font-weight: 500; }
+.gw .tx { transition: none; }
+.bd { font-size: 17px; font-weight: 800; padding: 6px 12px; border-radius: 8px; white-space: nowrap; }
+.bd.x { background: rgba(255,93,108,.18); color: #ff9aa3; border: 1px solid rgba(255,93,108,.5); }
+.bd.o { background: rgba(53,212,154,.16); color: #7cf0c2; border: 1px solid rgba(53,212,154,.45); }
+
+/* S5 개발자 */
+.ed .bar { height: 54px; display: flex; align-items: center; gap: 10px; padding: 0 22px; border-bottom: 1px solid rgba(255,255,255,.07); }
+.ed .bar i { width: 13px; height: 13px; border-radius: 50%; }
+.ed .bar span { margin-left: 14px; font-family: var(--mono); font-size: 17px; color: var(--muted); }
+.ed pre { margin: 0; padding: 24px 30px; font-family: var(--mono); font-size: 21px; line-height: 1.72; white-space: pre; color: var(--ink2); }
+.tk-p { color: #7c859b; } .tk-c { color: #7cf0c2; } .tk-f { color: #8fb0ff; } .tk-k { color: #ff9bd0; font-weight: 700; }
+.tk-u { color: #cdd5ff; } .tk-u2 { color: #8fe6ff; font-weight: 700; } .tk-s { color: #ffd08a; }
+.rs .hd { display: flex; align-items: center; gap: 14px; padding: 22px 30px 0; font-family: var(--mono); font-size: 18px; color: var(--muted); }
+.ok { font-family: "BookSans"; font-size: 17px; font-weight: 800; color: #0b1a14; background: var(--green); padding: 5px 12px; border-radius: 8px; }
+.rs pre { margin: 0; padding: 16px 30px; font-family: var(--mono); font-size: 20px; line-height: 1.7; color: var(--ink2); }
+.rs .pl3 { position: absolute; right: 30px; top: 74px; display: flex; flex-direction: column; gap: 15px; }
+.rs .pw { display: flex; align-items: center; gap: 12px; padding: 8px 14px; border-radius: 12px; background: rgba(77,124,255,.12); border: 1px solid rgba(77,124,255,.35); }
+.rs .pw b { width: 26px; height: 26px; border-radius: 50%; background: var(--blue); position: relative; flex: none; }
+.rs .pw b::after { content: ""; position: absolute; left: 10px; top: 7px; border-left: 9px solid #fff; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+.rs .pw .w { display: flex; align-items: center; gap: 3px; height: 30px; }
+.rs .pw .w i { display: block; width: 3px; border-radius: 2px; background: #9db6ff; }
+
+/* S6 숫자 */
+#s6 .hd { position: absolute; left: 0; right: 0; top: 232px; text-align: center; font-size: 26px; font-weight: 700; letter-spacing: 0.2em; color: var(--muted); }
+#s6 .stats { position: absolute; left: 150px; right: 150px; top: 330px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 40px; }
+#s6 .stat { border-top: 2px solid rgba(255,255,255,.12); padding-top: 34px; }
+#s6 .num { font-size: 148px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; white-space: nowrap; }
+#s6 .num small { font-size: 0.5em; letter-spacing: -0.02em; }
+#s6 .lab { font-size: 33px; font-weight: 700; margin-top: 22px; }
+#s6 .sub { font-size: 21px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+#s6 .foot { position: absolute; left: 0; right: 0; top: 820px; display: flex; justify-content: center; align-items: center; gap: 18px; font-size: 32px; font-weight: 700; }
+#s6 .foot .pill { font-size: 18px; font-weight: 700; letter-spacing: 0.06em; color: #cdd5ff; padding: 7px 14px; border-radius: 999px; border: 1.5px solid rgba(125,155,255,.5); }
+
+/* S7 마무리 */
+#end { position: absolute; left: 0; right: 0; top: 300px; display: flex; flex-direction: column; align-items: center; }
+#end .wm { font-size: 176px; }
+#end .plat { font-size: 52px; margin-top: 12px; }
+#endline { position: absolute; left: 0; right: 0; top: 640px; text-align: center; font-size: 36px; font-weight: 600; line-height: 1.5; color: var(--ink2); }
+#url { position: absolute; left: 960px; top: 790px; font-size: 32px; font-weight: 700; letter-spacing: 0.02em; padding: 16px 36px; border-radius: 999px; white-space: nowrap;
+  background: rgba(18, 22, 38, .9); border: 1.5px solid rgba(125,155,255,.65); box-shadow: 0 0 60px rgba(77,124,255,.45); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg" width="1920" height="1080"></canvas>
+
+  <!-- S1 도입 -->
+  <div class="scene" id="s1">
+    <div class="hook" id="hook">
+      <div class="hl" id="s1a">상상력을</div>
+      <div class="hl" id="s1b"><span class="grad">AI 기술</span>로 연결하는</div>
+    </div>
+  </div>
+
+  <!-- S2 로고 -->
+  <div class="scene" id="s2">
+    <div id="logo">
+      <div class="wm" id="wm"><span>V</span><span>A</span><span>R</span><span>C</span><span>O</span><div class="sheen" id="sheen"><span>V</span><span>A</span><span>R</span><span>C</span><span>O</span></div></div>
+      <div class="plat" id="plat">API Platform</div>
+    </div>
+    <div id="tag">Game · Media · Visual · Content AI를 하나의 플랫폼에서</div>
+  </div>
+
+  <!-- S3 연동 -->
+  <div class="scene" id="s3">
+    <canvas id="net" width="1920" height="1080"></canvas>
+    <div class="title"><div id="s3t1">단 한 번의 연동으로</div><div id="s3t2"><span class="grad">다양한 AI 기능</span>을</div></div>
+    <div class="anchor" style="left:960px;top:610px"><div id="key"><span class="dot"></span>OPENAPI_KEY</div></div>
+    <div id="nodes"></div>
+  </div>
+
+  <!-- S4 서비스 장면 7개는 스크립트가 만든다 -->
+  <div id="scs"></div>
+
+  <!-- S5 개발자 -->
+  <div class="scene sc" id="s5" style="--c: var(--green); --ts: 100px">
+    <div class="left">
+      <div class="eb"><span class="ln"></span><span>FOR DEVELOPERS</span></div>
+      <div class="tt"><span>문서와 예제로<br>빠르게 통합</span></div>
+      <div class="ds">모든 요청은 OPENAPI_KEY 헤더 하나로 인증합니다. 엔드포인트와 파라미터, 응답 예시는 API 레퍼런스에서 확인할 수 있습니다.</div>
+    </div>
+    <div class="right">
+      <div class="vis card ed" id="ed" style="left:0; top:170px; width:890px; height:330px">
+        <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span>terminal</span></div>
+        <pre id="code"></pre>
+      </div>
+      <div class="vis card rs" id="rs" style="left:0; top:530px; width:890px; height:300px">
+        <div class="hd"><span class="ok">200 OK</span><span>application/json</span></div>
+        <pre id="resp"></pre>
+        <div class="pl3" id="players"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6 숫자 -->
+  <div class="scene" id="s6">
+    <div class="hd" id="s6hd">숫자로 보는 VARCO API PLATFORM</div>
+    <div class="stats" id="stats"></div>
+    <div class="foot" id="s6foot"><span>사용한 만큼만 지불하는 사용량 기반 과금</span><span class="pill">USAGE-BASED PRICING</span></div>
+  </div>
+
+  <!-- S7 마무리 -->
+  <div class="scene" id="s7">
+    <div id="end">
+      <div class="wm" id="wm2"><span>V</span><span>A</span><span>R</span><span>C</span><span>O</span></div>
+      <div class="plat" id="plat2">API Platform</div>
+    </div>
+    <div id="endline">지금 바로 API를 호출하고,<br>당신의 제품에 AI 기능을 더해보세요.</div>
+    <div id="url"><span class="grad">api.varco.ai</span></div>
+  </div>
+
+  <div id="vignette"></div>
+  <div id="fade"></div>
+</div>
+
+<script>
+/* ============================================================ 기본 도구 */
+const W = 1920, H = 1080, DUR = 47;
+const $ = s => document.querySelector(s);
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const P = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, x) => a + (b - a) * x;
+const E = {
+  out: x => 1 - Math.pow(1 - x, 3),
+  out4: x => 1 - Math.pow(1 - x, 4),
+  expo: x => (x >= 1 ? 1 : 1 - Math.pow(2, -10 * x)),
+  inout: x => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2),
+  back: x => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+};
+function st(el, { x = 0, y = 0, sc = 1, op, blur = 0, base = '' } = {}) {
+  el.style.transform = `${base} translate(${x}px, ${y}px) scale(${sc})`;
+  if (op !== undefined) el.style.opacity = clamp(op);
+  el.style.filter = blur > 0.05 ? `blur(${blur}px)` : '';
+}
+function show(el, on) { el.style.visibility = on ? 'visible' : 'hidden'; }
+function rng(seed) {
+  return () => { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+function hash(n, s) { const v = Math.sin(n * 127.1 + s * 311.7) * 43758.5453; return v - Math.floor(v); }
+function noise(x, s) { const i = Math.floor(x), f = x - i, u = f * f * (3 - 2 * f); return lerp(hash(i, s), hash(i + 1, s), u); }
+function kf(frames, t) { // [[t, ...values]] 사이를 부드럽게 보간
+  if (t <= frames[0][0]) return frames[0].slice(1);
+  for (let i = 0; i < frames.length - 1; i++) {
+    const a = frames[i], b = frames[i + 1];
+    if (t <= b[0]) { const x = E.inout(P(t, a[0], b[0])); return a.slice(1).map((v, k) => lerp(v, b[k + 1], x)); }
+  }
+  return frames[frames.length - 1].slice(1);
+}
+const mix = (c1, c2, x) => c1.map((v, i) => Math.round(lerp(v, c2[i], x)));
+const rgb = c => `rgb(${c[0]},${c[1]},${c[2]})`;
+
+/* ============================================================ 배경: 입자·광원·빛줄기 */
+const bg = $('#bg'), g = bg.getContext('2d');
+const R0 = rng(7), PARTS = Array.from({ length: 240 }, (_, i) => {
+  const z = 0.3 + 0.7 * R0();
+  return { x: R0() * W, y: R0() * H, z, vx: (R0() - 0.5) * 14 * z, vy: -(5 + R0() * 12) * z, ph: R0() * 6.28, i };
+});
+const PART_ALPHA = [[0, 0], [0.7, .65], [3.8, .75], [4.4, 1], [8, .9], [9.2, .45], [12.9, .26], [33.9, .18], [38.8, .38], [42.5, .5], [44, 1], [47, 1]];
+const ORB_A = [[0, 960, 540, 300, 0], [1.2, 960, 600, 520, .26], [4, 960, 540, 700, .5], [8, 960, 560, 900, .5], [9.2, 960, 620, 720, .3],
+  [12.9, 1480, 430, 820, .26], [33.9, 1400, 540, 820, .22], [38.8, 960, 540, 950, .26], [42.5, 960, 520, 900, .42], [47, 960, 520, 900, .42]];
+const ORB_B = [[0, 960, 540, 300, 0], [1.2, 1100, 500, 420, .2], [4, 1180, 420, 620, .42], [8, 1250, 420, 760, .38], [9.2, 1300, 700, 620, .22],
+  [12.9, 1700, 800, 700, .22], [33.9, 1650, 300, 700, .2], [38.8, 1300, 700, 800, .22], [42.5, 1150, 420, 760, .36], [47, 1150, 420, 760, .36]];
+
+function orb(x, y, r, a, c) {
+  if (a <= 0.001) return;
+  const gr = g.createRadialGradient(x, y, 0, x, y, r);
+  gr.addColorStop(0, `rgba(${c},${a})`); gr.addColorStop(1, `rgba(${c},0)`);
+  g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2);
+}
+
+function drawBG(t) {
+  g.globalCompositeOperation = 'source-over';
+  g.fillStyle = '#05060a'; g.fillRect(0, 0, W, H);
+  g.globalCompositeOperation = 'lighter';
+  const drift = t * 0.35;
+  const [ax, ay, ar, aa] = kf(ORB_A, t), [bx, by, br, ba] = kf(ORB_B, t);
+  orb(ax + Math.sin(drift) * 60, ay + Math.cos(drift * 0.8) * 40, ar, aa, '58,104,255');
+  orb(bx + Math.cos(drift * 0.9) * 70, by + Math.sin(drift * 1.1) * 50, br, ba, '146,92,255');
+
+  // 입자
+  const pa = kf(PART_ALPHA, t)[0];
+  const conv = E.inout(P(t, 42.5, 44.2));
+  for (const p of PARTS) {
+    let x = ((p.x + p.vx * t) % W + W) % W, y = ((p.y + p.vy * t) % H + H) % H;
+    if (conv > 0) {
+      const th = (p.i / PARTS.length) * Math.PI * 2 + t * 0.12 * (0.6 + p.z);
+      const rx = 700 + (p.z - 0.65) * 260, ry = 330 + (p.z - 0.65) * 120;
+      x = lerp(x, 960 + Math.cos(th) * rx, conv); y = lerp(y, 520 + Math.sin(th) * ry, conv);
+    }
+    const tw = 0.45 + 0.55 * Math.sin(t * 1.4 + p.ph);
+    const a = pa * (0.2 + 0.8 * p.z) * tw;
+    if (a < 0.01) continue;
+    g.fillStyle = `rgba(${p.z > 0.8 ? '200,215,255' : '150,170,255'},${a})`;
+    g.beginPath(); g.arc(x, y, 0.6 + p.z * 1.9, 0, 6.2832); g.fill();
+  }
+
+  // S1 빛줄기: 자라났다가 가운데 한 점으로 모인다
+  if (t < 4.1) {
+    const grow = E.expo(P(t, 0.2, 1.4)), col = E.inout(P(t, 3.45, 3.95));
+    const w = 700 * grow * (1 - col), y = lerp(790, 540, col);
+    if (w > 1) {
+      const lg = g.createLinearGradient(960 - w, 0, 960 + w, 0);
+      lg.addColorStop(0, 'rgba(90,130,255,0)'); lg.addColorStop(0.35, 'rgba(110,150,255,.9)');
+      lg.addColorStop(0.5, 'rgba(235,240,255,1)'); lg.addColorStop(0.65, 'rgba(170,120,255,.9)'); lg.addColorStop(1, 'rgba(160,110,255,0)');
+      g.fillStyle = lg; g.fillRect(960 - w, y - 1.5, w * 2, 3);
+      orb(960, y, 120 + 60 * col, 0.25 + 0.5 * col, '120,150,255');
+    }
+  }
+  // S2 폭발: 빛 원반과 퍼지는 고리
+  const bp = P(t, 3.95, 4.9);
+  if (bp > 0 && bp < 1) {
+    orb(960, 540, 200 + 700 * E.out(bp), 0.9 * Math.pow(1 - bp, 2), '190,205,255');
+    g.strokeStyle = `rgba(170,190,255,${0.9 * (1 - bp)})`; g.lineWidth = 3 * (1 - bp) + 0.5;
+    g.beginPath(); g.arc(960, 540, 40 + 1150 * E.out4(bp), 0, 6.2832); g.stroke();
+    const bp2 = P(t, 4.05, 5.1);
+    if (bp2 > 0) { g.strokeStyle = `rgba(190,140,255,${0.6 * (1 - bp2)})`; g.lineWidth = 2;
+      g.beginPath(); g.arc(960, 540, 30 + 820 * E.out4(bp2), 0, 6.2832); g.stroke(); }
+  }
+  g.globalCompositeOperation = 'source-over';
+}
+
+/* ============================================================ S1 도입 */
+function renderS1(t) {
+  const on = t < 4.3; show($('#s1'), on); if (!on) return;
+  $('#s1').style.opacity = 1;
+  const a = P(t, 0.45, 1.2), b = P(t, 1.15, 1.95), ex = E.inout(P(t, 3.45, 4.05));
+  st($('#s1a'), { y: 44 * (1 - E.out4(a)), op: E.out(a), blur: 16 * (1 - a) });
+  st($('#s1b'), { y: 44 * (1 - E.out4(b)), op: E.out(b), blur: 16 * (1 - b) });
+  $('#s1a').style.letterSpacing = `${lerp(0.04, -0.045, E.out4(a))}em`;
+  $('#s1b').style.letterSpacing = `${lerp(0.04, -0.045, E.out4(b))}em`;
+  st($('#hook'), { sc: 1 + 0.02 * P(t, 1.2, 3.45) + 0.14 * ex, op: 1 - ex, blur: 18 * ex });
+}
+
+/* ============================================================ S2 로고 */
+const WM = [...document.querySelectorAll('#wm > span')], SH = $('#sheen');
+function renderS2(t) {
+  const on = t > 3.9 && t < 8.6; show($('#s2'), on); if (!on) return;
+  $('#s2').style.opacity = 1;
+  const ls = lerp(0.42, 0.12, E.expo(P(t, 4.05, 5.3)));
+  $('#wm').style.letterSpacing = `${ls}em`; $('#wm').style.marginRight = `${-ls}em`;
+  SH.style.letterSpacing = `${ls}em`;
+  WM.forEach((s, i) => {
+    const p = P(t, 4.05 + i * 0.07, 4.7 + i * 0.07);
+    st(s, { y: 110 * (1 - E.back(p)), op: E.out(p), blur: 22 * (1 - p) });
+  });
+  const sp = P(t, 5.25, 6.1);
+  SH.style.opacity = sp > 0 && sp < 1 ? 1 : 0;
+  SH.style.backgroundPosition = `${lerp(130, -30, E.inout(sp))}% 0`;
+  const pl = P(t, 4.7, 5.35); st($('#plat'), { y: 30 * (1 - E.out4(pl)), op: E.out(pl) });
+  const tg = P(t, 5.55, 6.2); st($('#tag'), { y: 24 * (1 - E.out4(tg)), op: E.out(tg) });
+  const shake = P(t, 4.05, 4.45), amp = 9 * Math.pow(1 - shake, 2) * (shake > 0 ? 1 : 0);
+  const ex = E.inout(P(t, 7.8, 8.45));
+  st($('#logo'), { x: amp * Math.sin(t * 90), y: amp * Math.cos(t * 77) - 40 * ex, sc: 1 + 0.03 * P(t, 5.3, 7.8) - 0.55 * ex, op: 1 - ex, blur: 10 * ex });
+  st($('#tag'), { y: 24 * (1 - E.out4(tg)) + 40 * ex, op: E.out(tg) * (1 - ex) });
+}
+
+/* ============================================================ S3 연동 */
+const NODES = [
+  ['Sound', 'GAME AI', '#4d7cff', -150], ['3D', 'GAME AI', '#4d7cff', -110], ['SyncFace', 'GAME AI', '#4d7cff', -70],
+  ['Voice', 'MEDIA AI', '#35d4ff', -30], ['Translate', 'MEDIA AI', '#35d4ff', 30], ['Art Fashion', 'VISUAL AI', '#a36bff', 70],
+  ['Chatbot', 'CONTENT AI', '#ff6bb0', 110], ['Gentle Words', 'CONTENT AI', '#ff6bb0', 150],
+].map(([name, grp, c, deg], k) => {
+  const r = deg * Math.PI / 180, x = 960 + 700 * Math.cos(r), y = 610 + 300 * Math.sin(r);
+  const a = document.createElement('div'); a.className = 'anchor'; a.style.left = x + 'px'; a.style.top = y + 'px';
+  a.innerHTML = `<div class="node" style="--c:${c}"><i></i><b>${name}</b><em>${grp}</em></div>`;
+  $('#nodes').appendChild(a);
+  return { x, y, c, el: a.firstChild, k };
+});
+const net = $('#net').getContext('2d');
+function hexA(c, a) { const n = parseInt(c.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; }
+function renderS3(t) {
+  const on = t > 8.1 && t < 13.1; show($('#s3'), on); if (!on) return;
+  const zoom = E.inout(P(t, 12.3, 13.05)), sn = NODES[0];
+  $('#s3').style.transformOrigin = `${sn.x}px ${sn.y}px`;
+  st($('#s3'), { sc: 1 + 2.2 * zoom, op: P(t, 8.1, 8.4) * (1 - P(t, 12.6, 13.05)), blur: 8 * zoom });
+  const t1 = P(t, 8.45, 9.0), t2 = P(t, 8.7, 9.25);
+  st($('#s3t1'), { y: 36 * (1 - E.out4(t1)), op: E.out(t1), blur: 10 * (1 - t1) });
+  st($('#s3t2'), { y: 36 * (1 - E.out4(t2)), op: E.out(t2), blur: 10 * (1 - t2) });
+  const kp = P(t, 8.3, 8.85);
+  st($('#key'), { base: 'translate(-50%,-50%)', sc: 0.5 + 0.5 * E.back(kp), op: E.out(kp) });
+
+  net.clearRect(0, 0, W, H);
+  net.globalCompositeOperation = 'lighter';
+  for (const n of NODES) {
+    const lp = E.out(P(t, 8.95 + n.k * 0.1, 9.6 + n.k * 0.1));
+    const np = P(t, 9.45 + n.k * 0.1, 9.9 + n.k * 0.1);
+    st(n.el, { base: 'translate(-50%,-13px)', sc: 0.6 + 0.4 * E.back(np), op: E.out(np) });
+    if (lp <= 0) continue;
+    const ex = lerp(960, n.x, lp), ey = lerp(610, n.y, lp);
+    const lg = net.createLinearGradient(960, 610, n.x, n.y);
+    lg.addColorStop(0, 'rgba(160,180,255,.1)'); lg.addColorStop(1, hexA(n.c, 0.75));
+    net.strokeStyle = lg; net.lineWidth = 2.2;
+    net.beginPath(); net.moveTo(960, 610); net.lineTo(ex, ey); net.stroke();
+    if (lp >= 1) { // 선을 따라 흐르는 신호
+      for (let j = 0; j < 2; j++) {
+        const q = ((t - 9.6) * 0.7 + n.k * 0.13 + j * 0.5) % 1;
+        const px = lerp(960, n.x, q), py = lerp(610, n.y, q);
+        const gr = net.createRadialGradient(px, py, 0, px, py, 16);
+        gr.addColorStop(0, hexA(n.c, 0.95)); gr.addColorStop(1, hexA(n.c, 0));
+        net.fillStyle = gr; net.fillRect(px - 16, py - 16, 32, 32);
+      }
+    }
+  }
+  net.globalCompositeOperation = 'source-over';
+}
+
+/* ============================================================ S4 서비스 장면 */
+const bars = n => '<i></i>'.repeat(n);
+const VIS = {
+  sound: {
+    html: `<div class="vis v-sound" style="left:0;top:260px;width:890px;height:560px"><img src="assets/sound.jpg"><div class="shade"></div>
+      <div class="prompt"><span class="k">prompt</span><span class="v"></span><span class="caret"></span></div><div class="bars">${bars(72)}</div></div>`,
+    init(s) { s.v = { img: s.el.querySelector('.v-sound img'), txt: s.el.querySelector('.prompt .v'), car: s.el.querySelector('.prompt .caret'), bars: [...s.el.querySelectorAll('.bars i')] }; },
+    render(s, lt) {
+      s.v.img.style.transform = `scale(${1.12 - 0.1 * E.out(P(lt, 0, 3))})`;
+      const full = '비 내리는 숲', n = Math.round(P(lt, 0.5, 1.15) * full.length);
+      s.v.txt.textContent = `"${full.slice(0, n)}${n >= full.length ? '"' : ''}`;
+      s.v.car.style.opacity = lt < 1.6 && Math.floor(lt * 2.6) % 2 === 0 ? 1 : 0;
+      const r = P(lt, 1.1, 1.85) * 78;
+      s.v.bars.forEach((b, i) => {
+        const e = clamp((r - i) / 6);
+        const amp = (0.25 + 0.75 * noise(i * 0.2 + lt * 1.8, 3)) * (0.3 + 0.7 * noise(i * 0.06 - lt * 0.9, 7));
+        b.style.height = `${6 + amp * 215 * e}px`; b.style.opacity = 0.25 + 0.75 * e;
+      });
+    },
+  },
+  '3d': {
+    html: `<div class="vis v-3d" style="left:0;top:300px;width:890px;height:382px"><img class="base" src="assets/3d.jpg"><div class="grid"></div>
+      <img class="color" src="assets/3d.jpg"><div class="scan"></div></div>
+      <div class="pipe" style="top:718px"><span class="st">Highpoly 메시</span><span class="ar">→</span><span class="st">Remesh</span><span class="ar">→</span><span class="st">UV Unwrap</span><span class="ar">→</span><span class="st">Texture</span></div>`,
+    init(s) { s.v = { col: s.el.querySelector('img.color'), scan: s.el.querySelector('.scan'), imgs: [...s.el.querySelectorAll('.v-3d img')], steps: [...s.el.querySelectorAll('.pipe .st')], pipe: s.el.querySelector('.pipe') }; },
+    render(s, lt) {
+      const p = E.inout(P(lt, 0.75, 2.35));
+      s.v.col.style.clipPath = `inset(0 ${100 - p * 100}% 0 0)`;
+      s.v.scan.style.left = `${p * 890 - 1.5}px`; s.v.scan.style.opacity = p > 0.001 && p < 0.999 ? 1 : 0;
+      const zs = 1.08 - 0.08 * E.out(P(lt, 0, 3));
+      s.v.imgs.forEach(im => { im.style.transform = `scale(${zs})`; });
+      s.v.steps.forEach((el, j) => el.classList.toggle('on', lt > 0.75 && p >= j / 4 - 0.001));
+      const pp = P(lt, 0.4, 0.9); st(s.v.pipe, { y: 20 * (1 - E.out(pp)), op: E.out(pp) });
+    },
+  },
+  face: {
+    html: `<div class="vis v-face" style="left:0;top:190px;width:368px;height:700px"><img src="assets/face.jpg"></div>
+      <div class="vis card bs" style="left:400px;top:190px;width:490px;height:700px">
+        <div class="ph"><span>blendshapes.json</span><span class="fr"></span></div>
+        ${['jawOpen', 'mouthFunnel', 'mouthSmileLeft', 'mouthPucker', 'eyeBlinkLeft', 'browInnerUp'].map(n => `<div class="row"><span>${n}</span><div class="track"><i></i></div><em>0.00</em></div>`).join('')}
+        <div class="al">input · voice.wav</div><div class="aud">${bars(46)}</div></div>`,
+    init(s) { s.v = { img: s.el.querySelector('.v-face img'), fr: s.el.querySelector('.fr'), rows: [...s.el.querySelectorAll('.bs .row')].map(r => [r.querySelector('i'), r.querySelector('em')]), aud: [...s.el.querySelectorAll('.aud i')] }; },
+    render(s, lt) {
+      s.v.img.style.transform = `scale(${1.1 - 0.1 * E.out(P(lt, 0, 3))})`;
+      const go = P(lt, 0.55, 0.9);
+      const speech = x => Math.pow(noise(x * 7, 11), 1.4) * (0.35 + 0.65 * noise(x * 1.9, 12));
+      const A = speech(lt) * go;
+      const vals = [clamp(A * 1.25), clamp(noise(lt * 4.2, 21) * A * 1.3), (0.18 + 0.32 * noise(lt * 0.8, 22)) * go,
+        clamp(noise(lt * 5.1, 23) * 0.7 * A), ((lt % 1.7) < 0.13 ? 0.94 : 0.05) * go, (0.12 + 0.42 * noise(lt * 0.9, 24)) * go];
+      s.v.rows.forEach(([bar, em], i) => { bar.style.width = `${vals[i] * 100}%`; em.textContent = vals[i].toFixed(2); });
+      s.v.fr.textContent = `frame ${String(Math.max(0, Math.floor((lt - 0.55) * 30))).padStart(4, '0')}`;
+      s.v.aud.forEach((b, i) => { const a = speech(lt - (45 - i) * 0.035) * go; b.style.height = `${4 + a * 110}px`; });
+    },
+  },
+  voice: {
+    html: `<div class="vis card v-voice" style="left:0;top:270px;width:890px;height:540px">
+      <div class="vl"><span class="pl">Text To Speech</span><span class="ar2">→</span><span class="pl b">Voice Conversion</span></div>
+      <div class="vt"><span class="tx"></span><span class="caret"></span></div><div class="vb">${bars(96)}</div>
+      <div class="vs"><span class="a">Speaker A</span><span class="ar2">→</span><span class="bspk">Speaker B</span></div></div>`,
+    init(s) { s.v = { tx: s.el.querySelector('.vt .tx'), car: s.el.querySelector('.vt .caret'), bars: [...s.el.querySelectorAll('.vb i')], pb: s.el.querySelector('.pl.b'), pa: s.el.querySelector('.pl:not(.b)'), sb: s.el.querySelector('.bspk'), vs: s.el.querySelector('.vs') }; },
+    render(s, lt) {
+      const full = '오늘 밤, 성문이 열립니다.', n = Math.round(P(lt, 0.35, 1.05) * full.length);
+      s.v.tx.textContent = full.slice(0, n);
+      s.v.car.style.opacity = lt < 1.3 && Math.floor(lt * 2.6) % 2 === 0 ? 1 : 0;
+      const r = P(lt, 1.05, 1.75) * 104, m = E.inout(P(lt, 1.95, 2.5));
+      const col = rgb(mix([53, 212, 255], [163, 107, 255], m));
+      s.v.bars.forEach((b, i) => {
+        const e = clamp((r - i) / 8);
+        const syl = Math.pow(Math.abs(Math.sin(i * 0.26 + 0.4)), 0.7);
+        const ampA = syl * (0.35 + 0.65 * noise(i * 0.35 + lt * 2.2, 31));
+        const ampB = Math.pow(Math.abs(Math.sin(i * 0.21 + 1.1)), 0.6) * (0.4 + 0.6 * noise(i * 0.3 - lt * 2.6, 32));
+        b.style.height = `${5 + lerp(ampA, ampB * 1.1, m) * 180 * e}px`; b.style.background = col; b.style.opacity = 0.25 + 0.75 * e;
+      });
+      s.v.pb.style.opacity = 0.35 + 0.65 * m; s.v.pa.style.opacity = 1 - 0.55 * m;
+      s.v.vs.style.opacity = P(lt, 1.6, 1.9); s.v.sb.style.opacity = 0.3 + 0.7 * m;
+    },
+  },
+  chat: {
+    html: `<div class="vis card v-chat" style="left:55px;top:282px;width:780px;height:516px">
+      <div class="chhead"><span># global-chat</span><span class="live">LIVE</span></div><div class="msgs">
+      ${[['Lumi', 'EN', '#8fb0ff', 'GG! That was an amazing play', 'GG! 정말 멋진 플레이였어요'],
+         ['Sora', 'JA', '#7cf0c2', '次のレイド、一緒に行こう！', '다음 레이드, 같이 가요!'],
+         ['Diego', 'ES', '#ffd08a', '¡Gracias por la ayuda!', '도와줘서 고마워요!']].map(([nm, lg, c, o, tr]) =>
+        `<div class="msg"><div class="av" style="background:${c}">${nm[0]}</div><div class="mb"><div class="mn">${nm}<span class="lg">${lg} → KO</span></div><div class="orig">${o}</div><div class="trl">${tr}</div></div></div>`).join('')}
+      </div></div>`,
+    init(s) { s.v = { msgs: [...s.el.querySelectorAll('.msg')].map(m => [m, m.querySelector('.trl')]) }; },
+    render(s, lt) {
+      s.v.msgs.forEach(([m, tr], k) => {
+        const a = P(lt, 0.35 + k * 0.5, 0.75 + k * 0.5), b = P(lt, 0.7 + k * 0.5, 1.15 + k * 0.5);
+        st(m, { y: 26 * (1 - E.out4(a)), op: E.out(a) });
+        tr.style.clipPath = `inset(0 ${100 - E.out(b) * 100}% 0 0 round 14px)`; tr.style.opacity = b > 0 ? 1 : 0;
+      });
+    },
+  },
+  fashion: {
+    html: `<div class="vis v-fash" style="left:0;top:220px;width:890px;height:500px"><img src="assets/fashion.jpg"></div>
+      <div class="tags" style="top:752px">${['Virtual Try On', 'Accessories', 'Headswap', 'Eraser', 'Inpaint (Text)', 'Inpaint (Image)', 'Texture', 'Perspective', 'Graphic', 'Background', 'Upscale'].map(x => `<span class="tg">${x}</span>`).join('')}</div>`,
+    init(s) { s.v = { img: s.el.querySelector('.v-fash img'), tags: [...s.el.querySelectorAll('.tg')] }; },
+    render(s, lt) {
+      s.v.img.style.transform = `scale(${1.1 - 0.1 * E.out(P(lt, 0, 3))})`;
+      s.v.tags.forEach((el, i) => { const p = P(lt, 0.7 + i * 0.07, 1.05 + i * 0.07); st(el, { y: 18 * (1 - E.out(p)), sc: 0.85 + 0.15 * E.back(p), op: E.out(p) }); });
+    },
+  },
+  content: {
+    html: `<div class="vis card" style="left:0;top:225px;width:890px;height:300px">
+        <div class="kh"><span class="d"></span>VARCO Chat · FAQ</div>
+        <div class="bub u">게임 설치 방법이 궁금해요</div>
+        <div class="bub b"><span class="bt">설치 방법 FAQ를 안내해 드릴게요.</span></div></div>
+      <div class="vis card" style="left:0;top:555px;width:890px;height:300px">
+        <div class="kh"><span class="d"></span>Gentle Words</div>
+        <div class="gw" style="top:86px"><span class="tx">무료 다이아 지급!! 지금 접속 ▶ bit.ly/…</span><span class="bd x">스팸 차단</span></div>
+        <div class="gw" style="top:180px"><span class="tx">오늘 레이드 수고하셨어요!</span><span class="bd o">통과</span></div></div>`,
+    init(s) { s.v = { u: s.el.querySelector('.bub.u'), b: s.el.querySelector('.bub.b'), rows: [...s.el.querySelectorAll('.gw')].map(r => [r, r.querySelector('.tx'), r.querySelector('.bd')]) }; },
+    render(s, lt) {
+      const u = P(lt, 0.4, 0.75), b = P(lt, 0.95, 1.3);
+      st(s.v.u, { y: 20 * (1 - E.out4(u)), sc: 0.92 + 0.08 * E.back(u), op: E.out(u) });
+      st(s.v.b, { y: 20 * (1 - E.out4(b)), sc: 0.92 + 0.08 * E.back(b), op: E.out(b) });
+      s.v.rows.forEach(([row, tx, bd], k) => {
+        const a = P(lt, 0.6 + k * 0.35, 0.95 + k * 0.35), f = P(lt, 1.35 + k * 0.35, 1.6 + k * 0.35);
+        st(row, { x: 30 * (1 - E.out4(a)), op: E.out(a) });
+        st(bd, { sc: 0.6 + 0.4 * E.back(f), op: E.out(f) });
+        if (k === 0) { tx.style.opacity = 1 - 0.55 * f; tx.style.textDecoration = f > 0.3 ? 'line-through' : 'none'; }
+      });
+    },
+  },
+};
+
+const SC = [
+  { vis: 'sound', c: '#4d7cff', eb: 'GAME AI', title: 'Sound', desc: '텍스트 프롬프트로 효과음을 생성하고 변형, 루프, 스테레오 확장까지 처리합니다.', chips: ['Text to Sound', 'Variation', 'Looping', 'Mono to Stereo', 'Conversion', 'Enhance'] },
+  { vis: '3d', c: '#4d7cff', eb: 'GAME AI', title: '3D', desc: '이미지 한 장을 넣으면 3D 메시와 텍스처를 생성합니다.', chips: ['Image to 3D', 'Tri / Quad', 'Face 1,000 ~ 300,000', 'Diffuse · Normal Map'] },
+  { vis: 'face', c: '#4d7cff', eb: 'GAME AI', title: 'SyncFace', desc: '음성만으로 입술 움직임과 표정이 담긴 3D 얼굴 애니메이션을 만듭니다.', chips: ['Voice to Face', 'Blendshape JSON', 'Unreal Engine 플러그인'] },
+  { vis: 'voice', c: '#35d4ff', eb: 'MEDIA AI', title: 'Voice', desc: '실시간 응대용 고속 TTS와 연기형 TTS, 목소리만 바꾸는 음성 변환을 제공합니다.', chips: ['Text To Speech Lite', 'Text To Speech Standard', 'Voice Conversion', 'Voice Conversion Acting'] },
+  { vis: 'chat', c: '#35d4ff', eb: 'MEDIA AI', title: 'Translate', desc: '실시간 채팅과 라이브 환경에서 서로 다른 언어를 쓰는 이용자를 AI 번역으로 잇습니다.', chips: ['Chat Translation', 'Content Translation', '17+ 지원 언어'] },
+  { vis: 'fashion', c: '#a36bff', eb: 'VISUAL AI', title: 'Art Fashion', desc: '가상 피팅, 헤드스왑, 배경 교체, 업스케일까지 이미지 편집 API 11종을 제공합니다.', chips: ['Virtual Try On', 'Headswap', 'Background', 'Upscale', '+7'] },
+  { vis: 'content', c: '#ff6bb0', eb: 'CONTENT BIZ · PROTECTION AI', title: 'Chatbot<br>Gentle Words', ts: 104, desc: '챗봇으로 상담과 안내를 자동화하고, Gentle Words로 유해 표현과 스팸을 걸러 냅니다.', chips: ['FAQ 챗봇', 'CMS 지식 관리', '스팸 필터링', '유해 표현 감지'] },
+];
+SC.forEach((s, k) => {
+  s.a = 12.9 + k * 3.0; s.b = 3.1;
+  const el = document.createElement('div');
+  el.className = 'scene sc'; el.style.setProperty('--c', s.c); if (s.ts) el.style.setProperty('--ts', s.ts + 'px');
+  el.innerHTML = `<div class="left"><div class="eb"><span class="n">${String(k + 1).padStart(2, '0')}</span><span class="ln"></span><span>${s.eb}</span></div>
+    <div class="tt"><span>${s.title}</span></div><div class="ds">${s.desc}</div>
+    <div class="chips">${s.chips.map(c => `<span class="chip">${c}</span>`).join('')}</div></div><div class="right">${VIS[s.vis].html}</div>`;
+  $('#scs').appendChild(el); s.el = el;
+  s.q = { eb: el.querySelector('.eb'), tt: el.querySelector('.tt span'), ds: el.querySelector('.ds'), chips: [...el.querySelectorAll('.chip')], right: el.querySelector('.right') };
+  VIS[s.vis].init(s);
+});
+
+function renderLeft(q, lt) { // 왼쪽 글 묶음 등장
+  const pe = E.out4(P(lt, 0, 0.5)); st(q.eb, { x: -30 * (1 - pe), op: pe });
+  const pt = E.out4(P(lt, 0.08, 0.72)); q.tt.style.transform = `translateY(${(1 - pt) * 105}%)`;
+  const pd = E.out(P(lt, 0.35, 0.9)); st(q.ds, { y: 24 * (1 - pd), op: pd });
+  (q.chips || []).forEach((c, i) => { const p = P(lt, 0.55 + i * 0.06, 0.95 + i * 0.06); st(c, { y: 16 * (1 - E.out(p)), sc: 0.9 + 0.1 * E.back(p), op: E.out(p) }); });
+}
+function renderSC(s, t) {
+  const lt = t - s.a, on = lt > -0.02 && lt < s.b; show(s.el, on); if (!on) return;
+  const ex = E.inout(P(lt, s.b - 0.45, s.b));
+  st(s.el, { x: -140 * ex, op: 1 - ex });
+  renderLeft(s.q, lt);
+  const pr = E.out4(P(lt, 0.05, 0.85)); st(s.q.right, { x: 90 * (1 - pr), op: pr * 1.4, sc: 0.96 + 0.04 * pr });
+  VIS[s.vis].render(s, lt);
+}
+
+/* ============================================================ S5 개발자 */
+const CODE = [
+  [['$ ', 'p'], ['curl', 'c'], [' -X ', 'f'], ['POST', 'k'], [' \\', 'p']],
+  [['  https://openapi.ai.nc.com', 'u'], ['/sound/varco/v1/api/text2sound', 'u2'], [' \\', 'p']],
+  [['  -H ', 'f'], ['"OPENAPI_KEY: ••••••••••••••••"', 's'], [' \\', 'p']],
+  [['  -H ', 'f'], ['"Content-Type: application/json"', 's'], [' \\', 'p']],
+  [['  -d ', 'f'], [`'{"prompt": "비 내리는 숲", "num_sample": 3}'`, 's']],
+];
+const CODE_LEN = CODE.reduce((n, l) => n + l.reduce((m, [x]) => m + x.length, 0) + 1, 0);
+const esc = x => x.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+function codeHTML(n) {
+  let out = '', left = n;
+  for (const line of CODE) {
+    for (const [txt, cls] of line) { if (left <= 0) break; const part = txt.slice(0, left); left -= part.length; out += `<span class="tk-${cls}">${esc(part)}</span>`; }
+    if (left <= 0) break; out += '\n'; left -= 1;
+  }
+  return out;
+}
+const RESP = ['[', '  { "audio": "UklGRiSAAQBXQVZFZm10…" },', '  { "audio": "UklGRkT+AABXQVZFZm10…" },', '  { "audio": "UklGRtBqAQBXQVZFZm10…" }', ']'];
+$('#players').innerHTML = [0, 1, 2].map(i => `<div class="pw"><b></b><div class="w">${bars(22)}</div></div>`).join('');
+const S5 = { el: $('#s5'), q: { eb: $('#s5 .eb'), tt: $('#s5 .tt span'), ds: $('#s5 .ds'), chips: [] } };
+const PW = [...document.querySelectorAll('#players .pw')];
+function renderS5(t) {
+  const lt = t - 33.85, on = lt > -0.02 && lt < 5.05; show(S5.el, on); if (!on) return;
+  const ex = E.inout(P(lt, 4.6, 5.05)); st(S5.el, { x: -140 * ex, op: 1 - ex });
+  renderLeft(S5.q, lt);
+  const pe = E.out4(P(lt, 0.05, 0.8)); st($('#ed'), { x: 90 * (1 - pe), op: pe * 1.4 });
+  const n = Math.round(P(lt, 0.55, 2.45) * CODE_LEN);
+  $('#code').innerHTML = codeHTML(n) + (lt < 2.9 && Math.floor(lt * 2.6) % 2 === 0 ? '<span class="caret"></span>' : '');
+  const pr = P(lt, 2.6, 3.1); st($('#rs'), { y: 40 * (1 - E.out4(pr)), op: E.out(pr) });
+  const rl = Math.floor(P(lt, 2.8, 3.4) * RESP.length + 0.001);
+  $('#resp').textContent = RESP.slice(0, rl).join('\n');
+  PW.forEach((pw, i) => {
+    const p = P(lt, 3.1 + i * 0.15, 3.45 + i * 0.15); st(pw, { x: 20 * (1 - E.out(p)), op: E.out(p) });
+    [...pw.querySelectorAll('i')].forEach((b, j) => { b.style.height = `${4 + 24 * (0.2 + 0.8 * noise(j * 0.5 + i * 7 + lt * 2, 40 + i))}px`; });
+  });
+}
+
+/* ============================================================ S6 숫자 */
+const STATS = [
+  { n: 26, suf: '', lab: 'API', sub: '사운드 · 3D · 음성 · 번역 ·<br>이미지 편집 등' },
+  { n: 17, suf: '+', lab: '번역 지원 언어', sub: 'Chat Translation 기준' },
+  { n: 100, suf: '<small>만+</small>', lab: '동시접속 규모', sub: '대규모 실시간 채팅에서도<br>안정적인 번역' },
+  { n: 4, suf: '', lab: '플러그인 환경', sub: 'Unity · Unreal · VST3 · AAX' },
+];
+$('#stats').innerHTML = STATS.map(s => `<div class="stat"><div class="num grad"><span class="v">0</span>${s.suf}</div><div class="lab">${s.lab}</div><div class="sub">${s.sub}</div></div>`).join('');
+const STAT_EL = [...document.querySelectorAll('#stats .stat')];
+function renderS6(t) {
+  const lt = t - 38.8, on = lt > -0.02 && lt < 3.95; show($('#s6'), on); if (!on) return;
+  const ex = E.inout(P(lt, 3.5, 3.95));
+  st($('#s6'), { sc: 1 + 0.06 * ex, op: 1 - ex, blur: 8 * ex });
+  const h = P(lt, 0, 0.5); st($('#s6hd'), { y: 20 * (1 - E.out(h)), op: E.out(h) });
+  STAT_EL.forEach((el, i) => {
+    const p = P(lt, 0.2 + i * 0.14, 0.75 + i * 0.14), c = E.expo(P(lt, 0.25 + i * 0.14, 1.35 + i * 0.14));
+    st(el, { y: 40 * (1 - E.out4(p)), op: E.out(p) });
+    el.querySelector('.v').textContent = Math.round(STATS[i].n * c);
+  });
+  const f = P(lt, 1.5, 2.0); st($('#s6foot'), { y: 20 * (1 - E.out(f)), op: E.out(f) });
+}
+
+/* ============================================================ S7 마무리 */
+const WM2 = [...document.querySelectorAll('#wm2 > span')];
+function renderS7(t) {
+  const lt = t - 42.55, on = lt > -0.02; show($('#s7'), on); if (!on) return;
+  $('#s7').style.opacity = 1;
+  const ls = lerp(0.36, 0.12, E.expo(P(lt, 0.2, 1.3)));
+  $('#wm2').style.letterSpacing = `${ls}em`; $('#wm2').style.marginRight = `${-ls}em`;
+  WM2.forEach((s, i) => { const p = P(lt, 0.2 + i * 0.06, 0.8 + i * 0.06); st(s, { y: 80 * (1 - E.back(p)), op: E.out(p), blur: 18 * (1 - p) }); });
+  const pl = P(lt, 0.75, 1.3); st($('#plat2'), { y: 24 * (1 - E.out4(pl)), op: E.out(pl) });
+  st($('#end'), { sc: 1 + 0.025 * P(lt, 1, 4.4) });
+  const l = P(lt, 1.2, 1.8); st($('#endline'), { y: 24 * (1 - E.out4(l)), op: E.out(l) });
+  const u = P(lt, 1.7, 2.2); st($('#url'), { base: 'translateX(-50%)', y: 20 * (1 - E.out4(u)), sc: 0.9 + 0.1 * E.back(u), op: E.out(u) });
+  $('#fade').style.opacity = E.inout(P(t, 46.2, 47));
+}
+
+/* ============================================================ 재생 */
+function render(t) {
+  drawBG(t); renderS1(t); renderS2(t); renderS3(t);
+  SC.forEach(s => renderSC(s, t));
+  renderS5(t); renderS6(t); renderS7(t);
+}
+window.__seek = t => render(t);
+
+const capture = new URLSearchParams(location.search).has('capture');
+function fit() {
+  if (capture) return;
+  const s = Math.min(innerWidth / W, innerHeight / H);
+  const ss = $('#stage').style;
+  ss.transform = `scale(${s})`; ss.left = `${(innerWidth - W * s) / 2}px`; ss.top = `${(innerHeight - H * s) / 2}px`;
+}
+addEventListener('resize', fit); fit();
+
+async function ready() {
+  await document.fonts.ready;
+  await Promise.all([...document.images].map(im => im.decode().catch(() => {})));
+  render(0);
+  window.__ready = true;
+  if (capture) return;
+  let start = performance.now(), paused = false, pausedAt = 0;
+  addEventListener('keydown', e => {
+    if (e.code === 'Space') { paused = !paused; if (paused) pausedAt = performance.now(); else start += performance.now() - pausedAt; }
+  });
+  addEventListener('click', () => { start = performance.now(); paused = false; });
+  const loop = now => { if (!paused) render(((now - start) / 1000) % DUR); requestAnimationFrame(loop); };
+  requestAnimationFrame(loop);
+}
+ready();
+</script>
+</body>
+</html>

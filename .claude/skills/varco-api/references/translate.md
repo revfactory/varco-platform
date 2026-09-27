@@ -1,0 +1,198 @@
+# Translate API
+> 원문: api.varco.ai 문서(2026-09 수집). 가이드와 레퍼런스가 다르면 **레퍼런스를 기준으로 한다** (공식 안내: "엔드포인트 별 최신 버전은 항상 API Reference 페이지를 기준으로 확인").
+
+---
+
+# 제1부. 가이드
+
+---
+
+## [가이드] translate
+
+[API 레퍼런스 바로가기](https://api.varco.ai/ko/reference/translate?version=1)
+"Translation API" 하나로 Chat Translation, Content Translation 사용이 가능합니다.
+
+🙌[VARCO Translation(SaaS) 바로가기](https://translation.varco.ai/)🙌
+
+## Chat Translation
+VARCO Chat Translation API는 실시간 채팅과 라이브 환경에서 여러 언어로 대화하는 이용자들을 자연스럽게 이어주는 실시간 AI번역 서비스입니다.  
+방송, 커뮤니티, 게임, 라이브 커머스 등 다양한 콘텐츠 비즈니스에서 언어 장벽 없이 소통할 수 있는 환경을 제공합니다.
+
+[![서비스 적용 영상](https://img.youtube.com/vi/s0Mx_3-9i-U/0.jpg)](https://www.youtube.com/watch?v=s0Mx_3-9i-U)
+
+NC 게임의 채팅, 우편 영역에서 실시간 번역을 지원중입니다.
+
+### [주요 기능]
+대규모 실시간 채팅 환경에서 발생하는 메시지를 여러 언어로 동시에 번역합니다.  
+동시접속자 수 100만명 이상의 규모에서도 안정적인 속도와 품질을 유지하며 하나의 채팅 흐름 안에서 서로 다른 언어 사용자가 자연스럽게 대화할 수 있도록 지원합니다.
+
+**지원 언어**
+한국어, 영어, 일본어, 중국어(간체), 중국어(번체), 프랑스어, 독일어, 러시아어, 스페인어, 포르투갈어, 이탈리아어, 폴란드어, 베트남어, 태국어, 인니어, 타갈로그어, 힌디어 등
+※ 서비스 적용 환경에 맞춰 지원 언어 추가가 가능합니다.
+
+### [활용 시나리오]
+**게임, 라이브 방송**
+실시간 플레이·스트리밍 환경에서 여러 언어를 사용하는 이용자들의 대화를 즉시 번역하여, 글로벌 커뮤니티의 참여도를 높입니다.
+
+**라이브 커머스, 이벤트 방송, 팬 커뮤니티**
+국가별 시청자들이 동일한 흐름으로 소통할 수 있도록 채팅을 번역하여, 참여 기반 콘텐츠의 몰입도와 전환을 높입니다.
+
+**글로벌 서비스 CS**  
+고객의 문의를 CS 담당자들의 언어로 번역하여 언어 장벽으로 인한 CS 부담을 줄입니다.
+
+## Content Translation
+VARCO Content Translation API 는 영상, 게임, 기사, 스토리 등 다양한 콘텐츠를 여러 언어로 자연스럽게 옮겨주는 AI번역 서비스입니다.
+장르와 상황에 맞춰 맥락을 고려한 번역으로 다양한 도메인에서 글로벌 이용자에게 읽기 편하고 몰입도 높은 콘텐츠 경험을 제공합니다.
+
+[![서비스 소개 영상](https://img.youtube.com/vi/x2-kareqH4M/0.jpg)](https://youtu.be/x2-kareqH4M?si=0Lxce91BVF4XEH2h)
+VARCO Translation SaaS에 Content Translation API가 적용되어 있습니다.
+
+### [주요 기능]
+문장의 흐름과 상황을 이해하고, 콘텐츠 유형에 맞추어 표현을 조정합니다.
+인게임 텍스트, 공지, 기사, 스토리 등 다양한 형식을 지원하며, 장르와 도메인에 따라 스타일을 세밀하게 맞추어 번역합니다.
+
+**지원 언어**
+한국어, 영어, 일본어, 중국어(간체), 중국어(번체), 프랑스어, 독일어, 러시아어, 스페인어, 포르투갈어 등
+※ 서비스 적용 환경에 맞춰 지원 언어 추가가 가능합니다.
+
+**주요 도메인**
+게임, 미디어, 패션/뷰티, 뉴스 등
+
+### [활용 시나리오]
+**글로벌 게임 서비스**
+인게임 텍스트, 스토리 대사, 시스템 메시지, 공지, 이벤트 페이지, 패치노트 등
+라이브 서비스 전반에서 필요한 다국어 번역을 지원합니다.
+
+**미디어 현지화**
+영상 자막, 뉴스 기사, 칼럼, 인터뷰, 기획 콘텐츠 등
+미디어 특성에 맞추어 문맥과 톤을 조정한 현지화 번역을 제공합니다.
+
+**내러티브 콘텐츠**
+브랜드/세계관/캐릭터 등 고유 표현이 많은 콘텐츠에서 용어 일관성 유지를 보조합니다.
+ 
+
+ 
+## 용어관리도구
+**※ 12월 중 Beta 서비스 예정, Enterprise 전용**
+
+**용어 편집**
+원문, 대역어, 동의어, 예문 등 용어 정보를 시트 형태로 편집할 수 있습니다.
+추천 대역어를 선택해 최종 용어로 적용할 수 있으며 언어별 필드 구성도 자유롭게 설정할 수 있습니다.
+
+**용어 파일 업로드**
+파일을 업로드하여 많은 수의 용어를 일괄 등록하거나 수정할 수 있습니다.
+반복되는 대량 작업을 빠르게 처리할 수 있도록 구조화된 입력 방식을 제공합니다.
+
+**용어 추출**
+보유한 텍스트 파일을 분석하여 자주 등장하거나 중요도가 높은 단어를 자동으로 추출하고, 용어집에 바로 등록할 수 있도록 지원합니다.
+
+**버전/배포 관리**
+편집된 용어를 서비스 연동 환경으로 배포할 수 있으며 배포 버전과 적용 여부를 관리할 수 있습니다.
+
+**권한 관리**
+운영자, 작업자 등 역할별 권한을 설정하여 용어집 접근과 수정 범위를 제한할 수 있습니다.
+팀원 초대, 권한 변경 등 API 단위 협업을 지원합니다.
+
+---
+
+# 제2부. API 레퍼런스
+
+---
+
+## [레퍼런스] translate
+
+**POST** `/mt/chat-content/v1/translate`
+
+### Description
+
+### Translate API
+* 용어집(Terminology)을 활용해 입력 텍스트를 번역하는 API
+
+#### Inputs
+- `TID`: Transaction ID
+- `svc`: 서비스 코드
+- `provider`: 호출 분류
+- `source_lang`: 출발 언어 (e.g., 'ko', 'en', 'tw')
+- `source_text`: 원문 텍스트 (e.g., "안녕하세요")
+- `target_lang`: 도착 언어 (e.g., 'ko', 'en', 'tw')
+
+#### output
+- `TID`: Transaction ID
+- `svc`: 서비스 코드
+- `provider`: 호출 분류
+- `source_lang`: 출발 언어 (e.g., 'ko', 'en', 'tw')
+- `source_text`: 원문 텍스트 (e.g., "안녕하세요")
+- `target_lang`: 도착 언어 (e.g., 'ko', 'en', 'tw')
+- `target_text`: 번역 결과 (e.g., "Hello")
+
+##### Header Parameters
+
+| Name | Type | Description | Required |
+| --- | --- | --- | --- |
+| `openapi_key` | string | OpenAPI Key | Yes |
+
+##### Body Parameters application/json
+
+| Name | Type | Description | Default | Possible values | Required |
+|---|---|---|---|---|---|
+| `TID` | string | Transaction ID | - | | Yes |
+| `svc` | string | 서비스 코드 | varco-translation | | Yes |
+| `provider` | string | 호출 분류 | - | chat, content | No |
+| `source_lang` | string | 입력 언어 | - | ko, en, ja, tw, cn, de, ru, es, pt, fr | No |
+| `source_text` | string | 입력 텍스트 | - | 입력 텍스트 | Yes |
+| `target_lang` | string | 출력 언어 | - | | Yes |
+
+### Responses
+| Code | Description |
+| ---- | ----------- |
+| `200` | Successful Response |
+| `401` | Unauthorized |
+| `500` | Bad Request |
+
+### Request
+
+##### Example - Request
+
+```json
+{
+    "TID": "00000000-0000-0000-0000-00000000000",
+    "svc": "varco-translation",
+    "provider": "content",
+    "source_lang": "en",
+    "source_text": "lets eat lunch",
+    "target_lang": "ko"
+}
+```
+ 
+---
+
+### Response
+
+#### Example - Response 200 application/json
+
+```json
+{
+    "TID": "00000000-0000-0000-0000-00000000000",
+    "target_lang": "ko",
+    "source_lang": "en",
+    "svc": "varco-translation",
+    "provider": "content",
+    "source_text": "lets eat lunch",
+    "target_text": "점심 먹읍시다",
+}
+```
+
+#### Example - Response 401
+
+```json
+{
+    "message": "Unauthorized",
+    "request_id": "eb7e214a7db6db54ef13fc6f2fa62f22"
+}
+```
+
+#### Example - Response 500
+
+```json
+"call MT Controller failed"
+```

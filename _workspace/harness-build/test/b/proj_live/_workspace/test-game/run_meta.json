@@ -1,0 +1,1 @@
+{"slug": "test-game", "engine": "web", "varco_mode": "live", "budget_credits": 1000, "approved_scope": "all", "source_lang": "ko", "target_langs": ["en", "ja"], "voice_langs": ["korean"], "gates": "confirm", "phases_done": ["01"]}

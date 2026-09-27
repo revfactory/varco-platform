@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>VARCO API Platform 레퍼런스 매뉴얼</title>
+<style>
+@font-face { font-family: "BookSans"; font-weight: 400; src: url("fonts/Pretendard-Regular.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 500; src: url("fonts/Pretendard-Medium.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 600; src: url("fonts/Pretendard-SemiBold.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 700; src: url("fonts/Pretendard-Bold.ttf"); }
+@font-face { font-family: "BookSans"; font-weight: 800; src: url("fonts/Pretendard-ExtraBold.ttf"); }
+@page { size: A4; }
+:root {
+  --ink: #15181e;
+  --ink-2: #3a404a;
+  --muted: #697180;
+  --faint: #9aa1ac;
+  --line: #e2e5ea;
+  --line-2: #cdd2d9;
+  --soft: #f5f6f8;
+  --accent: #2f5bea;
+  --accent-soft: #eef2fe;
+  --mono: "SF Mono", Menlo, Monaco, "BookSans", monospace;
+}
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  font-family: "BookSans", "Apple SD Gothic Neo", sans-serif;
+  font-size: 9.6pt;
+  line-height: 1.72;
+  color: var(--ink);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+a { color: var(--accent); text-decoration: none; }
+.pre { color: var(--muted); font-weight: 500; }
+
+/* ---------- 목차 ---------- */
+.front-title { font-size: 22pt; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 6mm; }
+.toc { break-after: page; }
+.toc-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 9mm; }
+.toc-col { list-style: none; margin: 0; padding: 0; }
+.toc a { display: flex; align-items: baseline; gap: 1.6mm; color: var(--ink); }
+.toc .t { flex: none; max-width: 70mm; }
+.toc .dots { flex: 1; border-bottom: 1px dotted var(--line-2); transform: translateY(-0.8mm); min-width: 4mm; }
+.toc .pg { flex: none; font-variant-numeric: tabular-nums; min-width: 6mm; text-align: right; color: var(--ink-2); }
+.toc-sec { font-size: 12pt; font-weight: 800; padding-bottom: 2mm; margin-bottom: 1.2mm; border-bottom: 1.5px solid var(--ink); }
+.toc-sec .no { color: var(--accent); font-size: 9pt; font-weight: 700; flex: none; }
+.toc-sec .pg { color: var(--ink); font-size: 9.6pt; }
+.toc-sec .dots { border: 0; }
+.toc-grp { font-size: 8.8pt; font-weight: 700; margin-top: 2.4mm; line-height: 1.7; }
+.toc-ch { font-size: 8.6pt; padding-left: 4mm; line-height: 1.62; color: var(--ink-2); }
+
+/* ---------- 일러두기 ---------- */
+.notes { break-after: page; }
+.notes ol { margin: 0; padding-left: 5mm; font-size: 10pt; line-height: 1.85; color: var(--ink-2); }
+.notes li { margin-bottom: 3.2mm; padding-left: 1mm; }
+
+/* ---------- 부 표지 ---------- */
+.sec-div { break-before: page; break-after: page; padding-top: 48mm; }
+.sec-title { font-size: 36pt; font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin: 0; }
+.sec-no { display: block; font-size: 10pt; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 3mm; }
+.sec-title::after { content: ""; display: block; width: 16mm; height: 1.2mm; background: var(--accent); margin: 7mm 0 6mm; border-radius: 1mm; }
+.sec-desc { font-size: 11pt; color: var(--ink-2); margin: 0 0 11mm; }
+.ov { border-top: 1px solid var(--line); }
+.ov-row { display: grid; grid-template-columns: 42mm 1fr; column-gap: 5mm; padding: 2.6mm 0; border-bottom: 1px solid var(--line); font-size: 9pt; line-height: 1.6; }
+.ov-grp { font-weight: 700; }
+.ov-chs { color: var(--ink-2); }
+.ov-chs a { color: var(--ink-2); }
+.ov-line + .ov-line { margin-top: 0.8mm; }
+.ov-sub { display: inline-block; min-width: 24mm; font-weight: 600; color: var(--muted); }
+
+/* ---------- 장 ---------- */
+.chapter { break-before: page; }
+.ch-head { border-bottom: 2px solid var(--ink); padding-bottom: 3.5mm; margin-bottom: 7mm; }
+.crumb { font-size: 8.6pt; font-weight: 700; letter-spacing: 0.03em; color: var(--accent); line-height: 1.5; }
+.crumb .grp { display: inline; font: inherit; letter-spacing: inherit; margin: 0; color: inherit; }
+.crumb .grp-sub { color: var(--faint); }
+.ch-title { font-size: 23pt; font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; margin: 1.2mm 0 1.8mm; }
+.ch-title .pre { font-weight: 600; color: var(--faint); }
+.src { font-size: 7.8pt; color: var(--faint); }
+.src a { color: var(--muted); }
+
+/* ---------- 본문 ---------- */
+.doc > :first-child { margin-top: 0; }
+.doc h4 { font-size: 14pt; font-weight: 700; letter-spacing: -0.015em; line-height: 1.4; margin: 8.5mm 0 2.5mm; break-after: avoid; }
+.doc h5 { font-size: 11.6pt; font-weight: 700; line-height: 1.45; margin: 6.5mm 0 2mm; break-after: avoid; }
+.doc h6 { font-size: 10.2pt; font-weight: 700; color: var(--ink); margin: 5mm 0 1.5mm; break-after: avoid; }
+.doc p { margin: 0 0 3mm; }
+.doc ul, .doc ol { margin: 0 0 3.2mm; padding-left: 6mm; }
+.doc li { margin: 0.7mm 0; }
+.doc li > p { margin-bottom: 1.5mm; }
+.doc hr { border: 0; border-top: 1px solid var(--line); margin: 7mm 0; }
+.doc blockquote { margin: 2mm 0 3.5mm; padding: 2mm 4mm; border-left: 3px solid var(--accent); background: var(--accent-soft); color: var(--ink-2); border-radius: 0 4px 4px 0; }
+.doc blockquote > :last-child { margin-bottom: 0; }
+.doc strong, .doc b { font-weight: 700; }
+.doc code { font-family: var(--mono); font-size: 0.86em; background: var(--soft); border: 1px solid var(--line); border-radius: 3px; padding: 0.05em 0.35em; word-break: break-all; }
+.doc pre {
+  font-family: var(--mono); font-size: 7.7pt; line-height: 1.58;
+  background: #f7f8fa; border: 1px solid var(--line); border-radius: 5px;
+  padding: 3mm 3.6mm; margin: 0 0 3.8mm;
+  white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere;
+}
+.doc pre code { background: none; border: 0; padding: 0; font-size: inherit; word-break: normal; }
+.doc div.sourceCode { margin: 0 0 3.8mm; }
+.doc div.sourceCode pre { margin: 0; }
+/* API 레퍼런스의 메서드·형식 배지(원문 인라인 스타일) */
+.doc p > span[style] { vertical-align: middle; line-height: 1.5; }
+
+/* 코드 색 */
+code span.kw, code span.cf, code span.im { color: #c2185b; }
+code span.dt, code span.at { color: #6f42c1; }
+code span.dv, code span.bn, code span.fl, code span.cn { color: #0b6bcb; }
+code span.st, code span.ch, code span.ss, code span.vs, code span.sc { color: #1a7f37; }
+code span.co, code span.do, code span.an, code span.cv, code span.in { color: #8a919c; font-style: italic; }
+code span.fu, code span.bu { color: #8250df; }
+code span.va { color: #953800; }
+code span.op, code span.ot { color: var(--ink-2); }
+code span.er, code span.al { color: #cf222e; }
+
+/* 표 */
+.doc table { width: 100%; border-collapse: collapse; margin: 1mm 0 4.5mm; font-size: 8.7pt; line-height: 1.55; }
+.doc th, .doc td { border-bottom: 1px solid var(--line); padding: 2mm 2.6mm; text-align: left; vertical-align: top; }
+.doc thead th { background: var(--soft); font-weight: 700; border-bottom: 1.5px solid var(--line-2); }
+.doc tr { break-inside: avoid; }
+.doc td[align="center"], .doc th[align="center"] { text-align: center; }
+.doc td > :last-child { margin-bottom: 0; }
+.doc td h4, .doc td h5, .doc td h6 { font-size: 10.6pt; margin: 0 0 1.5mm; color: var(--ink); }
+.doc td code { word-break: normal; }
+.num { text-align: right !important; font-variant-numeric: tabular-nums; }
+
+/* 이미지 */
+.doc img { max-width: 100%; max-height: 170mm; height: auto; vertical-align: middle; break-inside: avoid; }
+.doc img:not(.badge) { border: 1px solid var(--line); border-radius: 4px; }
+.doc p:has(> img:not(.badge)), .doc p:has(> a > img:not(.badge)) { text-align: center; }
+.doc img.badge { border: 0; height: 5.2mm; margin: 0.4mm 0.6mm 0.4mm 0; }
+.doc li img:not(.badge) { display: block; margin: 2mm 0 2.5mm; }
+
+/* 오디오·영상 */
+.media-card {
+  display: inline-flex; align-items: center; gap: 1.8mm;
+  border: 1px solid var(--line); background: var(--soft); border-radius: 999px;
+  padding: 0.8mm 3mm 0.8mm 1mm; margin: 1mm 0;
+  font-size: 8pt; line-height: 1.4; color: var(--ink-2); word-break: break-all;
+}
+.media-card .ico {
+  flex: none; width: 5mm; height: 5mm; border-radius: 50%;
+  background: var(--accent); color: #fff; font-size: 7.5pt;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.media-card .k { font-weight: 700; color: var(--ink); margin-right: 1.4mm; }
+figure.video { margin: 2mm auto 5mm; width: 125mm; break-inside: avoid; }
+figure.video .video-link { position: relative; display: block; }
+figure.video img.poster { width: 100%; display: block; border-radius: 5px; border: 0; }
+.video-link::before, a.yt::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 13mm; height: 13mm; margin: -6.5mm 0 0 -6.5mm;
+  border-radius: 50%; background: rgba(15, 17, 22, 0.62);
+}
+.video-link::after, a.yt::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  margin: -2.8mm 0 0 -1.6mm;
+  border-left: 4.6mm solid #fff; border-top: 2.8mm solid transparent; border-bottom: 2.8mm solid transparent;
+}
+figure.video figcaption { font-size: 8pt; color: var(--muted); margin-top: 1.8mm; text-align: center; }
+a.yt { position: relative; display: inline-block; }
+a.yt img { display: block; }
+td a.yt::before { width: 8mm; height: 8mm; margin: -4mm 0 0 -4mm; }
+td a.yt::after { margin: -1.7mm 0 0 -1mm; border-left-width: 2.9mm; border-top-width: 1.7mm; border-bottom-width: 1.7mm; }
+
+/* 요금표 */
+.pricing { margin-top: 9mm; }
+.pricing.keep { break-inside: avoid; }
+.pricing h4, .pricing > p { break-after: avoid; }
+
+/* API 레퍼런스: 표 위주라 간격을 좁혀 한 API가 되도록 한두 쪽 안에 들어가게 한다 */
+.chapter.reference .ch-head { margin-bottom: 5mm; }
+.chapter.reference .doc { font-size: 9pt; line-height: 1.6; }
+.chapter.reference .doc h4 { font-size: 12pt; margin: 5mm 0 1.6mm; }
+.chapter.reference .doc h5 { font-size: 10.6pt; margin: 4mm 0 1.4mm; }
+.chapter.reference .doc h6 { font-size: 9.8pt; margin: 3.5mm 0 1.2mm; }
+.chapter.reference .doc p { margin-bottom: 2mm; }
+.chapter.reference .doc ul, .chapter.reference .doc ol { margin-bottom: 2.4mm; }
+.chapter.reference .doc table { font-size: 8.1pt; line-height: 1.45; margin-bottom: 3mm; }
+.chapter.reference .doc th, .chapter.reference .doc td { padding: 1.25mm 2.2mm; }
+.chapter.reference .doc pre { padding: 2.2mm 3mm; margin-bottom: 3mm; }
+
+/* 쪽 나눔 */
+.doc pre[data-keep] { break-inside: avoid; }
+.doc p:has(+ div.sourceCode), .doc p:has(+ pre), .doc p:has(+ table) { break-after: avoid; }
+/* 웹 화면용 여백 div(height 지정)는 인쇄에서 짧게 줄인다 */
+.doc div[style*="height"] { height: 3mm !important; }
+</style>
+</head>
+<body>
+
+<section class="toc">
+  <div class="front-title">목차</div>
+  <div class="toc-grid">
+{{TOC}}
+  </div>
+</section>
+
+<section class="notes">
+  <div class="front-title">일러두기</div>
+  <ol>
+    <li>이 책자는 VARCO API Platform 사이트(<a href="https://api.varco.ai/ko">api.varco.ai</a>)에 공개된 한국어 문서를 2026년 9월 28일에 내려받아 엮은 참고용 사본입니다. 제1부에 도큐먼트 {{N_DOCS}}편, 제2부에 API 레퍼런스 {{N_REF}}편을 실었습니다.</li>
+    <li>원문은 그 뒤에 바뀌었을 수 있습니다. 최신 내용은 각 장 제목 아래에 적은 원문 주소에서 확인하시기 바랍니다.</li>
+    <li>순서와 묶음은 사이트 왼쪽 메뉴를 따랐고, 메뉴의 묶음 이름은 각 장 맨 위에 적었습니다. 도큐먼트에서 서비스별로 한 번 더 묶인 문서는 장 제목 앞에 서비스 이름을 붙였습니다. 예를 들어 Sound 묶음의 Conversion 문서는 <b style="white-space:nowrap">Sound · Conversion</b>으로 적었습니다.</li>
+    <li>도큐먼트 장 끝의 요금표는 사이트가 문서와 함께 보여 주는 요금 정보를 같은 날 기준으로 옮긴 것입니다.</li>
+    <li>오디오와 영상은 종이에서 재생할 수 없어 링크로 바꿨습니다. 영상은 한 장면을 캡처해 미리보기로 넣었습니다. PDF 뷰어에서 링크나 미리보기를 누르면 원본 파일이 열립니다.</li>
+    <li>문서끼리 가리키는 링크는 이 책자 안의 해당 장으로 이동합니다. 이 책자에 싣지 않은 페이지로 가는 링크는 사이트로 연결됩니다.</li>
+    <li>원문의 표기와 오탈자는 고치지 않았습니다.</li>
+  </ol>
+</section>
+
+{{BODY}}
+
+</body>
+</html>

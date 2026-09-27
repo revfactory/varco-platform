@@ -1,0 +1,16 @@
+{
+  "api": "sound.text2sound",
+  "method": "POST",
+  "url": "https://openapi.ai.nc.com/sound/varco/v1/api/text2sound",
+  "headers": {
+    "OPENAPI_KEY": "<redacted>"
+  },
+  "body": {
+    "prompt": "steady rain falling on forest leaves, distant thunder",
+    "num_sample": 2,
+    "version": "v2"
+  },
+  "intended_output": "_workspace/harness-build/e2e/_ws/03_sound_raw/amb_rain_forest_t2s.wav",
+  "est_credits": 25,
+  "price_note": "25/호출"
+}

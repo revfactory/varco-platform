@@ -1,0 +1,1 @@
+{"clear_time_s":{"stat":"median","min":20,"max":60},"deaths":{"stat":"mean","max":0.5},"max_ttk_s":{"stat":"p90","max":30}}

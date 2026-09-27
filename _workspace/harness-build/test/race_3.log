@@ -1,0 +1,13 @@
+{
+  "ts": "2026-09-28T06:06:55+09:00",
+  "asset_id": "race3",
+  "api": "sound.looping",
+  "est_credits": 150,
+  "price_known": true,
+  "price_note": "150/호출",
+  "mode": "live",
+  "ok": false,
+  "error": "예산 초과: 사용·예약 300 + 이번 150 > 예산 400.0",
+  "spent": 300,
+  "unknown_price_calls": 0
+}
