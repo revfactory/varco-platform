@@ -1,0 +1,899 @@
+{
+ "bpm": 120,
+ "beat": 0.5,
+ "duration": 60.0,
+ "prompt": "무너지는 금고에서 코인을 모아 탈출하는 웹게임 만들어줘",
+ "typing": [
+  0.52,
+  0.627,
+  0.734,
+  0.774,
+  0.901,
+  0.988,
+  1.029,
+  1.135,
+  1.242,
+  1.303,
+  1.39,
+  1.43,
+  1.537,
+  1.664,
+  1.685,
+  1.791,
+  1.918,
+  1.939,
+  2.046,
+  2.152,
+  2.193,
+  2.32,
+  2.341,
+  2.447,
+  2.554,
+  2.615,
+  2.702,
+  2.808,
+  2.849,
+  2.956
+ ],
+ "sections": [
+  {
+   "name": "cold_open",
+   "start": 0.0,
+   "end": 4.0,
+   "energy": 0.15,
+   "color": "#C8FF3D"
+  },
+  {
+   "name": "title",
+   "start": 4.0,
+   "end": 8.0,
+   "energy": 0.55,
+   "color": "#FFFFFF"
+  },
+  {
+   "name": "team",
+   "start": 8.0,
+   "end": 14.0,
+   "energy": 0.65,
+   "color": "#9D7BFF"
+  },
+  {
+   "name": "plan",
+   "start": 14.0,
+   "end": 22.0,
+   "energy": 0.7,
+   "color": "#9D7BFF"
+  },
+  {
+   "name": "spec",
+   "start": 22.0,
+   "end": 26.0,
+   "energy": 0.75,
+   "color": "#FFB938"
+  },
+  {
+   "name": "produce",
+   "start": 26.0,
+   "end": 36.0,
+   "energy": 1.0,
+   "color": "#2EE6FF"
+  },
+  {
+   "name": "develop",
+   "start": 36.0,
+   "end": 46.0,
+   "energy": 0.85,
+   "color": "#C8FF3D"
+  },
+  {
+   "name": "release",
+   "start": 46.0,
+   "end": 52.0,
+   "energy": 0.9,
+   "color": "#FF5E62"
+  },
+  {
+   "name": "outro",
+   "start": 52.0,
+   "end": 60.0,
+   "energy": 0.8,
+   "color": "#FFFFFF"
+  }
+ ],
+ "events": [
+  {
+   "t": 0.52,
+   "kind": "key",
+   "ch": "무",
+   "space": false
+  },
+  {
+   "t": 0.627,
+   "kind": "key",
+   "ch": "너",
+   "space": false
+  },
+  {
+   "t": 0.734,
+   "kind": "key",
+   "ch": "지",
+   "space": false
+  },
+  {
+   "t": 0.774,
+   "kind": "key",
+   "ch": "는",
+   "space": false
+  },
+  {
+   "t": 0.901,
+   "kind": "key",
+   "ch": " ",
+   "space": true
+  },
+  {
+   "t": 0.988,
+   "kind": "key",
+   "ch": "금",
+   "space": false
+  },
+  {
+   "t": 1.029,
+   "kind": "key",
+   "ch": "고",
+   "space": false
+  },
+  {
+   "t": 1.135,
+   "kind": "key",
+   "ch": "에",
+   "space": false
+  },
+  {
+   "t": 1.242,
+   "kind": "key",
+   "ch": "서",
+   "space": false
+  },
+  {
+   "t": 1.303,
+   "kind": "key",
+   "ch": " ",
+   "space": true
+  },
+  {
+   "t": 1.39,
+   "kind": "key",
+   "ch": "코",
+   "space": false
+  },
+  {
+   "t": 1.43,
+   "kind": "key",
+   "ch": "인",
+   "space": false
+  },
+  {
+   "t": 1.537,
+   "kind": "key",
+   "ch": "을",
+   "space": false
+  },
+  {
+   "t": 1.664,
+   "kind": "key",
+   "ch": " ",
+   "space": true
+  },
+  {
+   "t": 1.685,
+   "kind": "key",
+   "ch": "모",
+   "space": false
+  },
+  {
+   "t": 1.791,
+   "kind": "key",
+   "ch": "아",
+   "space": false
+  },
+  {
+   "t": 1.918,
+   "kind": "key",
+   "ch": " ",
+   "space": true
+  },
+  {
+   "t": 1.939,
+   "kind": "key",
+   "ch": "탈",
+   "space": false
+  },
+  {
+   "t": 2.046,
+   "kind": "key",
+   "ch": "출",
+   "space": false
+  },
+  {
+   "t": 2.152,
+   "kind": "key",
+   "ch": "하",
+   "space": false
+  },
+  {
+   "t": 2.193,
+   "kind": "key",
+   "ch": "는",
+   "space": false
+  },
+  {
+   "t": 2.32,
+   "kind": "key",
+   "ch": " ",
+   "space": true
+  },
+  {
+   "t": 2.341,
+   "kind": "key",
+   "ch": "웹",
+   "space": false
+  },
+  {
+   "t": 2.447,
+   "kind": "key",
+   "ch": "게",
+   "space": false
+  },
+  {
+   "t": 2.554,
+   "kind": "key",
+   "ch": "임",
+   "space": false
+  },
+  {
+   "t": 2.615,
+   "kind": "key",
+   "ch": " ",
+   "space": true
+  },
+  {
+   "t": 2.702,
+   "kind": "key",
+   "ch": "만",
+   "space": false
+  },
+  {
+   "t": 2.808,
+   "kind": "key",
+   "ch": "들",
+   "space": false
+  },
+  {
+   "t": 2.849,
+   "kind": "key",
+   "ch": "어",
+   "space": false
+  },
+  {
+   "t": 2.956,
+   "kind": "key",
+   "ch": "줘",
+   "space": false
+  },
+  {
+   "t": 3.45,
+   "kind": "enter"
+  },
+  {
+   "t": 3.5,
+   "kind": "riser",
+   "dur": 0.5,
+   "size": "small"
+  },
+  {
+   "t": 3.75,
+   "kind": "whoosh"
+  },
+  {
+   "t": 4.0,
+   "kind": "impact",
+   "size": "big"
+  },
+  {
+   "t": 4.0,
+   "kind": "slam"
+  },
+  {
+   "t": 5.0,
+   "kind": "slam"
+  },
+  {
+   "t": 6.0,
+   "kind": "slam"
+  },
+  {
+   "t": 6.0,
+   "kind": "glitch"
+  },
+  {
+   "t": 6.5,
+   "kind": "riser",
+   "dur": 1.5,
+   "size": "mid"
+  },
+  {
+   "t": 7.0,
+   "kind": "shimmer"
+  },
+  {
+   "t": 7.75,
+   "kind": "whoosh"
+  },
+  {
+   "t": 8.0,
+   "kind": "pop",
+   "idx": 0
+  },
+  {
+   "t": 8.0,
+   "kind": "impact",
+   "size": "mid"
+  },
+  {
+   "t": 8.125,
+   "kind": "pop",
+   "idx": 1
+  },
+  {
+   "t": 8.25,
+   "kind": "pop",
+   "idx": 2
+  },
+  {
+   "t": 8.375,
+   "kind": "pop",
+   "idx": 3
+  },
+  {
+   "t": 8.5,
+   "kind": "pop",
+   "idx": 4
+  },
+  {
+   "t": 8.625,
+   "kind": "pop",
+   "idx": 5
+  },
+  {
+   "t": 8.75,
+   "kind": "pop",
+   "idx": 6
+  },
+  {
+   "t": 8.875,
+   "kind": "pop",
+   "idx": 7
+  },
+  {
+   "t": 9.0,
+   "kind": "pop",
+   "idx": 8
+  },
+  {
+   "t": 9.125,
+   "kind": "pop",
+   "idx": 9
+  },
+  {
+   "t": 9.25,
+   "kind": "pop",
+   "idx": 10
+  },
+  {
+   "t": 9.375,
+   "kind": "pop",
+   "idx": 11
+  },
+  {
+   "t": 9.5,
+   "kind": "pop",
+   "idx": 12
+  },
+  {
+   "t": 9.625,
+   "kind": "pop",
+   "idx": 13
+  },
+  {
+   "t": 9.75,
+   "kind": "pop",
+   "idx": 14
+  },
+  {
+   "t": 10.0,
+   "kind": "tick"
+  },
+  {
+   "t": 10.25,
+   "kind": "tick"
+  },
+  {
+   "t": 10.5,
+   "kind": "tick"
+  },
+  {
+   "t": 10.75,
+   "kind": "tick"
+  },
+  {
+   "t": 11.0,
+   "kind": "tick"
+  },
+  {
+   "t": 11.25,
+   "kind": "tick"
+  },
+  {
+   "t": 11.5,
+   "kind": "tick"
+  },
+  {
+   "t": 11.75,
+   "kind": "tick"
+  },
+  {
+   "t": 12.0,
+   "kind": "sweep"
+  },
+  {
+   "t": 13.75,
+   "kind": "whoosh"
+  },
+  {
+   "t": 14.0,
+   "kind": "impact",
+   "size": "mid"
+  },
+  {
+   "t": 16.0,
+   "kind": "card",
+   "idx": 0
+  },
+  {
+   "t": 16.25,
+   "kind": "card",
+   "idx": 1
+  },
+  {
+   "t": 16.5,
+   "kind": "card",
+   "idx": 2
+  },
+  {
+   "t": 16.75,
+   "kind": "card",
+   "idx": 3
+  },
+  {
+   "t": 17.0,
+   "kind": "card",
+   "idx": 4
+  },
+  {
+   "t": 18.0,
+   "kind": "packet",
+   "idx": 0
+  },
+  {
+   "t": 18.25,
+   "kind": "packet",
+   "idx": 4
+  },
+  {
+   "t": 18.5,
+   "kind": "packet",
+   "idx": 1
+  },
+  {
+   "t": 18.75,
+   "kind": "packet",
+   "idx": 5
+  },
+  {
+   "t": 19.0,
+   "kind": "packet",
+   "idx": 2
+  },
+  {
+   "t": 19.25,
+   "kind": "packet",
+   "idx": 6
+  },
+  {
+   "t": 19.5,
+   "kind": "packet",
+   "idx": 3
+  },
+  {
+   "t": 19.5,
+   "kind": "confirm"
+  },
+  {
+   "t": 20.5,
+   "kind": "error"
+  },
+  {
+   "t": 21.0,
+   "kind": "confirm"
+  },
+  {
+   "t": 21.25,
+   "kind": "stamp"
+  },
+  {
+   "t": 21.75,
+   "kind": "whoosh"
+  },
+  {
+   "t": 22.0,
+   "kind": "impact",
+   "size": "mid"
+  },
+  {
+   "t": 22.4,
+   "kind": "chip",
+   "idx": 0
+  },
+  {
+   "t": 22.49,
+   "kind": "chip",
+   "idx": 1
+  },
+  {
+   "t": 22.58,
+   "kind": "chip",
+   "idx": 2
+  },
+  {
+   "t": 22.67,
+   "kind": "chip",
+   "idx": 3
+  },
+  {
+   "t": 22.76,
+   "kind": "chip",
+   "idx": 4
+  },
+  {
+   "t": 22.85,
+   "kind": "chip",
+   "idx": 5
+  },
+  {
+   "t": 22.94,
+   "kind": "chip",
+   "idx": 6
+  },
+  {
+   "t": 23.03,
+   "kind": "chip",
+   "idx": 7
+  },
+  {
+   "t": 23.12,
+   "kind": "chip",
+   "idx": 8
+  },
+  {
+   "t": 23.21,
+   "kind": "chip",
+   "idx": 9
+  },
+  {
+   "t": 23.3,
+   "kind": "chip",
+   "idx": 10
+  },
+  {
+   "t": 23.39,
+   "kind": "chip",
+   "idx": 11
+  },
+  {
+   "t": 23.5,
+   "kind": "counter",
+   "dur": 1.3
+  },
+  {
+   "t": 24.0,
+   "kind": "riser",
+   "dur": 2.0,
+   "size": "big"
+  },
+  {
+   "t": 25.0,
+   "kind": "click"
+  },
+  {
+   "t": 25.2,
+   "kind": "stamp"
+  },
+  {
+   "t": 26.0,
+   "kind": "impact",
+   "size": "huge"
+  },
+  {
+   "t": 26.0,
+   "kind": "drop"
+  },
+  {
+   "t": 28.0,
+   "kind": "panel",
+   "idx": 0
+  },
+  {
+   "t": 28.5,
+   "kind": "panel",
+   "idx": 1
+  },
+  {
+   "t": 29.0,
+   "kind": "panel",
+   "idx": 2
+  },
+  {
+   "t": 29.5,
+   "kind": "panel",
+   "idx": 3
+  },
+  {
+   "t": 32.0,
+   "kind": "qa_pass",
+   "idx": 0
+  },
+  {
+   "t": 32.25,
+   "kind": "qa_pass",
+   "idx": 1
+  },
+  {
+   "t": 32.5,
+   "kind": "qa_pass",
+   "idx": 2
+  },
+  {
+   "t": 32.75,
+   "kind": "qa_pass",
+   "idx": 3
+  },
+  {
+   "t": 34.0,
+   "kind": "tick"
+  },
+  {
+   "t": 34.15,
+   "kind": "tick"
+  },
+  {
+   "t": 34.3,
+   "kind": "tick"
+  },
+  {
+   "t": 34.45,
+   "kind": "tick"
+  },
+  {
+   "t": 34.6,
+   "kind": "tick"
+  },
+  {
+   "t": 34.75,
+   "kind": "tick"
+  },
+  {
+   "t": 34.9,
+   "kind": "tick"
+  },
+  {
+   "t": 35.05,
+   "kind": "tick"
+  },
+  {
+   "t": 35.2,
+   "kind": "tick"
+  },
+  {
+   "t": 35.35,
+   "kind": "tick"
+  },
+  {
+   "t": 35.75,
+   "kind": "whoosh"
+  },
+  {
+   "t": 36.0,
+   "kind": "impact",
+   "size": "mid"
+  },
+  {
+   "t": 38.0,
+   "kind": "boot"
+  },
+  {
+   "t": 40.0,
+   "kind": "error"
+  },
+  {
+   "t": 40.5,
+   "kind": "packet",
+   "idx": 99
+  },
+  {
+   "t": 41.0,
+   "kind": "type_burst"
+  },
+  {
+   "t": 41.5,
+   "kind": "stamp"
+  },
+  {
+   "t": 42.0,
+   "kind": "confirm",
+   "idx": 0
+  },
+  {
+   "t": 42.6,
+   "kind": "confirm",
+   "idx": 1
+  },
+  {
+   "t": 43.2,
+   "kind": "confirm",
+   "idx": 2
+  },
+  {
+   "t": 43.8,
+   "kind": "confirm",
+   "idx": 3
+  },
+  {
+   "t": 44.4,
+   "kind": "confirm",
+   "idx": 4
+  },
+  {
+   "t": 45.75,
+   "kind": "whoosh"
+  },
+  {
+   "t": 46.0,
+   "kind": "impact",
+   "size": "mid"
+  },
+  {
+   "t": 46.25,
+   "kind": "card",
+   "idx": 0
+  },
+  {
+   "t": 46.65,
+   "kind": "card",
+   "idx": 1
+  },
+  {
+   "t": 47.05,
+   "kind": "card",
+   "idx": 2
+  },
+  {
+   "t": 47.45,
+   "kind": "card",
+   "idx": 3
+  },
+  {
+   "t": 48.0,
+   "kind": "check",
+   "idx": 0
+  },
+  {
+   "t": 48.333,
+   "kind": "check",
+   "idx": 1
+  },
+  {
+   "t": 48.667,
+   "kind": "check",
+   "idx": 2
+  },
+  {
+   "t": 49.0,
+   "kind": "check",
+   "idx": 3
+  },
+  {
+   "t": 49.0,
+   "kind": "riser",
+   "dur": 1.5,
+   "size": "big"
+  },
+  {
+   "t": 49.333,
+   "kind": "check",
+   "idx": 4
+  },
+  {
+   "t": 49.667,
+   "kind": "check",
+   "idx": 5
+  },
+  {
+   "t": 50.5,
+   "kind": "impact",
+   "size": "huge"
+  },
+  {
+   "t": 50.5,
+   "kind": "go"
+  },
+  {
+   "t": 51.75,
+   "kind": "whoosh"
+  },
+  {
+   "t": 52.0,
+   "kind": "cut",
+   "idx": 0
+  },
+  {
+   "t": 52.25,
+   "kind": "cut",
+   "idx": 1
+  },
+  {
+   "t": 52.5,
+   "kind": "cut",
+   "idx": 2
+  },
+  {
+   "t": 52.75,
+   "kind": "cut",
+   "idx": 3
+  },
+  {
+   "t": 53.0,
+   "kind": "cut",
+   "idx": 4
+  },
+  {
+   "t": 53.25,
+   "kind": "cut",
+   "idx": 5
+  },
+  {
+   "t": 53.5,
+   "kind": "cut",
+   "idx": 6
+  },
+  {
+   "t": 53.75,
+   "kind": "cut",
+   "idx": 7
+  },
+  {
+   "t": 54.0,
+   "kind": "impact",
+   "size": "big"
+  },
+  {
+   "t": 56.0,
+   "kind": "shimmer"
+  },
+  {
+   "t": 58.0,
+   "kind": "impact",
+   "size": "final"
+  }
+ ]
+}

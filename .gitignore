@@ -12,3 +12,8 @@ __pycache__/
 # 실행 중에 생기는 잠금·프로세스 파일
 *.lock
 *.pid
+
+# 쇼릴 렌더 중간본(최종본은 루트의 VARCO-Game-Studio-Showreel.mp4)
+_workspace/showreel/out/
+_workspace/showreel/frames/
+_workspace/showreel/audio/pre_master.wav

@@ -1,0 +1,35 @@
+{
+ "integrated_lufs": -14.2,
+ "true_peak_dbtp": -1.1,
+ "lra": 4.5,
+ "sync": {
+  "impact@4.0": {
+   "before_db": -18.3,
+   "after_db": -9.7
+  },
+  "impact@8.0": {
+   "before_db": -17.6,
+   "after_db": -10.4
+  },
+  "impact@26.0": {
+   "before_db": -180.0,
+   "after_db": -10.5
+  },
+  "impact@50.5": {
+   "before_db": -180.0,
+   "after_db": -10.8
+  },
+  "impact@58.0": {
+   "before_db": -13.8,
+   "after_db": -10.6
+  },
+  "silence_25.76-25.99_db": -180.0,
+  "silence_50.26-50.49_db": -180.0,
+  "onset_26.0": 26.0001,
+  "onset_50.5": 50.5001,
+  "last_0.3s_db": -180.0,
+  "samples": 2880000
+ },
+ "duration_s": 60.0,
+ "render_s": 4.1
+}
