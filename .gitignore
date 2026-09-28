@@ -19,3 +19,6 @@ _workspace/showreel/frames/
 _workspace/showreel/audio/pre_master.wav
 # README GIF 를 만들 때 잘라 낸 중간 영상 조각
 _workspace/readme-media/*.mp4
+# 2분 제작 과정 영상 렌더 중간본(최종본은 루트의 VARCO-Game-Studio-Process.mp4)
+_workspace/process/out/
+_workspace/process/audio/pre_master.wav

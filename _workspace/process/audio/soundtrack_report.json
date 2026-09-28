@@ -1,0 +1,40 @@
+{
+ "integrated_lufs": -14.1,
+ "true_peak_dbtp": -1.0,
+ "lra": 3.6,
+ "sync": {
+  "impact@4.0": {
+   "size": "big",
+   "before_db": -18.2,
+   "after_db": -9.7
+  },
+  "impact@58.0": {
+   "size": "huge",
+   "before_db": -180.0,
+   "after_db": -10.4
+  },
+  "impact@104.0": {
+   "size": "huge",
+   "before_db": -180.0,
+   "after_db": -10.3
+  },
+  "impact@114.0": {
+   "size": "big",
+   "before_db": -15.1,
+   "after_db": -9.7
+  },
+  "impact@118.0": {
+   "size": "final",
+   "before_db": -14.1,
+   "after_db": -10.7
+  },
+  "silence_57.77-57.99_db": -180.0,
+  "onset_58.0": 58.0001,
+  "silence_103.77-104.00_db": -180.0,
+  "onset_104.0": 104.0003,
+  "last_0.3s_db": -180.0,
+  "samples": 5760000
+ },
+ "duration_s": 120.0,
+ "render_s": 9.8
+}

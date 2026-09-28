@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>VARCO GAME STUDIO — The Making of Coin Runner</title>
+<style>
+  @font-face { font-family: 'Pretendard'; font-weight: 400; src: url('../showreel/fonts/Pretendard-Regular.ttf'); }
+  @font-face { font-family: 'Pretendard'; font-weight: 500; src: url('../showreel/fonts/Pretendard-Medium.ttf'); }
+  @font-face { font-family: 'Pretendard'; font-weight: 600; src: url('../showreel/fonts/Pretendard-SemiBold.ttf'); }
+  @font-face { font-family: 'Pretendard'; font-weight: 700; src: url('../showreel/fonts/Pretendard-Bold.ttf'); }
+  @font-face { font-family: 'Pretendard'; font-weight: 800; src: url('../showreel/fonts/Pretendard-ExtraBold.ttf'); }
+  @font-face { font-family: 'SFMono'; src: url('file:///System/Library/Fonts/SFNSMono.ttf'); font-weight: 100 900; }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  canvas { display: block; width: 1920px; height: 1080px; }
+</style>
+</head>
+<body>
+<canvas id="cv" width="1920" height="1080"></canvas>
+<script src="cues.js"></script>
+<script src="core.js"></script>
+<script src="scenes_a.js"></script>
+<script src="scenes_b.js"></script>
+<script src="scenes_c.js"></script>
+<script>
+  (async () => {
+    const weights = [400, 500, 600, 700, 800];
+    await Promise.all([
+      ...weights.map(w => document.fonts.load(`${w} 40px Pretendard`, '가나다ABC')),
+      document.fonts.load('400 20px SFMono', 'abc{}'),
+      document.fonts.load('700 20px SFMono', 'abc{}'),
+    ]).catch(() => {});
+    initReel();
+    window.__seek = t => render(t);
+    window.__ready = true;
+    const q = new URLSearchParams(location.search);
+    if (q.has('t')) { render(parseFloat(q.get('t'))); return; }
+    if (q.has('capture')) { render(0); return; }
+    const start = performance.now() - (parseFloat(q.get('from') || 0) * 1000);
+    const loop = now => { render(((now - start) / 1000) % DUR); requestAnimationFrame(loop); };
+    requestAnimationFrame(loop);
+  })();
+</script>
+</body>
+</html>

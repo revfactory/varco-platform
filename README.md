@@ -13,6 +13,7 @@
 ![VARCO API](https://img.shields.io/badge/VARCO-API_Platform-FF5E62)
 
 [▶ 쇼릴 전체 영상 (1분, MP4)](VARCO-Game-Studio-Showreel.mp4) ·
+[🎬 제작 과정 영상 (2분, MP4)](VARCO-Game-Studio-Process.mp4) ·
 [📘 레퍼런스 매뉴얼 PDF 내려받기](https://github.com/revfactory/varco-platform/raw/main/VARCO-API-Reference-Manual-ko.pdf) ·
 [🚀 하네스 사용법](#사용법)
 
@@ -40,6 +41,7 @@
 | VARCO 레퍼런스 매뉴얼 | [`VARCO-API-Reference-Manual-ko.pdf`](VARCO-API-Reference-Manual-ko.pdf) | api.varco.ai 공개 문서를 모은 한국어 PDF, 141쪽 |
 | VARCO 플랫폼 소개 영상 | [`VARCO-Platform-Intro.mp4`](VARCO-Platform-Intro.mp4) | VARCO API 서비스를 소개하는 47초 모션그래픽 |
 | 하네스 쇼릴 | [`VARCO-Game-Studio-Showreel.mp4`](VARCO-Game-Studio-Showreel.mp4) | 하네스로 게임이 만들어지는 과정을 담은 1분 모션그래픽, 사운드트랙 포함 |
+| 제작 과정 영상 | [`VARCO-Game-Studio-Process.mp4`](VARCO-Game-Studio-Process.mp4) | 코인 러너가 준비부터 출시 판정까지 가는 과정을 해설 자막과 함께 따라가는 2분 모션그래픽, 사운드트랙 포함 |
 
 ## VARCO API 플랫폼 소개
 
@@ -105,6 +107,10 @@ curl https://openapi.ai.nc.com/sound/varco/v1/api/text2sound \
 ## VARCO Game Studio 하네스
 
 게임 아이디어 한 줄을 받으면 Claude Code의 에이전트 15명이 다섯 단계로 게임을 만듭니다. 기획 문서, VARCO로 만든 효과음·대사 음성·얼굴 애니메이션·3D 모델·번역 문자열, 플레이할 수 있는 웹 또는 Unity 프로토타입, QA 보고서, 출시 판정서가 결과물로 나옵니다.
+
+[<img src="VARCO-Game-Studio-Process-poster.jpg" width="100%" alt="2분 제작 과정 영상의 한 장면: 기획, 명세, 제작, 개발, 출시 다섯 단계 카드와 단계별 에이전트, 사람 확인 두 번">](VARCO-Game-Studio-Process.mp4)
+
+<sub>▶ 이미지를 누르면 2분 제작 과정 영상(MP4)이 열립니다. 준비부터 출시 판정까지 단계마다 누가 무엇을 하는지 자막으로 설명합니다.</sub>
 
 ### 진행 흐름
 
@@ -327,6 +333,21 @@ python3 audio/synth.py             # 사운드트랙
 python3 render.py video out/showreel.mp4 60 audio/soundtrack.wav
 ```
 
+### 2분 제작 과정 영상
+
+[`VARCO-Game-Studio-Process.mp4`](VARCO-Game-Studio-Process.mp4)는 같은 엔진으로 만든 2분짜리 해설판입니다. 1분 쇼릴이 다섯 단계를 빠르게 훑는다면, 이 영상은 단계 안에서 일이 넘어가는 순서를 따라갑니다. 화면 아래 자막 30줄이 장면마다 누가 무엇을 하는지 설명합니다.
+
+- **사양:** 1920×1080, 60fps, 120초, 48kHz 스테레오
+- **쇼릴보다 자세히 보여 주는 장면:** 리더가 실행 설정(`run_meta.json`)을 정하는 준비 단계, 사람에게 묻는 두 번의 확인(컨셉 승인, 크레딧 승인), 공유 작업 목록과 기획 동결·승격, 매니페스트 검사 스크립트, 에셋 QA의 재작업, 엔지니어와 QA의 계획 문서, 결과 폴더와 후속 요청
+- **소리:** 쇼릴의 합성기를 고쳐 장면마다 악기 편성을 `timeline.json`에서 읽게 했습니다. 장면 길이를 바꾸고 다시 실행하면 음악과 효과음이 새 시간표를 따라갑니다.
+
+```bash
+cd _workspace/process
+python3 build_timeline.py          # 큐 시트(장면, 자막, 효과음 시각)
+python3 audio/synth.py             # 사운드트랙
+python3 render.py video out/process.mp4 60 audio/soundtrack.wav 10   # 브라우저 10개로 나눠 렌더링
+```
+
 ## 저장소 구조
 
 ```text
@@ -339,11 +360,13 @@ python3 render.py video out/showreel.mp4 60 audio/soundtrack.wav
 ├── VARCO-API-Reference-Manual-ko.pdf
 ├── VARCO-Platform-Intro.mp4       (+ 포스터 이미지)
 ├── VARCO-Game-Studio-Showreel.mp4 (+ 포스터 이미지)
+├── VARCO-Game-Studio-Process.mp4  (+ 포스터 이미지)
 └── _workspace/
     ├── link-check/                VARCO 문서 수집 작업 파일
     ├── book/                      레퍼런스 매뉴얼 제작 파일
     ├── animation/                 플랫폼 소개 영상 제작 파일
     ├── showreel/                  하네스 쇼릴 제작 파일
+    ├── process/                   2분 제작 과정 영상 제작 파일
     ├── harness-build/             하네스 시험 표본과 검증 스크립트
     └── readme-media/              README GIF 생성 스크립트
 ```
