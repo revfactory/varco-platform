@@ -1,0 +1,24 @@
+<!doctype html><html><body style="background:#fff"><pre class="mermaid">flowchart LR
+    A(["아이디어 한 줄"]) --> B
+    subgraph B["01 기획 · 지속형 협업"]
+        direction TB
+        B1["게임 디렉터"] --- B2["시스템 · 시나리오 · 레벨<br/>UI/UX · 밸런스"]
+    end
+    B --> C["02 에셋 명세<br/>매니페스트 · 크레딧 견적"]
+    C --> G{{"사용자 크레딧 승인"}}
+    G --> D
+    subgraph D["03 에셋 제작 · 워크플로"]
+        direction TB
+        D1["사운드 · 보이스<br/>비주얼 · 현지화"] --> D2["에셋 QA"]
+        D2 -.->|"고칠 수 있는 실패만 1회"| D1
+    end
+    D --> E
+    subgraph E["04 개발 · 한 쌍"]
+        direction TB
+        E1["게임플레이 엔지니어"] <--> E2["게임 QA"]
+    end
+    E --> F["05 출시 준비<br/>에셋 감사 · 회귀 테스트<br/>밸런스 대조 · 스토어 이미지"]
+    F --> H(["디렉터 Go / No-Go"])
+</pre><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'; mermaid.initialize({startOnLoad:false});
+try { await mermaid.run({querySelector:'.mermaid'}); window.__ok=true; } catch(e) { window.__err=String(e); }</script></body></html>

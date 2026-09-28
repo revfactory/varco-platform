@@ -1,0 +1,590 @@
+<div align="center">
+<a target="_blank" rel="noopener noreferrer" href="docs/media/showreel-hero.gif"><img src="docs/media/showreel-hero.gif" width="100%" alt="VARCO Game Studio 쇼릴: 한 줄의 아이디어가 열다섯 명의 에이전트를 거쳐 하나의 게임이 되는 과정" style="max-width: 100%;"></a>
+<div class="markdown-heading"><h1 class="heading-element">VARCO Game Studio</h1><a id="user-content-varco-game-studio" class="anchor" aria-label="Permalink: VARCO Game Studio" href="#varco-game-studio"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><strong>VARCO API 플랫폼으로 게임을 기획부터 QA까지 만드는 Claude Code 하네스</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/16f4614339370680c79d4579c69c4770af2a489064cbf1430d868e6bf2fd2cab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436c617564655f436f64652d4861726e6573735f76322d443937373537"><img src="https://camo.githubusercontent.com/16f4614339370680c79d4579c69c4770af2a489064cbf1430d868e6bf2fd2cab/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436c617564655f436f64652d4861726e6573735f76322d443937373537" alt="Claude Code" data-canonical-src="https://img.shields.io/badge/Claude_Code-Harness_v2-D97757" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/096f65d53a1a21370d61da763d42eb5520b65ce975d86cbcde82b3b78ccc6459/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4167656e74732d31352d394437424646"><img src="https://camo.githubusercontent.com/096f65d53a1a21370d61da763d42eb5520b65ce975d86cbcde82b3b78ccc6459/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4167656e74732d31352d394437424646" alt="Agents" data-canonical-src="https://img.shields.io/badge/Agents-15-9D7BFF" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/73b83f5c358273a81195376f6d9ff6618b931cadf76d475b23a350a056992643/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f536b696c6c732d31372d324545364646"><img src="https://camo.githubusercontent.com/73b83f5c358273a81195376f6d9ff6618b931cadf76d475b23a350a056992643/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f536b696c6c732d31372d324545364646" alt="Skills" data-canonical-src="https://img.shields.io/badge/Skills-17-2EE6FF" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ca148432e9a53d6427a949590c6f553a4d92950e160baf9f9efb51aed4405b2e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5068617365732d352d433846463344"><img src="https://camo.githubusercontent.com/ca148432e9a53d6427a949590c6f553a4d92950e160baf9f9efb51aed4405b2e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5068617365732d352d433846463344" alt="Phases" data-canonical-src="https://img.shields.io/badge/Phases-5-C8FF3D" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/20bef21c55ec1a44e9700575b525440c4c6f8610c2df8566a4034ab70c6069b9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f564152434f2d4150495f506c6174666f726d2d464635453632"><img src="https://camo.githubusercontent.com/20bef21c55ec1a44e9700575b525440c4c6f8610c2df8566a4034ab70c6069b9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f564152434f2d4150495f506c6174666f726d2d464635453632" alt="VARCO API" data-canonical-src="https://img.shields.io/badge/VARCO-API_Platform-FF5E62" style="max-width: 100%;"></a></p>
+<p><a href="VARCO-Game-Studio-Showreel.mp4">▶ 쇼릴 전체 영상 (1분, MP4)</a> ·
+<a href="https://github.com/revfactory/varco-platform/raw/main/VARCO-API-Reference-Manual-ko.pdf">📘 레퍼런스 매뉴얼 PDF 내려받기</a> ·
+<a href="#%EC%82%AC%EC%9A%A9%EB%B2%95">🚀 하네스 사용법</a></p>
+</div>
+<hr>
+<div class="markdown-heading"><h2 class="heading-element">목차</h2><a id="user-content-목차" class="anchor" aria-label="Permalink: 목차" href="#목차"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li><a href="#%EC%9D%B4-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%9E%88%EB%8A%94-%EA%B2%83">이 저장소에 있는 것</a></li>
+<li><a href="#varco-api-%ED%94%8C%EB%9E%AB%ED%8F%BC-%EC%86%8C%EA%B0%9C">VARCO API 플랫폼 소개</a></li>
+<li><a href="#%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4-%EB%A7%A4%EB%89%B4%EC%96%BC-%EB%82%B4%EB%A0%A4%EB%B0%9B%EA%B8%B0">레퍼런스 매뉴얼 내려받기</a></li>
+<li><a href="#varco-game-studio-%ED%95%98%EB%84%A4%EC%8A%A4">VARCO Game Studio 하네스</a></li>
+<li><a href="#%EC%82%AC%EC%9A%A9%EB%B2%95">사용법</a></li>
+<li><a href="#%EC%95%8C%EC%95%84-%EB%91%90%EC%8B%A4-%EC%A0%90">알아 두실 점</a></li>
+<li><a href="#%EC%87%BC%EB%A6%B4-%EC%A0%9C%EC%9E%91%EA%B8%B0">쇼릴 제작기</a></li>
+<li><a href="#%EC%A0%80%EC%9E%A5%EC%86%8C-%EA%B5%AC%EC%A1%B0">저장소 구조</a></li>
+<li><a href="#%EA%B6%8C%EB%A6%AC-%EC%95%88%EB%82%B4">권리 안내</a></li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">이 저장소에 있는 것</h2><a id="user-content-이-저장소에-있는-것" class="anchor" aria-label="Permalink: 이 저장소에 있는 것" href="#이-저장소에-있는-것"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>위치</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>게임 제작 하네스</td>
+<td>
+<code>.claude/agents/</code>, <code>.claude/skills/</code>
+</td>
+<td>Claude Code 에이전트 15명과 스킬 17개. 게임 아이디어 한 줄로 기획, 에셋 제작, 프로토타입 개발, QA, 출시 판정까지 진행합니다</td>
+</tr>
+<tr>
+<td>VARCO 레퍼런스 매뉴얼</td>
+<td><a href="VARCO-API-Reference-Manual-ko.pdf"><code>VARCO-API-Reference-Manual-ko.pdf</code></a></td>
+<td>api.varco.ai 공개 문서를 모은 한국어 PDF, 141쪽</td>
+</tr>
+<tr>
+<td>VARCO 플랫폼 소개 영상</td>
+<td><a href="VARCO-Platform-Intro.mp4"><code>VARCO-Platform-Intro.mp4</code></a></td>
+<td>VARCO API 서비스를 소개하는 47초 모션그래픽</td>
+</tr>
+<tr>
+<td>하네스 쇼릴</td>
+<td><a href="VARCO-Game-Studio-Showreel.mp4"><code>VARCO-Game-Studio-Showreel.mp4</code></a></td>
+<td>하네스로 게임이 만들어지는 과정을 담은 1분 모션그래픽, 사운드트랙 포함</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h2 class="heading-element">VARCO API 플랫폼 소개</h2><a id="user-content-varco-api-플랫폼-소개" class="anchor" aria-label="Permalink: VARCO API 플랫폼 소개" href="#varco-api-플랫폼-소개"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p><a target="_blank" rel="noopener noreferrer" href="docs/media/varco-apis.gif"><img src="docs/media/varco-apis.gif" width="100%" alt="OPENAPI_KEY 하나로 Sound, 3D, SyncFace, Voice, Translate, Art Fashion, Chatbot, Gentle Words 서비스에 연결되는 모습" style="max-width: 100%;"></a></p>
+<p><a href="https://api.varco.ai/ko" rel="nofollow">VARCO API 플랫폼</a>은 NC AI가 운영하는 AI API 서비스입니다. 한 번 연동하면 텍스트, 이미지, 오디오, 3D를 다루는 AI 기능을 같은 방식으로 호출할 수 있고, 호출 내역과 크레딧 사용량은 워크스페이스에서 함께 관리합니다.</p>
+<div class="markdown-heading"><h3 class="heading-element">제공 서비스</h3><a id="user-content-제공-서비스" class="anchor" aria-label="Permalink: 제공 서비스" href="#제공-서비스"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>분류</th>
+<th>서비스</th>
+<th>할 수 있는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game AI</td>
+<td><strong>Sound</strong></td>
+<td>텍스트로 효과음·환경음 생성(Text to Sound), 변형(Variation), 끊김 없는 루프(Looping), 모노→스테레오, 사람 목소리를 몬스터 음색으로 변환(Conversion), 잡음 제거(Enhance)</td>
+</tr>
+<tr>
+<td>Game AI</td>
+<td><strong>3D</strong></td>
+<td>이미지 한 장으로 3D 메시와 텍스처 생성(Image to 3D, GLB)</td>
+</tr>
+<tr>
+<td>Game AI</td>
+<td><strong>SyncFace</strong></td>
+<td>음성으로 입 모양·표정 블렌드셰이프 애니메이션 생성(Voice-to-Face)</td>
+</tr>
+<tr>
+<td>Media AI</td>
+<td><strong>Voice</strong></td>
+<td>빠른 TTS(Lite), 감정 연기 TTS(Standard), 목소리만 바꾸는 음성 변환(Voice Conversion, Acting)</td>
+</tr>
+<tr>
+<td>Media AI</td>
+<td><strong>Translate</strong></td>
+<td>용어집을 반영한 게임 채팅·콘텐츠 번역(10개 언어)</td>
+</tr>
+<tr>
+<td>Visual AI</td>
+<td><strong>Art Fashion</strong></td>
+<td>배경 합성, 시점 변경, 업스케일, 지우기, 인페인트, 텍스처·그래픽 합성, 가상 착장, 헤드스왑</td>
+</tr>
+<tr>
+<td>Content Biz AI</td>
+<td><strong>Chatbot</strong></td>
+<td>FAQ·RAG 기반 상담 챗봇과 지식 관리 도구</td>
+</tr>
+<tr>
+<td>Content Protection AI</td>
+<td><strong>Gentle Words</strong></td>
+<td>채팅·게시글의 스팸과 금칙어 필터링</td>
+</tr>
+<tr>
+<td>Integrations</td>
+<td><strong>플러그인</strong></td>
+<td>VARCO Sound Unity 플러그인(효과음·루프·크리처·음악·음성을 에디터 안에서 생성)</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">시작하는 순서</h3><a id="user-content-시작하는-순서" class="anchor" aria-label="Permalink: 시작하는 순서" href="#시작하는-순서"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ol>
+<li>
+<a href="https://api.varco.ai/ko" rel="nofollow">api.varco.ai</a>에 구글 계정으로 가입합니다. 가입하면 개인 워크스페이스가 만들어집니다.</li>
+<li>여럿이 함께 쓰려면 공용 워크스페이스를 만들고 멤버를 초대합니다.</li>
+<li>사이드바의 <strong>API 키</strong> 메뉴에서 키를 발급합니다.</li>
+<li>워크스페이스 오너가 <strong>크레딧</strong>을 구매합니다. 호출마다 크레딧이 차감됩니다.</li>
+<li>요청 헤더에 <code>OPENAPI_KEY</code>를 넣어 호출합니다.</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre>curl https://openapi.ai.nc.com/sound/varco/v1/api/text2sound \
+  -H <span class="pl-s"><span class="pl-pds">"</span>OPENAPI_KEY: <span class="pl-smi">$OPENAPI_KEY</span><span class="pl-pds">"</span></span> \
+  -H <span class="pl-s"><span class="pl-pds">"</span>Content-Type: application/json<span class="pl-pds">"</span></span> \
+  -d <span class="pl-s"><span class="pl-pds">'</span>{"prompt": "비 내리는 숲속 환경음", "num_sample": 2}<span class="pl-pds">'</span></span></pre></div>
+<blockquote>
+<p>[!NOTE]
+과금은 사용량 기반 크레딧 방식입니다. 공식 가격표는 2026년 9월 기준 "공개 예정"입니다. API 키는 코드나 문서에 적지 말고, 유출이 의심되면 바로 폐기한 뒤 새로 발급하십시오.</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">레퍼런스 매뉴얼 내려받기</h2><a id="user-content-레퍼런스-매뉴얼-내려받기" class="anchor" aria-label="Permalink: 레퍼런스 매뉴얼 내려받기" href="#레퍼런스-매뉴얼-내려받기"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<tbody><tr>
+<td width="300"><a target="_blank" rel="noopener noreferrer" href="docs/media/manual-cover.png"><img src="docs/media/manual-cover.png" width="280" alt="VARCO API Platform 레퍼런스 매뉴얼 표지" style="max-width: 100%;"></a></td>
+<td>
+<p><strong>VARCO API Platform 레퍼런스 매뉴얼 (한국어판)</strong></p>
+<ul>
+<li>141쪽, 2026년 9월 28일 기준</li>
+<li>
+<strong>제1부 도큐먼트 25편:</strong> 시작하기, Game AI, Media AI, Visual AI, Content Biz AI, Content Protection AI, Integrations</li>
+<li>
+<strong>제2부 API 레퍼런스 28편:</strong> 엔드포인트, 요청 파라미터, 응답 형식, 예제 코드</li>
+<li>이미지 77장과 오디오 샘플 16개를 함께 실었습니다</li>
+</ul>
+<p><a href="https://github.com/revfactory/varco-platform/raw/main/VARCO-API-Reference-Manual-ko.pdf">📥 PDF 내려받기 (11MB)</a> · <a href="VARCO-API-Reference-Manual-ko.pdf">GitHub에서 보기</a></p>
+</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>[!IMPORTANT]
+이 매뉴얼은 <a href="https://api.varco.ai/ko" rel="nofollow">api.varco.ai</a>에 공개된 문서를 모아 엮은 참고용 사본이며, NC AI가 발행한 공식 문서가 아닙니다. 엔드포인트와 파라미터의 최신 명세는 공식 API Reference 페이지에서 확인하십시오.</p>
+</blockquote>
+<div class="markdown-heading"><h2 class="heading-element">VARCO Game Studio 하네스</h2><a id="user-content-varco-game-studio-하네스" class="anchor" aria-label="Permalink: VARCO Game Studio 하네스" href="#varco-game-studio-하네스"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>게임 아이디어 한 줄을 받으면 Claude Code의 에이전트 15명이 다섯 단계로 게임을 만듭니다. 기획 문서, VARCO로 만든 효과음·대사 음성·얼굴 애니메이션·3D 모델·번역 문자열, 플레이할 수 있는 웹 또는 Unity 프로토타입, QA 보고서, 출시 판정서가 결과물로 나옵니다.</p>
+<div class="markdown-heading"><h3 class="heading-element">진행 흐름</h3><a id="user-content-진행-흐름" class="anchor" aria-label="Permalink: 진행 흐름" href="#진행-흐름"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-mermaid"><pre><span class="pl-k">flowchart</span> <span class="pl-c1">LR</span>
+    <span class="pl-ent">A</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">([</span></span><span class="pl-s"><span class="pl-pds">"</span>아이디어 한 줄<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">])</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">B</span>
+    <span class="pl-k">subgraph</span> <span class="pl-en">B</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>"01 기획 · 지속형 협업"<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+        <span class="pl-k">direction</span> <span class="pl-c1">TB</span>
+        <span class="pl-ent">B1</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>게임 디렉터<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">---</span> <span class="pl-ent">B2</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>시스템 · 시나리오 · 레벨&lt;<span class="pl-ent">br</span>/&gt;UI/UX · 밸런스<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-k">end</span>
+    <span class="pl-ent">B</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">C</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>02 에셋 명세&lt;<span class="pl-ent">br</span>/&gt;매니페스트 · 크레딧 견적<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-ent">C</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">G</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">{{</span></span><span class="pl-s"><span class="pl-pds">"</span>사용자 크레딧 승인<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">}}</span></span></span>
+    <span class="pl-ent">G</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">D</span>
+    <span class="pl-k">subgraph</span> <span class="pl-en">D</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>"03 에셋 제작 · 워크플로"<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+        <span class="pl-k">direction</span> <span class="pl-c1">TB</span>
+        <span class="pl-ent">D1</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>사운드 · 보이스&lt;<span class="pl-ent">br</span>/&gt;비주얼 · 현지화<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">--&gt;</span> <span class="pl-ent">D2</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>에셋 QA<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span>
+        <span class="pl-ent">D2</span> <span class="pl-k">-.-&gt;</span><span class="pl-k">|</span><span class="pl-s">"고칠 수 있는 실패만 1회"</span><span class="pl-k">|</span> <span class="pl-ent">D1</span>
+    <span class="pl-k">end</span>
+    <span class="pl-ent">D</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">E</span>
+    <span class="pl-k">subgraph</span> <span class="pl-en">E</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span>"04 개발 · 한 쌍"<span class="pl-pds"><span class="pl-sg">]</span></span></span>
+        <span class="pl-k">direction</span> <span class="pl-c1">TB</span>
+        <span class="pl-ent">E1</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>게임플레이 엔지니어<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span> <span class="pl-k">&lt;--&gt;</span> <span class="pl-ent">E2</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>게임 QA<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-k">end</span>
+    <span class="pl-ent">E</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">F</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">[</span></span><span class="pl-s"><span class="pl-pds">"</span>05 출시 준비&lt;<span class="pl-ent">br</span>/&gt;에셋 감사 · 회귀 테스트&lt;<span class="pl-ent">br</span>/&gt;밸런스 대조 · 스토어 이미지<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">]</span></span></span>
+    <span class="pl-ent">F</span> <span class="pl-k">--&gt;</span> <span class="pl-ent">H</span><span class="pl-s"><span class="pl-pds"><span class="pl-sg">([</span></span><span class="pl-s"><span class="pl-pds">"</span>디렉터 Go / No-Go<span class="pl-pds">"</span></span><span class="pl-pds"><span class="pl-sg">])</span></span></span></pre></div>
+<p>단계마다 작업 성격이 달라 실행 방식을 다르게 골랐습니다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>실행 방식</th>
+<th>고른 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01 기획</td>
+<td>이름 붙인 에이전트들이 메시지를 주고받는 지속형 협업</td>
+<td>시스템·시나리오·레벨·UI 문서가 서로 맞물려 여러 번 조율해야 합니다</td>
+</tr>
+<tr>
+<td>02 에셋 명세</td>
+<td>서브에이전트 한 명 + <strong>사용자 승인</strong>
+</td>
+<td>매니페스트 한 벌이면 충분하고, 돈이 드는 단계라 사람이 승인해야 합니다</td>
+</tr>
+<tr>
+<td>03 에셋 제작</td>
+<td>Workflow 스크립트</td>
+<td>만들 에셋 목록과 검증·재작업 규칙을 코드로 정할 수 있습니다</td>
+</tr>
+<tr>
+<td>04 개발</td>
+<td>엔지니어와 QA 한 쌍</td>
+<td>모듈을 끝낼 때마다 바로 검사하고 버그를 주고받습니다</td>
+</tr>
+<tr>
+<td>05 출시 준비</td>
+<td>검사 네 가지를 병렬로 돌린 뒤 디렉터가 판정</td>
+<td>서로 독립인 검사를 동시에 돌리고, 판정은 한 사람이 기준표로 내립니다</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">단계별 모습</h3><a id="user-content-단계별-모습" class="anchor" aria-label="Permalink: 단계별 모습" href="#단계별-모습"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<tbody><tr>
+<td width="50%">
+<a target="_blank" rel="noopener noreferrer" href="docs/media/phase-team.gif"><img src="docs/media/phase-team.gif" alt="에이전트 15명이 단계별 궤도에 배치되는 장면" style="max-width: 100%;"></a><br><b>팀</b> · 게임 디렉터를 중심으로 다섯 단계 에이전트 15명</td>
+<td width="50%">
+<a target="_blank" rel="noopener noreferrer" href="docs/media/phase-plan.gif"><img src="docs/media/phase-plan.gif" alt="기획 카드 사이로 메시지가 오가며 밸런스 수치가 고쳐지고 동결되는 장면" style="max-width: 100%;"></a><br><b>01 기획</b> · 밸런스 분석가와 시스템 기획자가 수치를 조율하고, 디렉터가 불일치를 해결한 뒤 동결</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener noreferrer" href="docs/media/phase-spec.gif"><img src="docs/media/phase-spec.gif" alt="크레딧 견적이 올라가고 승인 도장이 찍히는 장면" style="max-width: 100%;"></a><br><b>02 명세</b> · 에셋 매니페스트와 크레딧 견적, 사용자 승인</td>
+<td>
+<a target="_blank" rel="noopener noreferrer" href="docs/media/phase-make.gif"><img src="docs/media/phase-make.gif" alt="효과음 파형, 립싱크 얼굴, 3D 메시, 번역이 동시에 진행되는 장면" style="max-width: 100%;"></a><br><b>03 제작</b> · 효과음, 대사 음성과 립싱크, 3D 모델, 번역을 병렬로 만들고 에셋마다 QA</td>
+</tr>
+<tr>
+<td>
+<a target="_blank" rel="noopener noreferrer" href="docs/media/phase-build.gif"><img src="docs/media/phase-build.gif" alt="게임 서버가 에셋을 불러오고 QA가 점수 버그를 잡아 고치는 장면" style="max-width: 100%;"></a><br><b>04 개발</b> · 에셋을 불러와 실행하고, QA가 버그를 잡으면 엔지니어가 고친 뒤 재검사</td>
+<td>
+<a target="_blank" rel="noopener noreferrer" href="docs/media/phase-ship.gif"><img src="docs/media/phase-ship.gif" alt="출시 기준 여섯 줄이 체크되고 GO가 표시되는 장면" style="max-width: 100%;"></a><br><b>05 출시</b> · 기준 여섯 가지를 모두 통과하면 GO</td>
+</tr>
+</tbody></table>
+<div class="markdown-heading"><h3 class="heading-element">팀 구성</h3><a id="user-content-팀-구성" class="anchor" aria-label="Permalink: 팀 구성" href="#팀-구성"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>모델은 에이전트의 위상이 아니라 업무 성격으로 골랐습니다. 막연한 아이디어를 구체화하고 전체를 통합하는 일에는 fable, 설계·코드·교차 검증에는 opus, 절차가 정해진 제작과 검사에는 sonnet을 씁니다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>에이전트</th>
+<th>모델</th>
+<th>하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기획</td>
+<td><code>game-director</code></td>
+<td>fable</td>
+<td>컨셉 구체화, 기획 문서 통합 리뷰, GDD, 출시 판정</td>
+</tr>
+<tr>
+<td>기획</td>
+<td><code>systems-designer</code></td>
+<td>opus</td>
+<td>코어 루프·시스템 규칙, 밸런스 CSV와 스키마</td>
+</tr>
+<tr>
+<td>기획</td>
+<td><code>narrative-designer</code></td>
+<td>opus</td>
+<td>세계관, 캐릭터, 대사 스크립트, 용어집</td>
+</tr>
+<tr>
+<td>기획</td>
+<td><code>level-designer</code></td>
+<td>opus</td>
+<td>레벨 배치와 난이도 흐름, 사운드 구역, 필요한 프랍</td>
+</tr>
+<tr>
+<td>기획</td>
+<td><code>ux-designer</code></td>
+<td>sonnet</td>
+<td>화면 흐름, HUD, UI 문자열</td>
+</tr>
+<tr>
+<td>기획·출시</td>
+<td><code>balance-analyst</code></td>
+<td>opus</td>
+<td>몬테카를로 시뮬레이션으로 수치 검증, 구현 수치 대조</td>
+</tr>
+<tr>
+<td>명세</td>
+<td><code>asset-producer</code></td>
+<td>sonnet</td>
+<td>에셋 매니페스트, VARCO API 호출 순서, 크레딧 견적</td>
+</tr>
+<tr>
+<td>제작</td>
+<td><code>sound-designer</code></td>
+<td>sonnet</td>
+<td>효과음, 환경음 루프, 크리처 음성</td>
+</tr>
+<tr>
+<td>제작</td>
+<td><code>voice-director</code></td>
+<td>sonnet</td>
+<td>화자 캐스팅, 대사 음성, 얼굴 애니메이션</td>
+</tr>
+<tr>
+<td>제작</td>
+<td><code>visual-artist</code></td>
+<td>sonnet</td>
+<td>3D 모델, 이미지 편집</td>
+</tr>
+<tr>
+<td>제작</td>
+<td><code>localization-specialist</code></td>
+<td>sonnet</td>
+<td>대사·UI 번역, 용어집·자리표시자 보호</td>
+</tr>
+<tr>
+<td>제작·출시</td>
+<td><code>asset-qa</code></td>
+<td>sonnet</td>
+<td>에셋 측정·검증, 출시 전 전수 감사</td>
+</tr>
+<tr>
+<td>개발</td>
+<td><code>gameplay-engineer</code></td>
+<td>opus</td>
+<td>웹(Phaser 3·three.js) 또는 Unity 6 프로토타입</td>
+</tr>
+<tr>
+<td>개발·출시</td>
+<td><code>game-qa</code></td>
+<td>opus</td>
+<td>테스트 계획, 모듈별 검사, 버그 리포트, 회귀 테스트</td>
+</tr>
+<tr>
+<td>출시</td>
+<td><code>marketing-artist</code></td>
+<td>sonnet</td>
+<td>스토어 키 아트·캡슐 이미지, 스토어 설명</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">스킬</h3><a id="user-content-스킬" class="anchor" aria-label="Permalink: 스킬" href="#스킬"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>묶음</th>
+<th>스킬</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조율</td>
+<td>
+<code>varco-game-studio</code>: 전체 흐름을 조율하는 오케스트레이터</td>
+</tr>
+<tr>
+<td>공용</td>
+<td>
+<code>varco-api</code>: VARCO API 명세 정리본과 공용 클라이언트 <code>varco_client.py</code>
+</td>
+</tr>
+<tr>
+<td>기획</td>
+<td>
+<code>game-concept</code>, <code>game-systems-design</code>, <code>game-narrative</code>, <code>level-design</code>, <code>game-ux-design</code>, <code>balance-simulation</code>
+</td>
+</tr>
+<tr>
+<td>제작</td>
+<td>
+<code>asset-manifest</code>, <code>varco-sound-production</code>, <code>varco-voice-production</code>, <code>varco-visual-production</code>, <code>varco-localization</code>, <code>marketing-kit</code>
+</td>
+</tr>
+<tr>
+<td>개발·QA</td>
+<td>
+<code>game-prototype-dev</code>, <code>asset-qa-check</code>, <code>game-qa-testing</code>
+</td>
+</tr>
+</tbody>
+</table>
+<p>에이전트끼리 주고받는 파일의 위치와 형식은 <a href=".claude/skills/varco-game-studio/references/contracts.md">산출물 계약서</a> 한 곳에서 정합니다.</p>
+<div class="markdown-heading"><h3 class="heading-element">크레딧을 지키는 장치</h3><a id="user-content-크레딧을-지키는-장치" class="anchor" aria-label="Permalink: 크레딧을 지키는 장치" href="#크레딧을-지키는-장치"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>크레딧 승인:</strong> 에셋을 만들기 전에 견적을 보여 주고 반드시 사용자 승인을 받습니다.</li>
+<li>
+<strong>예산 차단:</strong> 모든 VARCO 호출은 공용 클라이언트를 거칩니다. 승인한 예산을 넘는 호출은 보내지 않고, 여러 에이전트가 동시에 호출해도 잠금으로 크레딧을 먼저 예약하므로 예산을 넘지 않습니다.</li>
+<li>
+<strong>호출 장부:</strong> 모든 호출(드라이런 포함)이 <code>varco_ledger.jsonl</code>에 한 줄씩 남습니다.</li>
+<li>
+<strong>드라이런:</strong> 키가 없거나 원하지 않으면 실제로 호출하지 않고 요청 명세와 견적만 만듭니다.</li>
+<li>
+<strong>즉시 중단:</strong> 인증 실패나 크레딧 부족이 한 번이라도 나오면 아직 시작하지 않은 에셋은 호출하지 않습니다.</li>
+<li>
+<strong>단가 미공개 API:</strong> 번역, Voice-to-Face, 음성 변환 Acting은 단가가 공개되지 않아 따로 승인받아야 호출합니다. 승인하지 않으면 연기 변환은 일반 TTS로 대체하고 얼굴 애니메이션은 뺍니다.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">사용법</h2><a id="user-content-사용법" class="anchor" aria-label="Permalink: 사용법" href="#사용법"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">준비물</h3><a id="user-content-준비물" class="anchor" aria-label="Permalink: 준비물" href="#준비물"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<table>
+<thead>
+<tr>
+<th>필요한 것</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://code.claude.com/docs" rel="nofollow">Claude Code</a></td>
+<td>하네스 실행</td>
+</tr>
+<tr>
+<td>Python 3 (3.10 이상 권장), <code>numpy</code>, <code>Pillow</code>, <code>requests</code>
+</td>
+<td>공용 클라이언트와 검사 스크립트</td>
+</tr>
+<tr>
+<td>
+<code>ffmpeg</code>, <code>ffprobe</code>
+</td>
+<td>오디오 후처리와 측정</td>
+</tr>
+<tr>
+<td>VARCO <code>OPENAPI_KEY</code> (선택)</td>
+<td>실제 에셋 생성. 없으면 드라이런으로 진행합니다</td>
+</tr>
+<tr>
+<td>Unity 6 (선택)</td>
+<td>Unity 프로토타입. 기본값은 웹입니다</td>
+</tr>
+<tr>
+<td>Playwright MCP (선택)</td>
+<td>웹 프로토타입을 브라우저로 직접 플레이하며 QA</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">설치</h3><a id="user-content-설치" class="anchor" aria-label="Permalink: 설치" href="#설치"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/revfactory/varco-platform.git
+<span class="pl-c1">cd</span> varco-platform
+pip install numpy pillow requests
+
+<span class="pl-c"><span class="pl-c">#</span> 선택: VARCO 키. .env 는 .gitignore 에 들어 있어 커밋되지 않습니다</span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>OPENAPI_KEY=발급받은_키<span class="pl-pds">"</span></span> <span class="pl-k">&gt;</span> .env
+
+claude</pre></div>
+<blockquote>
+<p>[!TIP]
+하네스 파일을 방금 추가했거나 수정한 세션에서는 에이전트가 아직 등록되지 않았을 수 있습니다. Claude Code를 새로 시작하면 <code>.claude/agents/</code>의 에이전트 15명을 불러옵니다.</p>
+</blockquote>
+<div class="markdown-heading"><h3 class="heading-element">게임 만들기</h3><a id="user-content-게임-만들기" class="anchor" aria-label="Permalink: 게임 만들기" href="#게임-만들기"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>Claude Code에 만들고 싶은 게임을 말하면 <code>varco-game-studio</code> 스킬이 불립니다.</p>
+<pre lang="text"><code>무너지는 금고에서 코인을 모아 탈출하는 2분짜리 웹게임 만들어줘
+</code></pre>
+<pre lang="text"><code>Unity로 VARCO 사운드가 들어간 탑다운 슈터 프로토타입 만들어줘. 번역은 영어와 일본어.
+</code></pre>
+<p>진행하는 동안 두 번 멈춰서 묻습니다.</p>
+<ol>
+<li>
+<strong>컨셉 승인:</strong> 디렉터가 쓴 컨셉의 핵심 결정 세 가지를 보여 주고 방향을 확인합니다.</li>
+<li>
+<strong>크레딧 승인:</strong> 에셋 목록과 견적(우선순위별 합계, 단가 미공개 호출 수, 수동 제작 에셋)을 보여 주고 전체 승인, P0만 승인, 드라이런 가운데 고르게 합니다.</li>
+</ol>
+<p>결과는 두 폴더에 나뉘어 쌓입니다.</p>
+<pre lang="text"><code>games/{slug}/               확정본: 다음 단계와 사람이 보는 결과
+├── docs/                   컨셉, GDD, 시스템, 시나리오, 레벨, UX, 밸런스 보고서
+├── data/                   밸런스 CSV, 캐릭터·대사·UI 문자열, 용어집, strings/{lang}.json
+├── assets/                 효과음, 환경음, 대사 음성, 얼굴 애니메이션, 3D 모델, 이미지
+├── manifest.json           승인된 에셋 목록과 제작 상태
+├── web/ 또는 unity/        프로토타입
+├── qa/                     테스트 계획, 버그 리포트, 보고서, 스크린샷
+├── marketing/              스토어 이미지
+└── RELEASE_REPORT.md       출시 판정서
+
+_workspace/{slug}/          작업 기록: 초안, 에이전트 간 산출물, 크레딧 장부, 동결 해시
+</code></pre>
+<div class="markdown-heading"><h3 class="heading-element">이어서 요청하기</h3><a id="user-content-이어서-요청하기" class="anchor" aria-label="Permalink: 이어서 요청하기" href="#이어서-요청하기"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>이미 진행한 게임은 필요한 부분만 다시 돌립니다.</p>
+<table>
+<thead>
+<tr>
+<th>이렇게 요청하면</th>
+<th>다시 돌리는 범위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"밸런스 수정해줘, 적이 너무 세"</td>
+<td>시스템 기획·밸런스 분석 → 데이터 재반영 → 구현 수치 대조</td>
+</tr>
+<tr>
+<td>"대사 음성만 다시 뽑아줘"</td>
+<td>3단계를 해당 에셋만</td>
+</tr>
+<tr>
+<td>"일본어 현지화 추가해줘"</td>
+<td>에셋 명세에 현지화 추가 → 크레딧 승인 → 3단계</td>
+</tr>
+<tr>
+<td>"드라이런 말고 실제로 생성해줘"</td>
+<td>키 확인 → 크레딧 승인 → 3단계 전체</td>
+</tr>
+<tr>
+<td>"버그 고쳐줘", "QA 다시 돌려줘"</td>
+<td>4단계 엔지니어·QA 한 쌍</td>
+</tr>
+<tr>
+<td>"스토어 이미지 다시 만들어줘"</td>
+<td>마케팅 아티스트만</td>
+</tr>
+<tr>
+<td>"출시 판정 다시"</td>
+<td>5단계</td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading"><h3 class="heading-element">VARCO API만 직접 쓰기</h3><a id="user-content-varco-api만-직접-쓰기" class="anchor" aria-label="Permalink: VARCO API만 직접 쓰기" href="#varco-api만-직접-쓰기"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>게임 전체가 아니라 VARCO API 한두 번만 필요하면 공용 클라이언트를 바로 써도 됩니다.</p>
+<div class="highlight highlight-source-shell"><pre>C=.claude/skills/varco-api/scripts/varco_client.py
+
+<span class="pl-c"><span class="pl-c">#</span> 사용할 수 있는 API 목록과 추정 단가</span>
+python3 <span class="pl-smi">$C</span> catalog
+
+<span class="pl-c"><span class="pl-c">#</span> 호출 전 파라미터 검사(필수값, 허용값, 글자·바이트 한도)와 추정 크레딧</span>
+python3 <span class="pl-smi">$C</span> validate sound.text2sound --param prompt=<span class="pl-s"><span class="pl-pds">"</span>heavy door creaking<span class="pl-pds">"</span></span> --param num_sample=3
+
+<span class="pl-c"><span class="pl-c">#</span> 드라이런: 호출하지 않고 요청 명세만 저장</span>
+python3 <span class="pl-smi">$C</span> call sound.text2sound --param prompt=<span class="pl-s"><span class="pl-pds">"</span>coin pickup chime<span class="pl-pds">"</span></span> \
+  --out out/coin.wav --ledger out/ledger.jsonl --dry-run
+
+<span class="pl-c"><span class="pl-c">#</span> 실제 호출: 장부 기준 누적 500 크레딧을 넘으면 호출하지 않음</span>
+python3 <span class="pl-smi">$C</span> call sound.variation --file source=out/coin_01.wav --param num_sample=4 \
+  --out out/coin_var.wav --ledger out/ledger.jsonl --budget 500
+
+<span class="pl-c"><span class="pl-c">#</span> 장부 요약</span>
+python3 <span class="pl-smi">$C</span> ledger --ledger out/ledger.jsonl</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">알아 두실 점</h2><a id="user-content-알아-두실-점" class="anchor" aria-label="Permalink: 알아 두실 점" href="#알아-두실-점"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>
+<strong>크레딧 단가는 추정치입니다.</strong> 공식 가격표가 공개되지 않아, 각 문서에 주석으로 숨겨진 가격표에서 단가를 가져왔습니다. 번역, Voice-to-Face, 음성 변환 Acting은 단가를 몰라 견적 합계에 들어가지 않습니다.</li>
+<li>
+<strong>VARCO에 없는 기능이 있습니다.</strong> 텍스트로 이미지를 만드는 API와 음악을 만드는 REST API가 없습니다. 3D 원본 이미지는 사용자가 주거나 다른 이미지 생성 도구로 만들고, 배경음악은 Unity 플러그인에서 사람이 만드는 수동 에셋으로 분류합니다.</li>
+<li>
+<strong>실제 VARCO 서버로 전체 흐름을 돌려 보지는 않았습니다.</strong> 공용 클라이언트는 로컬 모의 서버로 실제 호출 경로(응답 저장, 3D 결과 조회, 오류 분류, 동시 호출 예산)를 검증했고, 에이전트는 드라이런으로 시험했습니다. 처음 실제 키로 실행할 때 결과를 함께 확인하십시오.</li>
+<li>
+<strong>Unity WebGL 빌드</strong>가 필요하면 Unity Hub에서 WebGL 빌드 모듈을 설치해야 합니다.</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">쇼릴 제작기</h2><a id="user-content-쇼릴-제작기" class="anchor" aria-label="Permalink: 쇼릴 제작기" href="#쇼릴-제작기"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>맨 위 영상은 이 하네스가 게임을 만드는 과정을 1분으로 옮긴 모션그래픽입니다. 소재는 하네스를 시험할 때 실제로 만든 "코인 러너"의 대사와 데이터입니다.</p>
+<ul>
+<li>
+<strong>사양:</strong> 1920×1080, 60fps, 60초, 48kHz 스테레오</li>
+<li>
+<strong>화면:</strong> HTML 캔버스 한 장에 모든 요소를 코드로 그렸습니다. 모든 장면이 시간만 받아 그리는 순수 함수라 어느 프레임이든 똑같이 다시 그릴 수 있고, 엔딩 몽타주는 앞 장면을 그대로 다시 불러 씁니다.</li>
+<li>
+<strong>소리:</strong> 120 BPM, A 단조의 음악과 효과음 27종을 numpy로 합성했습니다. 화면과 소리가 같은 큐 시트(<code>timeline.json</code>)를 읽어 한 박자 안에서 맞물립니다.</li>
+</ul>
+<p>다시 렌더링하려면 Playwright(Python)와 Chrome이 필요합니다.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">cd</span> _workspace/showreel
+python3 build_timeline.py          <span class="pl-c"><span class="pl-c">#</span> 큐 시트</span>
+python3 audio/synth.py             <span class="pl-c"><span class="pl-c">#</span> 사운드트랙</span>
+python3 render.py video out/showreel.mp4 60 audio/soundtrack.wav</pre></div>
+<div class="markdown-heading"><h2 class="heading-element">저장소 구조</h2><a id="user-content-저장소-구조" class="anchor" aria-label="Permalink: 저장소 구조" href="#저장소-구조"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<pre lang="text"><code>.
+├── .claude/
+│   ├── agents/                    에이전트 정의 15개
+│   └── skills/                    스킬 17개(스크립트·참조 문서 포함)
+├── CLAUDE.md                      하네스 호출 조건과 변경 이력
+├── docs/media/                    README 용 GIF와 이미지
+├── VARCO-API-Reference-Manual-ko.pdf
+├── VARCO-Platform-Intro.mp4       (+ 포스터 이미지)
+├── VARCO-Game-Studio-Showreel.mp4 (+ 포스터 이미지)
+└── _workspace/
+    ├── link-check/                VARCO 문서 수집 작업 파일
+    ├── book/                      레퍼런스 매뉴얼 제작 파일
+    ├── animation/                 플랫폼 소개 영상 제작 파일
+    ├── showreel/                  하네스 쇼릴 제작 파일
+    ├── harness-build/             하네스 시험 표본과 검증 스크립트
+    └── readme-media/              README GIF 생성 스크립트
+</code></pre>
+<div class="markdown-heading"><h2 class="heading-element">권리 안내</h2><a id="user-content-권리-안내" class="anchor" aria-label="Permalink: 권리 안내" href="#권리-안내"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>VARCO와 VARCO API Platform은 NC AI의 서비스입니다. 이 저장소는 NC AI가 운영하는 공식 저장소가 아닙니다.</li>
+<li>레퍼런스 매뉴얼과 <code>.claude/skills/varco-api/references/</code>, <code>_workspace/link-check/</code>의 문서 원문 저작권은 NC AI에 있습니다.</li>
+<li>영상과 매뉴얼에 쓴 Pretendard 글꼴은 SIL Open Font License를 따릅니다.</li>
+</ul>

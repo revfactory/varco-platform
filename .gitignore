@@ -17,3 +17,5 @@ __pycache__/
 _workspace/showreel/out/
 _workspace/showreel/frames/
 _workspace/showreel/audio/pre_master.wav
+# README GIF 를 만들 때 잘라 낸 중간 영상 조각
+_workspace/readme-media/*.mp4
